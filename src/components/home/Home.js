@@ -1,5 +1,6 @@
 import React from 'react';
 import Events from '../events/Events';
+import styles from './Home.css';
 
 const data = [{
   name: 'Family Fun',
@@ -8,13 +9,13 @@ const data = [{
   location: { address: 'Cathedral Park' },
   cost: 'free',
   age: 'all ages',
-  description: 'family fun day' 
+  description: 'family fun day'
 }];
 function Home() {
   return (
-    <>
-    <Events events={data}/>
-    </>
+    <section className={styles.Home}>
+      <Events events={data} />
+    </section>
   );
 }
 export default Home;

@@ -1,0 +1,17 @@
+.Header{
+    border-bottom: 1px solid black;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+    }
+    a {
+      margin: .5em;
+      text-decoration: none;
+      color: black;
+    }
+  }
+.logo {
+  margin: 0;
+  text-align: center;
+}
