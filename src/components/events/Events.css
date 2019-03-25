@@ -1,11 +1,26 @@
 .Select {
-  color: red;
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  padding: .5em;
   select {
-    display: flex;
-    justify-content: space-between;
     padding: .5em;
+    font-size: .8em;
   }
+}
+
+.Event {
+  display: flex;
+  justify-content: center;
+
+  ul {
+    width: 95vw;
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 1em;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+  }
+
 }
