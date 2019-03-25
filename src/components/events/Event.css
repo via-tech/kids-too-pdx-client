@@ -5,7 +5,7 @@
     text-align: center;
   }
   p {
-    display: flex;
+    text-align: center;
     margin: .4em;
     span {
       font-weight: 800;
