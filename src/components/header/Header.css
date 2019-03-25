@@ -1,4 +1,5 @@
 .Header{
+  width: 95vw;
     border-bottom: 1px solid black;
     nav {
       display: flex;

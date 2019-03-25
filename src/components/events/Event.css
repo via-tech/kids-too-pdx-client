@@ -1,0 +1,24 @@
+.Event {
+  h2{
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;
+  }
+  p {
+    display: flex;
+    margin: .4em;
+    span {
+      font-weight: 800;
+      margin-right: .5em;
+    }
+  }
+  img {
+    display: block;
+    height: 45vw;
+    width: auto;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px gray;;
+  }
+  
+}
