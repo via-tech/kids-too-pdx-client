@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Event.css';
+import { Link } from 'react-router-dom';
+
+// import dollar from '../../../public/assets/dollar-symbol.png';
 
 import { Link } from 'react-router-dom';
 
@@ -14,7 +17,6 @@ function Event({ event }) {
   return (
 
     <>
-
       <section className={styles.Event}>
         <img src={image} alt='event picture' />
         <Link to={`/events/${event.id}`} key={event.id}><h2>{name}</h2></Link>
