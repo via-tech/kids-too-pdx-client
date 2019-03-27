@@ -4,9 +4,6 @@ import styles from './Event.css';
 import { Link } from 'react-router-dom';
 
 // import dollar from '../../../public/assets/dollar-symbol.png';
-
-import { Link } from 'react-router-dom';
-
 // import dollar from '../../../public/assets/dollar-symbol.png';
 
 function Event({ event }) {
