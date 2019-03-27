@@ -1,5 +1,31 @@
+// export const postEvent = event => post('/events', event);
+
 export const getEvents = () => {
   const events = [
+    {
+      name: 'Potluck in the Park',
+      date: '04/21/19',
+      location: { address: 'SW Hawthorne', city: 'Portland', zip: 97201 },
+      time: '12pm',
+      price: 0,
+      age: '12',
+      description: 'Serving the hungry, rain or shine',
+      pending: '',
+      category: 'volunteer',
+      organization: 'Potluck in the Park'
+    },
+    {
+      name: 'Potluck in the Park',
+      date: '04/07/19',
+      location: { address: 'SW Hawthorne', city: 'Portland', zip: 97201 },
+      time: '12pm',
+      price: 0,
+      age: '12',
+      description: 'Serving the hungry, rain or shine',
+      pending: '',
+      category: 'volunteer',
+      organization: 'Potluck in the Park'
+    },
     {
       name: 'Potluck in the Park',
       image: './public/assets/volunteerpic.jpg',
@@ -66,7 +92,7 @@ export const getEvents = () => {
       organization: 'Portland Parks and Rec'
     },
     {
-      name: 'Potluck in the Park',
+      name: 'Get Books to Children at Children\'s Book Bank',
       image: './public/assets/volunteer2pic.jpg',
       date: '04/21/19',
       location: { address: 'SW Hawthorne', city: 'Portland', zip: 97201 },
@@ -105,7 +131,7 @@ export const getEvents = () => {
       organization: 'Children\'s Book Bank'
     },
     {
-      name: 'Potluck in the Park',
+      name: 'Kids! Sort & Package Supplies for Families @ Portland Center',
       image: './public/assets/volunteerpic.jpg',
       date: '04/07/19',
       location: { address: 'SW Hawthorne', city: 'Portland', zip: 97201 },
