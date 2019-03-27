@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Event.css';
-import { Link } from 'react-router-dom';
 
 // import dollar from '../../../public/assets/dollar-symbol.png';
-// import dollar from '../../../public/assets/dollar-symbol.png';
-
 function Event({ event }) {
   const { name, date, time, location, cost, age, description, category, image } = event;
   // if(event.cost === 'free') {
@@ -16,7 +13,7 @@ function Event({ event }) {
     <>
       <section className={styles.Event}>
         <img src={image} alt='event picture' />
-        <Link to={`/events/${event.id}`} key={event.id}><h2>{name}</h2></Link>
+        <a to={`/events/${event.id}`} key={event.id}><h2>{name}</h2></a>
         <p>{date} @ {time}</p>
         <p><span>Location:</span>{location.address}</p>
         <p><span>Cost:</span>{cost}</p>

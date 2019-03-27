@@ -1,17 +1,6 @@
-.Select {
-  display: flex;
-  justify-content: space-between;
-  padding: .5em;
-  select {
-    padding: .5em;
-    font-size: .8em;
-  }
-}
-
 .Event {
   display: flex;
   justify-content: center;
-
   ul {
     width: 95vw;
     list-style: none;
