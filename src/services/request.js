@@ -1,5 +1,5 @@
 import store from '../store';
-import { getToken } from './selectors/session';
+import { getToken } from '../selectors/session';
 
 const request = (path, method, body) => {
   return fetch(`${process.env.API_URL}${path}`, {
