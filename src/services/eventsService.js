@@ -1,3 +1,4 @@
+import { get } from './request';
 // export const postEvent = event => post('/events', event);
 
 export const getEvents = () => {
@@ -364,9 +365,3 @@ export const getEvents = () => {
       category: 'volunteer',
       organization: 'Oregon Humane Society'
     }
-
-  ];
-  return Promise.resolve(
-    events
-  );
-};

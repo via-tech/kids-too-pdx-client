@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styles from './Events.css';
 
 function Events({ events }) {
-  console.log(events);
   const listOfEvents = events.map((event, i) => {
     return <li key={i}><Event event={event} /></li>;
   });

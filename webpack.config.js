@@ -2,6 +2,7 @@ const HtmlPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const DotenvPlugin = require('dotenv-webpack');
 
+
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
