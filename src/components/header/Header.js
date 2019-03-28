@@ -15,13 +15,13 @@ import Resources from '../resources/Resources';
 function Header() {
   return (
     <>
-      <h1 className={styles.logo}>
-        KidsTOO!
-      </h1>
       <Router>
-        <section>
+        <section className={styles.container}>
           <header className={styles.Header}>
-            <nav>
+            <section className={styles.logo}>
+              <img src='../../../public/assets/logo.png' />
+            </section>
+            <nav className={styles.nav}>
               <Link to='/'>Home</Link>
               <Link to='/submit-event'>Submit Event</Link>
               <Link to='/contact'>Contact</Link>

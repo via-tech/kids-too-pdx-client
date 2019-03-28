@@ -2,14 +2,27 @@
   display: flex;
   justify-content: center;
   ul {
-    width: 95vw;
+    width:85vw;
     list-style: none;
     padding: 0;
     li {
       padding: 1em;
       border: 1px solid black;
       border-radius: 10px;
+      background-color: white;
+      margin-bottom: 0.8em;
     }
   }
-
+}
+@media only screen and (min-width: 1000px) {
+  .Event {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+      margin-top: 15em;
+    }
+    li {
+      margin: 1em;
+    }
+  }
 }

@@ -13,13 +13,14 @@ function Event({ event }) {
     <>
       <section className={styles.Event}>
         <img src={image} alt='event picture' />
-        <a href={`/events/${event._id}`}><h2>{name}</h2></a>
-        <p>{date} @ {time}</p>
+        <a href={`/events/${event.id}`} key={event.id}><h2>{name}</h2></a>
+        <p><span>Date:</span>{date}</p>
+        <p>Time: @ {time}</p>
         <p><span>Location:</span>{location}</p>
         <p><span>Cost:</span>{price}</p>
         <p><span>Age:</span>{ageMin} - {ageMax}</p>
         <p>{category}</p>
-        <p>{description}</p>
+        {/* <p>{description}</p> */}
       </section>
     </>
   );

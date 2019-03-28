@@ -3,9 +3,9 @@ import styles from './Footer.css';
 
 function Footer() {
   return (
-    <main className={styles.Footer}>
+    <section className={styles.Footer}>
       <a href='/aboutus'>About Us</a>
-    </main>
+    </section>
   );
 }
 export default Footer;

@@ -1,8 +1,14 @@
 .Event {
   h2{
     margin: 0;
-    font-size: 2.5em;
+    font-size: 1.75em;
     text-align: center;
+  }
+  a{
+    text-decoration: none;
+  }
+  h2:hover {
+    color: #766987;
   }
   p {
     text-align: center;
@@ -14,11 +20,21 @@
   }
   img {
     display: block;
-    height: 40vw;
-    width: auto;
+    height: auto;
+    width: 30vw;
     margin: auto;
     border-radius: 5px;
-    box-shadow: 2px 2px gray;;
   }
-  
+}
+
+@media only screen and (min-width: 1000px) {
+  .Event {
+    img {
+      display: block;
+      height: auto;
+      width: 10vw;
+      margin: auto;
+      border-radius: 5px;
+    }
+  }
 }
