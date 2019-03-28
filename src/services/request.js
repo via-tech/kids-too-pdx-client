@@ -6,6 +6,7 @@ const request = (path, method, body) => {
     method,
     body: body ? JSON.stringify(body) : null,
     headers: {
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${getToken(store.getState())}`
     }
   })

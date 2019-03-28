@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Event.css';
+import { Link } from 'react-router-dom';
 
 // import dollar from '../../../public/assets/dollar-symbol.png';
 function Event({ event }) {
@@ -13,14 +14,14 @@ function Event({ event }) {
     <>
       <section className={styles.Event}>
         <img src={image} alt='event picture' />
-        <a href={`/events/${event._id}`} key={event._id}><h2>{name}</h2></a>
+        <Link to={`/events/${event._id}`}><h2>{name}</h2></Link>
         <p><span>Date:</span>{date}</p>
-        <p>Time: @ {time}</p>
+        <p><span>Time: @</span> {time}</p>
         <p><span>Location:</span>{location}</p>
         <p><span>Cost:</span>{price}</p>
-        <p><span>Age:</span>{ageMin} - {ageMax}</p>
+        <p><span>Age:</span>{ageMin}-{ageMax}</p>
         <p>{category}</p>
-        <p>{description}</p>
+        <p id={styles.description}>{description}</p>
       </section>
     </>
   );

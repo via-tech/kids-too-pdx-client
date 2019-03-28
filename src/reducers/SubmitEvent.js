@@ -1,9 +1,14 @@
 import {
   CREATE_EVENT,
-  UPDATE_CONTACT,
+  UPDATE_CONTACT_NAME,
+  UPDATE_CONTACT_EMAIL,
+  UPDATE_CONTACT_PHONE,
   UPDATE_EVENT_NAME,
   UPDATE_DATE,
-  UPDATE_LOCATION,
+  UPDATE_LOCATION_VENUE,
+  UPDATE_LOCATION_ADDRESS,
+  UPDATE_LOCATION_STATE,
+  UPDATE_LOCATION_ZIPCODE,
   UPDATE_TIME,
   UPDATE_PRICE,
   UPDATE_RRATE,
@@ -14,34 +19,53 @@ import {
 } from '../actions/submitEvent';
 
 const initialState = {
-  contact: {},
+  contact: {
+    contactName: '',
+    email: '',
+    phone: ''
+  },
   name: '',
-  date: Date.now(),
+  date: '',
   time: '',
-  location: {},
+  location: {
+    venue: '',
+    address: '',
+    state: '',
+    zipcode: ''
+  },
   price: '',
-  reducedRate: true,
-  minAge: 0,
-  maxAge: 0,
+  reducedRate: false,
+  minAge: '',
+  maxAge: '',
   category: '',
   description: ''
 };
 
 export default function reducer(state = initialState, { payload, type }) {
   switch(type) {
-    case CREATE_EVENT: 
+    case CREATE_EVENT:
       return {
         ...state
       };
-    case UPDATE_CONTACT:
-      return {
-        ...state,
-        contact: payload
-      };
-    case UPDATE_EVENT_NAME:
+    case UPDATE_EVENT_NAME: 
       return {
         ...state,
         name: payload
+      };
+    case UPDATE_CONTACT_NAME:
+      return {
+        ...state,
+        contact: { ...state.contact, contactName: payload }
+      };
+    case UPDATE_CONTACT_PHONE:
+      return {
+        ...state,
+        contact: { ...state.contact, phone: payload }
+      };
+    case UPDATE_CONTACT_EMAIL:
+      return {
+        ...state,
+        contact: { ...state.contact, email: payload }
       };
     case UPDATE_DATE:
       return {
@@ -53,10 +77,25 @@ export default function reducer(state = initialState, { payload, type }) {
         ...state,
         time: payload
       };
-    case UPDATE_LOCATION:
+    case UPDATE_LOCATION_VENUE:
       return {
         ...state,
-        location: payload
+        location: { ...state.location, venue: payload }
+      };
+    case UPDATE_LOCATION_ADDRESS:
+      return {
+        ...state,
+        location: { ...state.location, address: payload }
+      };
+    case UPDATE_LOCATION_STATE:
+      return {
+        ...state,
+        location: { ...state.location, state: payload }
+      };
+    case UPDATE_LOCATION_ZIPCODE:
+      return {
+        ...state,
+        location: { ...state.location, zipcode: payload }
       };
     case UPDATE_PRICE:
       return {
@@ -78,12 +117,12 @@ export default function reducer(state = initialState, { payload, type }) {
         ...state,
         maxAge: payload
       };
-    case UPDATE_CATEGORY: 
+    case UPDATE_CATEGORY:
       return {
         ...state,
         category: payload
       };
-    case UPDATE_DESCRIPTION: 
+    case UPDATE_DESCRIPTION:
       return {
         ...state,
         description: payload
