@@ -11,6 +11,7 @@ const auth0 = new WebAuth({
 export const login = () => {
   return auth0.authorize();
 };
+
 export const logout = () => {
   return auth0.logout();
 };
@@ -19,7 +20,7 @@ export const handleAuth = () => {
   return new Promise((resolve, reject) => {
     auth0.parseHash((err, result) => {
       if(result && result.accessToken && result.idToken) {
-        auth0.client.userInfo(result.accessToken, (err, info) => {
+        auth0.client.userInfo(result.accessToken, (err) => {
           if(err) return reject(err);
           return resolve({
             token: result.idToken

@@ -1,4 +1,7 @@
-import { FETCH_EVENT_DETAIL, FETCH_EVENT_DETAIL_PENDING } from '../actions/eventDetail';
+import {
+  FETCH_EVENT_DETAIL,
+  FETCH_EVENT_DETAIL_PENDING
+} from '../actions/eventDetail';
 
 const initialState = {
   loading: false,

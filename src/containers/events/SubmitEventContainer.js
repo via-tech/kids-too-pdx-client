@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
-import SubmitEvent from '../components/submission/SubmitEvent';
+import SubmitEvent from '../../components/submission/SubmitEvent';
 import PropTypes from 'prop-types';
 import { getContact, getName, getDate, getTime, getLocation, getPrice, getMinAge, getMaxAge, getCategory, getDescription, getReduced } from '../selectors/submitEvent';
 import { createEvent, updateEventName, updateDate, updateTime, updateLocationAddress, updateLocationCity, updateLocationState, updateLocationZipcode, updatePrice, updateMinAge, updateMaxAge, updateRr, updateCategory, updateDescription, updateContactEmail, updateContactPhone, updateLocationVenue, updateContactName } from '../actions/submitEvent';
@@ -28,12 +28,14 @@ class SubmitContainer extends PureComponent {
     category: PropTypes.string,
     description: PropTypes.string
   };
+
   render() {
     return (
       <SubmitEvent {...this.props} />
     );
   }
 }
+
 const mapStateToProps = state => ({
   contact: getContact(state),
   name: getName(state),

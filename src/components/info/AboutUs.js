@@ -38,4 +38,5 @@ function AboutUs() {
     </section>
   );
 }
+
 export default AboutUs;

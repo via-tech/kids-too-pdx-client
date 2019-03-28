@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import AdminEvent from './AdminEvent';
 
 function EventsList({ events }) {
   const listOfEvents = events.map(event => {

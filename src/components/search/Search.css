@@ -1,12 +1,14 @@
 .Select {
   text-align: center;
   padding: .5em;
+
   select {
     display: block;
     margin: auto;
     padding: .5em;
     font-size: .8em;
   }
+
   input {
     margin: auto;
     text-align: center;
@@ -14,6 +16,7 @@
     width: 4em;
     padding: .5em;
   }
+
   label {
     font-weight: 800;
   }
@@ -24,12 +27,14 @@
     display: flex;
     justify-content: space-around;
     margin: 1em;
+
     label {
       display: flex;
       justify-content: center;
       margin: 0;
       justify-content: center
     }
+    
     select {
       margin: 0;
     }
