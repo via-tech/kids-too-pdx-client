@@ -16,13 +16,13 @@ import {
 const initialState = {
   contact: {},
   name: '',
-  date: '',
+  date: Date.now(),
   time: '',
   location: {},
   price: '',
-  rr: true,
-  minAge: '',
-  maxAge: '',
+  reducedRate: true,
+  minAge: 0,
+  maxAge: 0,
   category: '',
   description: ''
 };
@@ -66,7 +66,7 @@ export default function reducer(state = initialState, { payload, type }) {
     case UPDATE_RRATE:
       return {
         ...state,
-        rr: payload
+        reducedRate: payload
       };
     case UPDATE_MINAGE:
       return {

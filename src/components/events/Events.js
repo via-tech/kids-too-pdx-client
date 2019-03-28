@@ -10,7 +10,7 @@ function Events({ events }) {
   });
   return (
   <>
-    <Search />
+    {/* <Search /> */}
     <section className={styles.Event}>
       <ul>
         {listOfEvents}

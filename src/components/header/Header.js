@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from '../home/Home';
 import EventDetail from '../events/EventsDetail';
-import SubmitEvent from '../submission/SubmitEvent';
+import SubmitEventContainer from '../../containers/SubmitEventContainer';
 import AdminEvents from '../admin/AdminEvents';
 import AboutUs from '../info/AboutUs';
 import Callback from '../../containers/auth/Callback';
@@ -27,7 +27,7 @@ function Header() {
           </header>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/submit-event' component={withSession(SubmitEvent)} />
+            <Route exact path='/submit-event' component={withSession(SubmitEventContainer)} />
             <Route exact path='/events/:id' component={EventDetail} />
             <Route exact path='/admin' component={AdminEvents} />
             <Route exact path='/admin/event/:id' component={AdminEvents} />

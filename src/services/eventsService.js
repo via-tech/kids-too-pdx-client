@@ -1,5 +1,7 @@
-// import { get } from './request';
-// export const postEvent = event => post('/events', event);
+import { post, get } from './request';
+export const postEvent = event => post('/events', event);
+//need change events to approvedEvents
+export const getEvents = () => get('/events'); 
 
 // export const getEvents = () => {
 //   const events = [
@@ -364,4 +366,6 @@
 //       pending: '',
 //       category: 'volunteer',
 //       organization: 'Oregon Humane Society'
-//     }
+//     }];
+//   return Promise.all
+// };

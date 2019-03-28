@@ -11,9 +11,9 @@ export const [
 ] = createAction('CREATE_EVENT', postEvent);
 
 export const UPDATE_CONTACT = 'UPDATE_CONTACT';
-export const updateContactName = (contact, email, phone) => ({
+export const updateContact = contact => ({
   type: UPDATE_CONTACT,
-  payload: contact, email, phone
+  payload: contact
 });
 
 export const UPDATE_EVENT_NAME = 'UPDATE_EVENT_NAME';
@@ -35,9 +35,9 @@ export const updateTime = time => ({
 });
 
 export const UPDATE_LOCATION = 'UPDATE_LOCATION';
-export const updateLocation = (venue, address, city, state, zipcode) => ({
+export const updateLocation = location => ({
   type: UPDATE_LOCATION,
-  payload: venue, address, city, state, zipcode
+  payload: location
 });
 
 
