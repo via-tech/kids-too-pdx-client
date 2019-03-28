@@ -16,7 +16,7 @@ function Event({ event }) {
     <>
       <section className={styles.Event}>
         <img src={event.image} alt='event picture' />
-        <Link to={`/events/${event._id}`}><h2>{name}</h2></Link>
+        <Link to={`/events/${event._id}`}><h2>{event.name}</h2></Link>
         <p><span>Date:</span>{event.date}</p>
         <p><span>Time: @</span> {event.time}</p>
         {event.location && <p><span>Location:</span>{event.location.venue}</p>}
