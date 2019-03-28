@@ -15,5 +15,6 @@ function EventsList({ events }) {
 }
 EventsList.propTypes = {
   events: PropTypes.array.isRequired
-}
+};
+
 export default EventsList;
