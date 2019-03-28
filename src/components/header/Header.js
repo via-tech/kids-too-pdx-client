@@ -23,7 +23,7 @@ function Header() {
             </section>
             <nav className={styles.nav}>
               <Link to='/'>Home</Link>
-              <Link to='/submit-event'>Submit Event</Link>
+              {/* <Link to='/submit-event'>Submit Event</Link> */}
               <Link to='/contact'>Contact</Link>
               <Link to='/resources'>Resources</Link>
             </nav>

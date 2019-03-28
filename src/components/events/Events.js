@@ -1,7 +1,7 @@
 import React from 'react';
 import Event from './Event';
 import PropTypes from 'prop-types';
-// import Search from '../search/Search';
+import Search from '../search/Search';
 import styles from './Events.css';
 
 function Events({ events, onChange, onSubmit }) {
