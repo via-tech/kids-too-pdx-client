@@ -10,6 +10,7 @@ import Callback from '../../containers/auth/Callback';
 // import { withSession } from '../../containers/auth/withSession';
 import Contact from '../info/Contact';
 import styles from './Header.css';
+import Resources from '../resources/Resources';
 
 function Header() {
   return (
@@ -24,6 +25,7 @@ function Header() {
               <Link to='/'>Home</Link>
               <Link to='/submit-event'>Submit Event</Link>
               <Link to='/contact'>Contact</Link>
+              <Link to='/resources'>Resources</Link>
             </nav>
           </header>
           <Switch>
@@ -36,6 +38,7 @@ function Header() {
             <Route exact path='/contact' component={Contact} /> 
             <Route exact path='/aboutus' component={AboutUs} /> 
             <Route exact path='/callback' component={Callback} /> 
+            <Route exact path='/resources' component={Resources} />
           </Switch>
         </section>
       </Router>
