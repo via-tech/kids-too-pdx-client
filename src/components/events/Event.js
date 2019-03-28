@@ -10,6 +10,7 @@ function Event({ event }) {
   //   return <img src={dollar} alt="dollar sign"/>;
   // }
   // console.log(event.location, 'location');
+
   return (
 
     <>

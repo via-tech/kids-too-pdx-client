@@ -50,7 +50,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleChange({ target }) {
-    console.log(target.name, 'target');
     const factoryMethod = {
       contactName: updateContactName,
       contactEmail: updateContactEmail,
