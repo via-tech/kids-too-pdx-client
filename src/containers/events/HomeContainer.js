@@ -13,6 +13,7 @@ import store from '../../store';
 const mapStateToProps = state => ({
   events: getEvents(state),
   loading: isLoading(state),
+  details: false
 });
 
 const mapDispatchToProps = dispatch => ({

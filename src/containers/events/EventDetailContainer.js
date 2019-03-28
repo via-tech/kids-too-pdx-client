@@ -6,7 +6,8 @@ import Event from '../../components/events/Event';
 import { getEventDetail } from '../../selectors/eventDetail';
 
 const mapStateToProps = state => ({
-  event: getEventDetail(state)
+  event: getEventDetail(state),
+  details: true
 });
 
 const mapDispatchToProps = (dispatch, props) => ({

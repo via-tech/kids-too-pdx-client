@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import Search from '../search/Search';
 import styles from './Events.css';
 
-function Events({ events, onChange, onSubmit }) {
+function Events({ events, onChange, onSubmit, details }) {
   const listOfEvents = events.map((event, i) => {
-    return <li key={i}><Event event={event} /></li>;
+    return <li key={i}><Event event={event} details={details} /></li>;
   });
   return (
   <>
@@ -25,6 +25,7 @@ function Events({ events, onChange, onSubmit }) {
 Events.propTypes = {
   events: PropTypes.array,
   onChange: PropTypes.func,
-  onSubmit: PropTypes.func
+  onSubmit: PropTypes.func,
+  details: PropTypes.boolean
 };
 export default Events;

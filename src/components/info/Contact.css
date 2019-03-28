@@ -2,7 +2,7 @@
   padding: 20em;
   margin: auto;
   text-align: center;
-  background-image: url('https://images.unsplash.com/photo-1550785116-fe550d4904cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80');
+  background-image: url('../../../public/assets/background1.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   img {
