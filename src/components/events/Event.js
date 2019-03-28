@@ -5,23 +5,24 @@ import { Link } from 'react-router-dom';
 
 // import dollar from '../../../public/assets/dollar-symbol.png';
 function Event({ event }) {
-  const { name, date, time, location, price, ageMin, ageMax, description, category, image } = event;
+  // const { name, date, time, price, ageMin, ageMax, description, category, image } = event;
   // if(event.cost === 'free') {
   //   return <img src={dollar} alt="dollar sign"/>;
   // }
+  // console.log(event.location, 'location');
   return (
 
     <>
       <section className={styles.Event}>
-        <img src={image} alt='event picture' />
+        <img src={event.image} alt='event picture' />
         <Link to={`/events/${event._id}`}><h2>{name}</h2></Link>
-        <p><span>Date:</span>{date}</p>
-        <p><span>Time: @</span> {time}</p>
-        <p><span>Location:</span>{location}</p>
-        <p><span>Cost:</span>{price}</p>
-        <p><span>Age:</span>{ageMin}-{ageMax}</p>
-        <p>{category}</p>
-        <p id={styles.description}>{description}</p>
+        <p><span>Date:</span>{event.date}</p>
+        <p><span>Time: @</span> {event.time}</p>
+        {event.location && <p><span>Location:</span>{event.location.venue}</p>}
+        <p><span>Cost:</span>{event.price}</p>
+        <p><span>Age:</span>{event.ageMin}-{event.ageMax}</p>
+        <p>{event.category}</p>
+        <p>{event.description}</p>
       </section>
     </>
   );
