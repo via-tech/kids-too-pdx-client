@@ -3,7 +3,7 @@
 }
 .Home {
   position: relative;
-  background: url('../../../public/assets/background.png');
+    background: url('../../../public/assets/background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
