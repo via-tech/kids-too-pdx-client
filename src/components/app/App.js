@@ -9,9 +9,8 @@ import Contact from '../info/Contact';
 import AboutUs from '../info/AboutUs';
 import Callback from '../../containers/auth/Callback';
 import Resources from '../resources/Resources';
-// import withSession from '../../containers/auth/withSession';
-// import SubmitEvent from '../../components/submission/SubmitEvent';
-// import SubmitEventContainer from '../../containers/SubmitEventContainer';
+import { withSession } from '../../containers/auth/withSession';
+import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
 
 export default function App() {
   return (
@@ -20,9 +19,8 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path='/' component={Home} />
-        {/* <Route exact path='/submit-event' component={withSession(SubmitEvent)} /> */}
         <Route exact path='/events/:id' component={EventDetailContainer} />
-        {/* <Route exact path='/submit-event' component={withSession(SubmitEventContainer)} /> */}
+        <Route exact path='/submit-event' component={withSession(SubmitEventContainer)} />
         {/* <Route exact path='/admin' component={AdminEvents} />
         <Route exact path='/admin/event/:id' component={AdminEvents} /> */}
         <Route exact path='/contact' component={Contact} /> 

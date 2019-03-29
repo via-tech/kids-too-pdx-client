@@ -1,6 +1,7 @@
 .Event {
   display: flex;
   justify-content: center;
+  margin-top: 7em;
   ul {
     width:85vw;
     list-style: none;
@@ -12,6 +13,9 @@
       background-color: white;
       margin-bottom: 0.8em;
     }
+    section {
+      margin: 0;
+    }
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -19,7 +23,7 @@
     ul {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
-      margin-top: 15em;
+      margin-top: 5em;
     }
     li {
       margin: 1em;
