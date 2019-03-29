@@ -71,7 +71,7 @@ function SubmitEvent({
               <option value="arts">Art</option>
               <option value="music">Music</option>
               <option value="performance">Performance</option>
-              <option value="education">Educational</option>
+              <option value="educational">Educational</option>
               <option value="volunteer">Volunteer</option>
             </select>
           </label>
