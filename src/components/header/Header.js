@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.css';
+import logo from '../../../public/assets/logo2.png';
 
 function Header() {
   return (
@@ -8,7 +9,7 @@ function Header() {
         <section className={styles.container}>
           <header className={styles.Header}>
             <section className={styles.logo}>
-              <img src='../../../public/assets/logo2.png' />
+              <img src={logo} />
             </section>
             <nav className={styles.nav}>
               <Link to="/">Home</Link>
