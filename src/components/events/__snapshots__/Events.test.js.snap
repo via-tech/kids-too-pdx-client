@@ -50,6 +50,7 @@ Array [
     <label>
       Price:
       <input
+        min="0"
         name="price"
         onChange={[MockFunction]}
         placeholder="max"
@@ -59,15 +60,17 @@ Array [
     <label>
       Age:
       <input
+        min="0"
         name="ageMin"
         onChange={[MockFunction]}
-        placeholder="min age"
+        placeholder="min"
         type="number"
       />
       <input
+        min="0"
         name="ageMax"
         onChange={[MockFunction]}
-        placeholder="max age"
+        placeholder="max"
         type="number"
       />
     </label>
@@ -85,10 +88,12 @@ Array [
         <section
           className="Event"
         >
-          <img
-            alt="event picture"
-            src="image.com"
-          />
+          <figure>
+            <img
+              alt="event picture"
+              src="image.com"
+            />
+          </figure>
           <a
             href="/events/1"
             onClick={[Function]}
@@ -101,7 +106,7 @@ Array [
             <span>
               Date:
             </span>
-            Fri Mar 29 2019 08:53:35 GMT-0700 (Pacific Daylight Time)
+            3/29/2019
           </p>
           <p>
             <span>
@@ -120,6 +125,7 @@ Array [
             <span>
               Cost:
             </span>
+            $
             250
           </p>
           <p>
@@ -138,10 +144,12 @@ Array [
         <section
           className="Event"
         >
-          <img
-            alt="event picture"
-            src="image.com"
-          />
+          <figure>
+            <img
+              alt="event picture"
+              src="image.com"
+            />
+          </figure>
           <a
             href="/events/2"
             onClick={[Function]}
@@ -154,7 +162,7 @@ Array [
             <span>
               Date:
             </span>
-            Fri Mar 29 2019 08:53:35 GMT-0700 (Pacific Daylight Time)
+            3/29/2019
           </p>
           <p>
             <span>
@@ -173,6 +181,7 @@ Array [
             <span>
               Cost:
             </span>
+            $
             150
           </p>
           <p>
@@ -191,10 +200,12 @@ Array [
         <section
           className="Event"
         >
-          <img
-            alt="event picture"
-            src="image.com"
-          />
+          <figure>
+            <img
+              alt="event picture"
+              src="image.com"
+            />
+          </figure>
           <a
             href="/events/3"
             onClick={[Function]}
@@ -207,7 +218,7 @@ Array [
             <span>
               Date:
             </span>
-            Fri Mar 29 2019 08:53:35 GMT-0700 (Pacific Daylight Time)
+            3/29/2019
           </p>
           <p>
             <span>
@@ -226,6 +237,7 @@ Array [
             <span>
               Cost:
             </span>
+            $
             50
           </p>
           <p>

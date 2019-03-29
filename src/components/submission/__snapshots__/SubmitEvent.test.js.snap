@@ -56,13 +56,21 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
       />
     </label>
     <label>
+      Website:
+      <input
+        name="website"
+        onChange={[MockFunction]}
+        type="text"
+      />
+    </label>
+    <label>
       Date:
       <input
         name="date"
         onChange={[MockFunction]}
         required={true}
         type="date"
-        value="Fri Mar 29 2019 08:53:35 GMT-0700 (Pacific Daylight Time)"
+        value="Fri Mar 29 2019 09:56:51 GMT-0700 (Pacific Daylight Time)"
       />
     </label>
     <label>
@@ -118,6 +126,7 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
     <label>
       Price:
       <input
+        min="0"
         name="price"
         onChange={[MockFunction]}
         placeholder="$"
@@ -138,6 +147,7 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
     <label>
       Age Range:
       <input
+        min="0"
         name="minAge"
         onChange={[MockFunction]}
         placeholder="Min Age"
@@ -145,6 +155,7 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         type="number"
       />
       <input
+        min="0"
         name="maxAge"
         onChange={[MockFunction]}
         placeholder="Max Age"
@@ -167,32 +178,32 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
           Category
         </option>
         <option
-          value="sports"
+          value="Sports"
         >
           Sports
         </option>
         <option
-          value="arts"
+          value="Art"
         >
           Art
         </option>
         <option
-          value="music"
+          value="Music"
         >
           Music
         </option>
         <option
-          value="performance"
+          value="Performance"
         >
           Performance
         </option>
         <option
-          value="educational"
+          value="Educational"
         >
           Educational
         </option>
         <option
-          value="volunteer"
+          value="Volunteer"
         >
           Volunteer
         </option>

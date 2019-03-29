@@ -4,10 +4,12 @@ exports[`Event matches snapshot for Event 1`] = `
 <section
   className="Event"
 >
-  <img
-    alt="event picture"
-    src="image.com"
-  />
+  <figure>
+    <img
+      alt="event picture"
+      src="image.com"
+    />
+  </figure>
   <a
     href="/events/1"
     onClick={[Function]}
@@ -20,7 +22,7 @@ exports[`Event matches snapshot for Event 1`] = `
     <span>
       Date:
     </span>
-    Fri Mar 29 2019 08:53:35 GMT-0700 (Pacific Daylight Time)
+    3/29/2019
   </p>
   <p>
     <span>
@@ -39,6 +41,7 @@ exports[`Event matches snapshot for Event 1`] = `
     <span>
       Cost:
     </span>
+    $
     250
   </p>
   <p>

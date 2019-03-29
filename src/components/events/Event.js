@@ -40,7 +40,7 @@ function Event({ event, details }) {
         {event.age && <p><span>Age:</span> {event.age}</p>}
         {event.category && <p>{event.category}</p>}
         {details && event.description && <p>{event.description}</p>}
-        {details && event.website && <p className={styles.info}><a href={event.website} target="_blank">MORE INFO</a></p>}
+        {details && event.website && <p className={styles.info}><a href={event.website} target="_blank" rel="noopener noreferrer">MORE INFO</a></p>}
       </section>
     </>
   );
@@ -48,7 +48,7 @@ function Event({ event, details }) {
 
 Event.propTypes = {
   event: PropTypes.object.isRequired,
-  details: PropTypes.boolean
+  details: PropTypes.bool
 };
 
 export default Event;

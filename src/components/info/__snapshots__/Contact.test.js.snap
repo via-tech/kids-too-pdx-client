@@ -5,7 +5,7 @@ exports[`Contact snapshots Contact 1`] = `
   className="Contact"
 >
   <h1>
-    Kids Too Inc.
+    Kids2 Inc.
   </h1>
   <p>
     <strong>
@@ -17,7 +17,7 @@ exports[`Contact snapshots Contact 1`] = `
     <strong>
       Phone: 
     </strong>
-     (503) 200 400
+     (503) 200 4000
   </p>
   <p>
     <strong>

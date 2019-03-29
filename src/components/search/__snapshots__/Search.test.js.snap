@@ -49,6 +49,7 @@ exports[`Search snapshots Search 1`] = `
   <label>
     Price:
     <input
+      min="0"
       name="price"
       onChange={[MockFunction]}
       placeholder="max"
@@ -58,15 +59,17 @@ exports[`Search snapshots Search 1`] = `
   <label>
     Age:
     <input
+      min="0"
       name="ageMin"
       onChange={[MockFunction]}
-      placeholder="min age"
+      placeholder="min"
       type="number"
     />
     <input
+      min="0"
       name="ageMax"
       onChange={[MockFunction]}
-      placeholder="max age"
+      placeholder="max"
       type="number"
     />
   </label>
