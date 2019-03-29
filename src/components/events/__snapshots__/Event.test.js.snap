@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event matches snapshot for Event 1`] = `
+<section
+  className="Event"
+>
+  <img
+    alt="event picture"
+    src="image.com"
+  />
+  <a
+    href="/events/1"
+    onClick={[Function]}
+  >
+    <h2>
+      House Event
+    </h2>
+  </a>
+  <p>
+    <span>
+      Date:
+    </span>
+    Fri Mar 29 2019 08:53:35 GMT-0700 (Pacific Daylight Time)
+  </p>
+  <p>
+    <span>
+      Time:
+    </span>
+     
+    2pm
+  </p>
+  <p>
+    <span>
+      Location:
+    </span>
+    My House
+  </p>
+  <p>
+    <span>
+      Cost:
+    </span>
+    250
+  </p>
+  <p>
+    <span>
+      Age:
+    </span>
+     
+    9-12
+  </p>
+  <p>
+    Art
+  </p>
+</section>
+`;

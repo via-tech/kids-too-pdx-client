@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search snapshots Search 1`] = `
+<form
+  className="Select"
+  onSubmit={[MockFunction]}
+>
+  <select
+    name="category"
+    onChange={[MockFunction]}
+  >
+    <option
+      hidden={true}
+      value="DEFAULT"
+    >
+      Category
+    </option>
+    <option
+      value="Sports"
+    >
+      Sports
+    </option>
+    <option
+      value="Art"
+    >
+      Art
+    </option>
+    <option
+      value="Music"
+    >
+      Music
+    </option>
+    <option
+      value="Performance"
+    >
+      Performance
+    </option>
+    <option
+      value="Educational"
+    >
+      Educational
+    </option>
+    <option
+      value="Volunteer"
+    >
+      Volunteer
+    </option>
+  </select>
+  <label>
+    Price:
+    <input
+      name="price"
+      onChange={[MockFunction]}
+      placeholder="max"
+      type="number"
+    />
+  </label>
+  <label>
+    Age:
+    <input
+      name="ageMin"
+      onChange={[MockFunction]}
+      placeholder="min age"
+      type="number"
+    />
+    <input
+      name="ageMax"
+      onChange={[MockFunction]}
+      placeholder="max age"
+      type="number"
+    />
+  </label>
+  <button
+    type="submit"
+  >
+    Search
+  </button>
+</form>
+`;

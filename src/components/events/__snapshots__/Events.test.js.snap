@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Events matches snapshot for Events 1`] = `
+Array [
+  <form
+    className="Select"
+    onSubmit={[MockFunction]}
+  >
+    <select
+      name="category"
+      onChange={[MockFunction]}
+    >
+      <option
+        hidden={true}
+        value="DEFAULT"
+      >
+        Category
+      </option>
+      <option
+        value="Sports"
+      >
+        Sports
+      </option>
+      <option
+        value="Art"
+      >
+        Art
+      </option>
+      <option
+        value="Music"
+      >
+        Music
+      </option>
+      <option
+        value="Performance"
+      >
+        Performance
+      </option>
+      <option
+        value="Educational"
+      >
+        Educational
+      </option>
+      <option
+        value="Volunteer"
+      >
+        Volunteer
+      </option>
+    </select>
+    <label>
+      Price:
+      <input
+        name="price"
+        onChange={[MockFunction]}
+        placeholder="max"
+        type="number"
+      />
+    </label>
+    <label>
+      Age:
+      <input
+        name="ageMin"
+        onChange={[MockFunction]}
+        placeholder="min age"
+        type="number"
+      />
+      <input
+        name="ageMax"
+        onChange={[MockFunction]}
+        placeholder="max age"
+        type="number"
+      />
+    </label>
+    <button
+      type="submit"
+    >
+      Search
+    </button>
+  </form>,
+  <section
+    className="Event"
+  >
+    <ul>
+      <li>
+        <section
+          className="Event"
+        >
+          <img
+            alt="event picture"
+            src="image.com"
+          />
+          <a
+            href="/events/1"
+            onClick={[Function]}
+          >
+            <h2>
+              House Event
+            </h2>
+          </a>
+          <p>
+            <span>
+              Date:
+            </span>
+            Fri Mar 29 2019 08:53:35 GMT-0700 (Pacific Daylight Time)
+          </p>
+          <p>
+            <span>
+              Time:
+            </span>
+             
+            2pm
+          </p>
+          <p>
+            <span>
+              Location:
+            </span>
+            My House
+          </p>
+          <p>
+            <span>
+              Cost:
+            </span>
+            250
+          </p>
+          <p>
+            <span>
+              Age:
+            </span>
+             
+            9-12
+          </p>
+          <p>
+            Art
+          </p>
+        </section>
+      </li>
+      <li>
+        <section
+          className="Event"
+        >
+          <img
+            alt="event picture"
+            src="image.com"
+          />
+          <a
+            href="/events/2"
+            onClick={[Function]}
+          >
+            <h2>
+              House Event
+            </h2>
+          </a>
+          <p>
+            <span>
+              Date:
+            </span>
+            Fri Mar 29 2019 08:53:35 GMT-0700 (Pacific Daylight Time)
+          </p>
+          <p>
+            <span>
+              Time:
+            </span>
+             
+            2pm
+          </p>
+          <p>
+            <span>
+              Location:
+            </span>
+            My House
+          </p>
+          <p>
+            <span>
+              Cost:
+            </span>
+            150
+          </p>
+          <p>
+            <span>
+              Age:
+            </span>
+             
+            9-12
+          </p>
+          <p>
+            Art
+          </p>
+        </section>
+      </li>
+      <li>
+        <section
+          className="Event"
+        >
+          <img
+            alt="event picture"
+            src="image.com"
+          />
+          <a
+            href="/events/3"
+            onClick={[Function]}
+          >
+            <h2>
+              House Event
+            </h2>
+          </a>
+          <p>
+            <span>
+              Date:
+            </span>
+            Fri Mar 29 2019 08:53:35 GMT-0700 (Pacific Daylight Time)
+          </p>
+          <p>
+            <span>
+              Time:
+            </span>
+             
+            2pm
+          </p>
+          <p>
+            <span>
+              Location:
+            </span>
+            My House
+          </p>
+          <p>
+            <span>
+              Cost:
+            </span>
+            50
+          </p>
+          <p>
+            <span>
+              Age:
+            </span>
+             
+            9-12
+          </p>
+          <p>
+            Art
+          </p>
+        </section>
+      </li>
+    </ul>
+  </section>,
+]
+`;

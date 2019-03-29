@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function EventsList({ events }) {
   const listOfEvents = events.map(event => {
-    return <li key={event.id}></li>;
+    return <li key={event._id}></li>;
   });
 
   return (

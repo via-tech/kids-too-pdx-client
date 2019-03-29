@@ -26,6 +26,6 @@ Events.propTypes = {
   events: PropTypes.array,
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
-  details: PropTypes.boolean
+  details: PropTypes.bool
 };
 export default Events;

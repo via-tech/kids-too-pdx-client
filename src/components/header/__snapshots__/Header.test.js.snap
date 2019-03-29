@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches snapshot for Header 1`] = `
+<section
+  className="container"
+>
+  <header
+    className="Header"
+  >
+    <section
+      className="logo"
+    >
+      <img
+        src="/path/to/image.png"
+      />
+    </section>
+    <nav
+      className="nav"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        href="/submit-event"
+        onClick={[Function]}
+      >
+        Submit Event
+      </a>
+      <a
+        href="/contact"
+        onClick={[Function]}
+      >
+        Contact
+      </a>
+      <a
+        href="/resources"
+        onClick={[Function]}
+      >
+        Resources
+      </a>
+    </nav>
+  </header>
+</section>
+`;
