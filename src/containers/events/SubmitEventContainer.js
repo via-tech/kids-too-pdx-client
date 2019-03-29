@@ -61,6 +61,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch, props) => ({
   handleChange({ target }) {
+    console.log('HI', target.name);
     const factoryMethod = {
       contactName: updateContactName,
       contactEmail: updateContactEmail,
@@ -84,9 +85,9 @@ const mapDispatchToProps = (dispatch, props) => ({
     dispatch(factoryMethod[target.name](target.value));
   },
 
-  handleSubmit(contact, name, date, time, location, price, minAge, maxAge, reducedRate, category, description, event) {
+  handleSubmit(contact, name, website, date, time, location, price, minAge, maxAge, reducedRate, category, description, event) {
     event.preventDefault();
-    const action = createEvent({ contact, name, date, time, location, price, minAge, maxAge, reducedRate, category, description });
+    const action = createEvent({ contact, name, website, date, time, location, price, minAge, maxAge, reducedRate, category, description });
     dispatch(action);
     action.payload.then(({ _id }) => {
       props.history.push(`/events/${_id}`);
