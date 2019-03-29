@@ -27,7 +27,6 @@ function Event({ event, details }) {
         {event.category && <p>{event.category}</p>}
         {details && event.description && <p>{event.description}</p>}
         {details && event.website && <p>{event.website}</p>}
-        
       </section>
     </>
   );
