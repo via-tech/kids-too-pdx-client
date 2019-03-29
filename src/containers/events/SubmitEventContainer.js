@@ -29,9 +29,13 @@ class SubmitContainer extends PureComponent {
     ]),
     reducedRate: PropTypes.bool,
     category: PropTypes.string,
-    description: PropTypes.string
+    description: PropTypes.string,
+    clear: PropTypes.func.isRequired
   };
 
+  componentWillUnmount(){
+    this.props.clear();
+  }
   render() {
     return (
       <SubmitEvent {...this.props} />
@@ -53,7 +57,7 @@ const mapStateToProps = state => ({
   description: getDescription(state)
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, props) => ({
   handleChange({ target }) {
     const factoryMethod = {
       contactName: updateContactName,
@@ -79,9 +83,13 @@ const mapDispatchToProps = dispatch => ({
 
   handleSubmit(contact, name, date, time, location, price, minAge, maxAge, reducedRate, category, description, event) {
     event.preventDefault();
-    dispatch(createEvent({ contact, name, date, time, location, price, minAge, maxAge, reducedRate, category, description }));
+    const action = createEvent({ contact, name, date, time, location, price, minAge, maxAge, reducedRate, category, description });
+    dispatch(action);
+    action.payload.then(({ _id }) => {
+      props.history.push(`/events/${_id}`);
+    });
   },
-
+  
   clear() {
     dispatch(clearForm());
   },
