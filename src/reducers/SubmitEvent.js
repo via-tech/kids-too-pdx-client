@@ -15,7 +15,8 @@ import {
   UPDATE_MINAGE,
   UPDATE_MAXAGE,
   UPDATE_CATEGORY,
-  UPDATE_DESCRIPTION
+  UPDATE_DESCRIPTION,
+  CLEAR_FORM
 } from '../actions/submitEvent';
 
 const initialState = {
@@ -126,6 +127,10 @@ export default function reducer(state = initialState, { payload, type }) {
       return {
         ...state,
         description: payload
+      };
+    case CLEAR_FORM:
+      return {
+        ...initialState
       };
     default:
       return state;

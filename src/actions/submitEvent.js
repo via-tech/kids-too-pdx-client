@@ -113,3 +113,8 @@ export const updateDescription = description => ({
   type: UPDATE_DESCRIPTION,
   payload: description
 });
+
+export const CLEAR_FORM = 'CLEAR_FORM';
+export const clearForm = () => ({
+  type: CLEAR_FORM
+});
