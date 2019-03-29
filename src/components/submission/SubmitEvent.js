@@ -57,7 +57,7 @@ function SubmitEvent({
           </label>
 
           <label>Price:
-            <input type="number" placeholder="$" value={price} onChange={handleChange} name="price" required/>
+            <input type="number" placeholder="$" value={price} onChange={handleChange} name="price" min="0" required/>
           </label>
 
           <label className={styles.radio}>Reduced Rate Available:
@@ -65,8 +65,8 @@ function SubmitEvent({
           </label>
 
           <label>Age Range:
-            <input type="number" placeholder="Min Age" value={minAge} onChange={handleChange} name="minAge" required/>
-            <input type="number" placeholder="Max Age" value={maxAge} onChange={handleChange} name="maxAge" required/>
+            <input type="number" placeholder="Min Age" value={minAge} onChange={handleChange} name="minAge" min="0" required/>
+            <input type="number" placeholder="Max Age" value={maxAge} onChange={handleChange} name="maxAge" min="0" required/>
           </label>
 
           <label>Category:

@@ -16,12 +16,12 @@ function Search({ onChange, onSubmit }) {
       </select>
       <label>
         Price:
-        <input type="number" name="price" onChange={onChange} placeholder="max"/>
+        <input type="number" name="price" onChange={onChange} placeholder="max" min="0"/>
       </label>
       <label>
         Age:
-        <input name="ageMin" onChange={onChange} type="number" placeholder="min"/>
-        <input name="ageMax" onChange={onChange} type="number" placeholder="max"/>
+        <input name="ageMin" onChange={onChange} type="number" placeholder="min" min="0"/>
+        <input name="ageMax" onChange={onChange} type="number" placeholder="max" min="0"/>
       </label>
       <button type="submit">Search</button>
     </form>
