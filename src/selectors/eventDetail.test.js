@@ -10,7 +10,6 @@ describe('eventDetail selectors', () => {
         name: 'The House Event',
         venue: 'My House'
       },
-
       loading: false
     }
   };

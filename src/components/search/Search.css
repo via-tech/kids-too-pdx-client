@@ -45,7 +45,6 @@
       margin: 0;
       justify-content: center
     }
-    
     select {
       margin-top: auto; 
       margin-bottom: auto; 
@@ -53,9 +52,6 @@
       font-size: .5em;
       margin-right: 0;
       margin-left: 0;
-    }
-    form {
-      
     }
   }
 } 

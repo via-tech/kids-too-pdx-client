@@ -21,9 +21,7 @@ describe('events selectors', () => {
           venue: 'My Other Another House'
         }
       ],
-
       loading: true,
-
       filters: {
         ageMin: 2,
         ageMax: 5
