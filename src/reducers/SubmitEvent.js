@@ -4,6 +4,7 @@ import {
   UPDATE_CONTACT_EMAIL,
   UPDATE_CONTACT_PHONE,
   UPDATE_EVENT_NAME,
+  UPDATE_WEBSITE,
   UPDATE_DATE,
   UPDATE_LOCATION_VENUE,
   UPDATE_LOCATION_ADDRESS,
@@ -26,6 +27,7 @@ const initialState = {
     phone: ''
   },
   name: '',
+  website: '',
   date: '',
   time: '',
   location: {
@@ -67,6 +69,11 @@ export default function reducer(state = initialState, { payload, type }) {
       return {
         ...state,
         contact: { ...state.contact, email: payload }
+      };
+    case UPDATE_WEBSITE: 
+      return {
+        ...state,
+        website: payload
       };
     case UPDATE_DATE:
       return {

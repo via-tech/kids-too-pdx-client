@@ -2,16 +2,17 @@ import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import SubmitEvent from '../../components/submission/SubmitEvent';
 import PropTypes from 'prop-types';
-import { getContact, getName, getDate, getTime, getLocation, getPrice, getMinAge, getMaxAge, getCategory, getDescription, getReduced } from '../../selectors/submitEvent';
+import { getContact, getName, getDate, getTime, getLocation, getPrice, getMinAge, getMaxAge, getCategory, getDescription, getReduced, getWebsite } from '../../selectors/submitEvent';
 import {
   createEvent, updateEventName, updateDate, updateTime, updateLocationAddress, updateLocationCity, updateLocationState, updateLocationZipcode, updatePrice, updateMinAge, updateMaxAge, updateRr, updateCategory, updateDescription, updateContactEmail, updateContactPhone, updateLocationVenue, updateContactName,
-  clearForm
+  clearForm, updateWebsite
 } from '../../actions/submitEvent';
 
 class SubmitContainer extends PureComponent {
   static propTypes = {
     contact: PropTypes.object,
     name: PropTypes.string,
+    website: PropTypes.string,
     date: PropTypes.string,
     time: PropTypes.string,
     location: PropTypes.object,
@@ -46,6 +47,7 @@ class SubmitContainer extends PureComponent {
 const mapStateToProps = state => ({
   contact: getContact(state),
   name: getName(state),
+  website: getWebsite(state),
   date: getDate(state),
   time: getTime(state),
   location: getLocation(state),
@@ -64,6 +66,7 @@ const mapDispatchToProps = (dispatch, props) => ({
       contactEmail: updateContactEmail,
       contactPhone: updateContactPhone,
       name: updateEventName,
+      website: updateWebsite,
       date: updateDate,
       time: updateTime,
       locationVenue: updateLocationVenue,

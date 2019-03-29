@@ -35,6 +35,12 @@ export const updateContactEmail = contactEmail => ({
   payload: contactEmail
 });
 
+export const UPDATE_WEBSITE = 'UPDATE_WEBSITE';
+export const updateWebsite = website => ({
+  type: UPDATE_WEBSITE,
+  payload: website
+});
+
 export const UPDATE_DATE = 'UPDATE_DATE';
 export const updateDate = date => ({
   type: UPDATE_DATE,
