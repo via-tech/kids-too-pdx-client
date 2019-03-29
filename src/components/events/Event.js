@@ -39,6 +39,7 @@ function Event({ event, details }) {
         {event.price && <p><span>Cost:</span>${event.price}</p>}
         {event.age && <p><span>Age:</span> {event.age}</p>}
         {event.category && <p>{event.category}</p>}
+        {event.reducedRate && <p>Reduced Rate Available</p>}
         {details && event.description && <p>{event.description}</p>}
         {details && event.website && <p className={styles.info}><a href={event.website} target="_blank" rel="noopener noreferrer">MORE INFO</a></p>}
       </section>
