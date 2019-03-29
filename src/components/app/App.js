@@ -4,7 +4,8 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import 'normalize.css';
 import Home from '../home/Home';
-import EventDetailContainer from '../../containers/events/EventDetailContainer';
+// import EventDetailContainer from '../../containers/events/EventDetailContainer';
+import EventDetail from '../events/EventDetail';
 import Contact from '../info/Contact';
 import AboutUs from '../info/AboutUs';
 import Callback from '../../containers/auth/Callback';
@@ -19,10 +20,8 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/events/:id' component={EventDetailContainer} />
+        <Route exact path='/events/:id' component={EventDetail} />
         <Route exact path='/submit-event' component={withSession(SubmitEventContainer)} />
-        {/* <Route exact path='/admin' component={AdminEvents} />
-        <Route exact path='/admin/event/:id' component={AdminEvents} /> */}
         <Route exact path='/contact' component={Contact} /> 
         <Route exact path='/aboutus' component={AboutUs} /> 
         <Route exact path='/callback' component={Callback} /> 

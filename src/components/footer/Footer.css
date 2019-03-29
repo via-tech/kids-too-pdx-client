@@ -1,10 +1,12 @@
 .Footer {
   bottom: 0;
-  padding: 1rem;
-  background-color: #efefef;
+  padding: 1em;
   text-align: center;
   font-size: 1.4em;
   margin: 0;
+  section{
+    height: 1em;
+  }
   a {
     color: black;
     text-decoration: none;

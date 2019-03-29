@@ -20,8 +20,8 @@ function Search({ onChange, onSubmit }) {
       </label>
       <label>
         Age:
-        <input name="ageMin" onChange={onChange} type="number" placeholder="min age"/>
-        <input name="ageMax" onChange={onChange} type="number" placeholder="max age"/>
+        <input name="ageMin" onChange={onChange} type="number" placeholder="min"/>
+        <input name="ageMax" onChange={onChange} type="number" placeholder="max"/>
       </label>
       <button type="submit">Search</button>
     </form>

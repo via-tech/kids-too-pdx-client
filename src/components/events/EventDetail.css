@@ -1,0 +1,10 @@
+.Event{
+  top: 5;
+  height: 75vh;
+  margin-top: 5em;
+  section {
+    width: 85vw;
+    margin: auto;
+    margin-top: 1em;
+  }
+}
