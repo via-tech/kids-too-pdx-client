@@ -18,9 +18,12 @@ export const getEvents = () => Promise.resolve(results);
 
 export const getFilteredEvents = filters => {
   let route = '/events/query/q?';
-
-  Object.keys(filters).every(key => route += `${key}=${filters[key]}&`);
-
+  console.log('FILTERS', filters);
+  Object.keys(filters).every(key => {
+    console.log('VALUE', filters[key]);
+    if(key === 'category' && filters[key] !== 'All')
+      route += `${key}=${filters[key]}&`;
+  });
   return Promise.resolve(route);
 };
 

@@ -7,6 +7,7 @@ function Search({ onChange, onSubmit }) {
     <form className={styles.Select} onSubmit={onSubmit}>
       <select name="category" onChange={onChange}>
         <option value="DEFAULT" hidden>Category</option>
+        <option value="All">All</option>
         <option value="Sports">Sports</option>
         <option value="Art">Art</option>
         <option value="Music">Music</option>
