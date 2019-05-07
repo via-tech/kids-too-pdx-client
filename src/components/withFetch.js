@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { SyncLoader } from 'react-spinners';
+import Styles from './home/Home.css';
 
 export const withFetch = Component => {
   class WithFetch extends PureComponent {
@@ -21,7 +23,13 @@ export const withFetch = Component => {
       return (
         <>
           {loading ?
-            <h1>LOADING!!!!</h1 >
+            <div className={Styles.Loader}>
+              <SyncLoader 
+                sizeUnit={'px'}
+                size={30}
+                color={'#123abc'}
+              />
+            </div>
             : <Component {...this.props} />}
         </>
       );

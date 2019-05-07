@@ -3,7 +3,6 @@
 }
 .Home {
   position: relative;
-  background: url('../../../public/assets/background1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -11,4 +10,11 @@
 }
 img {
   width: 100vw;
+}
+div {
+  .Loader {
+    text-align: center;
+    margin: 100px;
+    color: grey;
+  }
 }
