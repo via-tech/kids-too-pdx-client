@@ -13,6 +13,7 @@ import {
   UPDATE_TIME,
   UPDATE_PRICE,
   UPDATE_RRATE,
+  UPDATE_INSURANCE,
   UPDATE_MINAGE,
   UPDATE_MAXAGE,
   UPDATE_CATEGORY,
@@ -38,6 +39,7 @@ const initialState = {
   },
   price: '',
   reducedRate: false,
+  eventInsurance: false,
   minAge: '',
   maxAge: '',
   category: '',
@@ -114,6 +116,11 @@ export default function reducer(state = initialState, { payload, type }) {
       return {
         ...state,
         reducedRate: payload
+      };
+    case UPDATE_INSURANCE:
+      return {
+        ...state,
+        eventInsurance: payload
       };
     case UPDATE_MINAGE:
       return {

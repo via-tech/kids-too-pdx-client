@@ -11,6 +11,7 @@ describe('Submit Event reducers', () => {
     location: {},
     price: 0,
     reducedRate: true,
+    eventInsurace: true,
     minAge: 0,
     maxAge: 0,
     category: '',
@@ -87,6 +88,12 @@ describe('Submit Event reducers', () => {
       reducedRate: false
     });
   });
+  expect(insurance(state, action)).toEqual({
+    ...state,
+    eventInsurace: false
+  });
+});
+
 
   it('updates minimum age', () => {
     const action = {

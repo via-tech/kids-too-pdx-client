@@ -31,6 +31,7 @@ describe('submit event selectors', () => {
       },
       price: 200,
       reducedRate: false,
+      eventInsurance: false,
       minAge: 5,
       maxAge: 12,
       category: 'Art',
