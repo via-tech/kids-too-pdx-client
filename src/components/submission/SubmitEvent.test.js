@@ -28,6 +28,7 @@ describe('SubmitEvent', () => {
       category: 'Art',
       description: 'The bestest event',
       rrSelect: jest.fn(),
+      insuranceSelect: jest.fn(),
       handleChange: jest.fn(),
       handleSubmit: jest.fn()
     };
