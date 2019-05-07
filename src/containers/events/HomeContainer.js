@@ -28,7 +28,6 @@ const mapDispatchToProps = dispatch => ({
   },
 
   onSubmit(event) {
-    console.log('SUBMIT');
     event.preventDefault();
     return dispatch(fetchFilteredEvents(getFilters(store.getState())));
   }

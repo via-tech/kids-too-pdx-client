@@ -9,10 +9,8 @@ import Contact from '../info/Contact';
 import AboutUs from '../info/AboutUs';
 import Callback from '../../containers/auth/Callback';
 import Resources from '../resources/Resources';
-// import { withSession } from '../../containers/auth/withSession';
 import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
 
-console.log('HEYY');
 export default function App() {
   return (
     <Router>
