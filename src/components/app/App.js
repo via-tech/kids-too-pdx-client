@@ -12,6 +12,7 @@ import Resources from '../resources/Resources';
 // import { withSession } from '../../containers/auth/withSession';
 import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
 
+console.log('HEYY');
 export default function App() {
   return (
     <Router>
