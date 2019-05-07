@@ -16,6 +16,11 @@ exports[`Search snapshots Search 1`] = `
       Category
     </option>
     <option
+      value="DEFAULT"
+    >
+      All
+    </option>
+    <option
       value="Sports"
     >
       Sports

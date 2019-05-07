@@ -17,6 +17,11 @@ Array [
         Category
       </option>
       <option
+        value="DEFAULT"
+      >
+        All
+      </option>
+      <option
         value="Sports"
       >
         Sports
@@ -106,7 +111,7 @@ Array [
             <span>
               Date:
             </span>
-            3/29/2019
+            5/7/2019
           </p>
           <p>
             <span>
@@ -162,7 +167,7 @@ Array [
             <span>
               Date:
             </span>
-            3/29/2019
+            5/7/2019
           </p>
           <p>
             <span>
@@ -218,7 +223,7 @@ Array [
             <span>
               Date:
             </span>
-            3/29/2019
+            5/7/2019
           </p>
           <p>
             <span>

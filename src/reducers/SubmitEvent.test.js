@@ -88,12 +88,6 @@ describe('Submit Event reducers', () => {
       reducedRate: false
     });
   });
-  expect(insurance(state, action)).toEqual({
-    ...state,
-    eventInsurace: false
-  });
-});
-
 
   it('updates minimum age', () => {
     const action = {

@@ -70,7 +70,7 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="date"
-        value="Fri Mar 29 2019 09:56:51 GMT-0700 (Pacific Daylight Time)"
+        value="Tue May 07 2019 14:15:48 GMT-0700 (Pacific Daylight Time)"
       />
     </label>
     <label>
@@ -139,6 +139,15 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
       className="radio"
     >
       Reduced Rate Available:
+      <input
+        onChange={[MockFunction]}
+        type="checkbox"
+      />
+    </label>
+    <label
+      className="radio"
+    >
+      Event Insurance Available:
       <input
         onChange={[MockFunction]}
         type="checkbox"
