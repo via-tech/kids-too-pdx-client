@@ -4,14 +4,14 @@ import styles from './SubmitEvent.css';
 
 function SubmitEvent({
   contact, name, website, date, time, location, price, minAge, maxAge, category, description,
-  rrSelect, handleSubmit, handleChange, reducedRate
+  rrSelect, insuranceSelect, handleSubmit, handleChange, reducedRate, eventInsurance
 }) {
   const { contactName, email, phone } = contact;
   const { venue, address, city, state, zipcode } = location;
   return (
     <>
       <form className={styles.Form} onSubmit={handleSubmit.bind(
-        null, contact, name, website, date, time, location, price, minAge, maxAge, reducedRate, category, description
+        null, contact, name, website, date, time, location, price, minAge, maxAge, reducedRate, eventInsurance, category, description
       )}>
         <fieldset>
           <legend>Contact Info</legend>
@@ -64,6 +64,10 @@ function SubmitEvent({
             <input type="checkbox" onChange={rrSelect} value={reducedRate}/>
           </label>
 
+          <label className={styles.radio}>Event Insurance Available:
+            <input type="checkbox" onChange={insuranceSelect} value={eventInsurance}/>
+          </label>
+
           <label>Age Range:
             <input type="number" placeholder="Min Age" value={minAge} onChange={handleChange} name="minAge" min="0" required/>
             <input type="number" placeholder="Max Age" value={maxAge} onChange={handleChange} name="maxAge" min="0" required/>
@@ -112,9 +116,11 @@ SubmitEvent.propTypes = {
     PropTypes.number
   ]),
   reducedRate: PropTypes.bool,
+  eventInsurance: PropTypes.bool,
   category: PropTypes.string,
   description: PropTypes.string,
   rrSelect: PropTypes.func.isRequired,
+  insuranceSelect: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired
 };

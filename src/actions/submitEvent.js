@@ -95,6 +95,11 @@ export const updateRr = reduced => ({
   type: UPDATE_RRATE,
   payload: reduced
 });
+export const UPDATE_INSURANCE = 'UPDATE_INSURANCE';
+export const updateInsurance = insurance => ({
+  type: UPDATE_INSURANCE,
+  payload: insurance
+});
 
 export const UPDATE_MINAGE = 'UPDATE_MINAGE';
 export const updateMinAge = minAge => ({
