@@ -9,15 +9,16 @@ Array [
     <select
       name="category"
       onChange={[MockFunction]}
+      value=""
     >
       <option
         hidden={true}
-        value="DEFAULT"
+        value=""
       >
         Category
       </option>
       <option
-        value="DEFAULT"
+        value=""
       >
         All
       </option>
@@ -60,6 +61,7 @@ Array [
         onChange={[MockFunction]}
         placeholder="max"
         type="number"
+        value=""
       />
     </label>
     <label>
@@ -70,6 +72,7 @@ Array [
         onChange={[MockFunction]}
         placeholder="min"
         type="number"
+        value=""
       />
       <input
         min="0"
@@ -77,6 +80,7 @@ Array [
         onChange={[MockFunction]}
         placeholder="max"
         type="number"
+        value=""
       />
     </label>
     <button
@@ -111,7 +115,7 @@ Array [
             <span>
               Date:
             </span>
-            5/7/2019
+            5/9/2019
           </p>
           <p>
             <span>
@@ -167,7 +171,7 @@ Array [
             <span>
               Date:
             </span>
-            5/7/2019
+            5/9/2019
           </p>
           <p>
             <span>
@@ -223,7 +227,7 @@ Array [
             <span>
               Date:
             </span>
-            5/7/2019
+            5/9/2019
           </p>
           <p>
             <span>
