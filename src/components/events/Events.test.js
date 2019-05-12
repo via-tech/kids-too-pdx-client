@@ -12,7 +12,7 @@ describe('Events', () => {
           image: 'image.com',
           time: '2pm',
           name: 'House Event',
-          date: new Date().toString(),
+          date: new Date(2019, 6, 1, 10, 30).toString(),
           location: {
             venue: 'My House'
           },
@@ -27,7 +27,7 @@ describe('Events', () => {
           image: 'image.com',
           time: '2pm',
           name: 'House Event',
-          date: new Date().toString(),
+          date: new Date(2019, 6, 1, 10, 30).toString(),
           location: {
             venue: 'My House'
           },
@@ -42,7 +42,7 @@ describe('Events', () => {
           image: 'image.com',
           time: '2pm',
           name: 'House Event',
-          date: new Date().toString(),
+          date: new Date(2019, 6, 1, 10, 30).toString(),
           location: {
             venue: 'My House'
           },
