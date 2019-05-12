@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AdminEvents matches a snapshot for admin events 1`] = `
-<ul>
-  <li />
-  <li />
-  <li />
-</ul>
-`;
