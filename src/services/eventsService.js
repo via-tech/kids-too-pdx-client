@@ -18,4 +18,4 @@ export const getFilteredEvents = filters => {
 
 export const signUp = user => post('/auth/signup', user);
 
-export const signIn = (user) => post('/auth/signin', user);
+export const signIn = user => post('/auth/signin', user);

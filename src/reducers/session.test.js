@@ -1,5 +1,7 @@
 import reducer from './session';
 
+jest.mock('../services/eventsService');
+
 describe('session reducer', () => {
   const state = {
     token: ''
@@ -10,6 +12,7 @@ describe('session reducer', () => {
       type: 'SET_SESSION',
       payload: '1234'
     };
+
 
     expect(reducer(state, action)).toEqual({
       ...state,
