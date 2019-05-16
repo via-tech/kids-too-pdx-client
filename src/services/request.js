@@ -2,7 +2,6 @@ import store from '../store';
 import { getToken } from '../selectors/session';
 
 const request = (path, method, body) => {
-  body.token = getToken(store.getState());
   return fetch(`${process.env.API_URL}${path}`, {
     method,
     body: body ? JSON.stringify(body) : null,

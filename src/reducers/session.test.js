@@ -13,7 +13,6 @@ describe('session reducer', () => {
       payload: '1234'
     };
 
-
     expect(reducer(state, action)).toEqual({
       ...state,
       token: '1234'

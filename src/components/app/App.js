@@ -7,7 +7,6 @@ import Home from '../home/Home';
 import EventDetail from '../events/EventDetail';
 import Contact from '../info/Contact';
 import AboutUs from '../info/AboutUs';
-// import Callback from '../../containers/auth/Callback';
 import Resources from '../resources/Resources';
 import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
 
@@ -22,7 +21,6 @@ export default function App() {
         <Route exact path='/submit-event' component={SubmitEventContainer} />
         <Route exact path='/contact' component={Contact} /> 
         <Route exact path='/aboutus' component={AboutUs} /> 
-        {/* <Route exact path='/callback' component={Callback} />  */}
         <Route exact path='/resources' component={Resources} />
       </Switch>
       <Footer />
