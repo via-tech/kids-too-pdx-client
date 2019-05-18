@@ -9,7 +9,7 @@ import Contact from '../info/Contact';
 import AboutUs from '../info/AboutUs';
 import Resources from '../resources/Resources';
 import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
-import UserForm from '../users/UserForm';
+import SignUp from '../../containers/users/SignUp';
 
 export default function App() {
   return (
@@ -23,7 +23,7 @@ export default function App() {
         <Route exact path='/contact' component={Contact} /> 
         <Route exact path='/aboutus' component={AboutUs} /> 
         <Route exact path='/resources' component={Resources} />
-        <Route exact path='/sign-up' component={UserForm} />
+        <Route exact path='/sign-up' component={SignUp} />
       </Switch>
       <Footer />
     </>

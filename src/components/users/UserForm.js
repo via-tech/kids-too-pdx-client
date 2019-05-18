@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function UserForm({ handleSubmit, handleChange, user }) {
+function UserForm({ handleSubmit, handleChange }) {
   return (
-    <form onSubmit={handleSubmit.bind(null, user)}>
+    <form onSubmit={handleSubmit}>
       <fieldset>
         <legend>User Info</legend>
         <label>Email:
-          <input type="text" name="email" value={user.email} onChange={handleChange} required />
+          <input type="text" name="email" onChange={handleChange} required />
         </label>
 
         <label>Password:
-          <input type="text" name="password" value={user.password} onChange={handleChange} required />
+          <input type="text" name="password" onChange={handleChange} required />
         </label>
       </fieldset>
     </form>
