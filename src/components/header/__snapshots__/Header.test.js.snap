@@ -14,6 +14,12 @@ exports[`Header matches snapshot for Header 1`] = `
         src="/path/to/image.png"
       />
     </section>
+    <a
+      href="/sign-up"
+      onClick={[Function]}
+    >
+      Sign Up
+    </a>
     <nav
       className="nav"
     >

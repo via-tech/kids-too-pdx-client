@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign up form snapshots SignUpForm 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <fieldset>
+    <legend>
+      User Info
+    </legend>
+    <label>
+      Email:
+      <input
+        name="email"
+        onChange={[MockFunction]}
+        required={true}
+        type="text"
+        value="theOrg@org.com"
+      />
+    </label>
+    <label>
+      Password:
+      <input
+        name="password"
+        onChange={[MockFunction]}
+        required={true}
+        type="text"
+        value="pass"
+      />
+    </label>
+  </fieldset>
+</form>
+`;
