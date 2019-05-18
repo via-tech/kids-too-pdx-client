@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function SignUpForm({ handleSubmit, handleChange, user }) {
+function UserForm({ handleSubmit, handleChange, user }) {
   return (
     <form onSubmit={handleSubmit.bind(null, user)}>
       <fieldset>
@@ -18,10 +18,10 @@ function SignUpForm({ handleSubmit, handleChange, user }) {
   );
 }
 
-SignUpForm.propTypes = {
+UserForm.propTypes = {
   handleSubmit: PropTypes.func,
   handleChange: PropTypes.func,
   user: PropTypes.object
 };
 
-export default SignUpForm;
+export default UserForm;
