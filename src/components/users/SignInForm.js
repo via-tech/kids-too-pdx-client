@@ -1,27 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function UserForm({ handleSubmit, handleChange }) {
+function SignInForm({ handleSubmit, handleChange, user }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit.bind(null, user)}>
       <fieldset>
         <legend>User Info</legend>
         <label>Email:
-          <input type="text" name="email" onChange={handleChange} required />
+          <input type="text" name="username" onChange={handleChange} required />
         </label>
 
         <label>Password:
           <input type="text" name="password" onChange={handleChange} required />
         </label>
       </fieldset>
+      <button type="submit">Login</button>
     </form>
   );
 }
 
-UserForm.propTypes = {
+SignInForm.propTypes = {
   handleSubmit: PropTypes.func,
   handleChange: PropTypes.func,
   user: PropTypes.object
 };
 
-export default UserForm;
+export default SignInForm;

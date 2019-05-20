@@ -11,7 +11,7 @@ function Header() {
             <section className={styles.logo}>
               <img src={logo} />
             </section>
-            <Link to="/sign-up">Sign Up</Link>
+            <Link to="/login">Log In</Link>
             <nav className={styles.nav}>
               <Link to="/">Home</Link>
               <Link to='/submit-event'>Submit Event</Link>

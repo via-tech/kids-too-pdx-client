@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import UserForm from './UserForm';
+import SignInForm from './SignInForm';
 
-describe('Sign up form', () => {
-  it('snapshots UserForm', () => {
+describe('Sign in form', () => {
+  it('snapshots SignInForm', () => {
     const props = {
       handleSubmit: jest.fn(),
       handleChange: jest.fn(),
@@ -14,7 +14,7 @@ describe('Sign up form', () => {
     };
 
     const tree = renderer.create(
-      <UserForm {...props} />
+      <SignInForm {...props} />
     );
 
     expect(tree).toMatchSnapshot();

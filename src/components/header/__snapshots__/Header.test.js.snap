@@ -15,10 +15,10 @@ exports[`Header matches snapshot for Header 1`] = `
       />
     </section>
     <a
-      href="/sign-up"
+      href="/login"
       onClick={[Function]}
     >
-      Sign Up
+      Log In
     </a>
     <nav
       className="nav"
