@@ -7,15 +7,27 @@ describe('session reducer', () => {
     token: ''
   };
 
-  it('sets session', () => {
+  it('sets session on sign up', () => {
     const action = {
-      type: 'SET_SESSION',
-      payload: '1234'
+      type: 'SIGN_UP_SESSION',
+      payload: { token: '1234' }
     };
 
     expect(reducer(state, action)).toEqual({
       ...state,
       token: '1234'
+    });
+  });
+
+  it('sets session on sign in', () => {
+    const action = {
+      type: 'SIGN_IN_SESSION',
+      payload: { token: '5678' }
+    };
+
+    expect(reducer(state, action)).toEqual({
+      ...state,
+      token: '5678'
     });
   });
 });

@@ -1,4 +1,4 @@
-import reducer from './SubmitEvent';
+import reducer from './submitEvent';
 
 jest.mock('../services/eventsService');
 

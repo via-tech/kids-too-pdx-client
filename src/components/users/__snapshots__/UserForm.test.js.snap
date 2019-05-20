@@ -2,7 +2,7 @@
 
 exports[`Sign up form snapshots UserForm 1`] = `
 <form
-  onSubmit={[Function]}
+  onSubmit={[MockFunction]}
 >
   <fieldset>
     <legend>
@@ -15,7 +15,6 @@ exports[`Sign up form snapshots UserForm 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="text"
-        value="theOrg@org.com"
       />
     </label>
     <label>
@@ -25,7 +24,6 @@ exports[`Sign up form snapshots UserForm 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="text"
-        value="pass"
       />
     </label>
   </fieldset>
