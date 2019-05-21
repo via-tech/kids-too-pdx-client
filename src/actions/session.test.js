@@ -1,4 +1,8 @@
-import { signUpSession, signInSession } from './session';
+import {
+  signUpSession,
+  signInSession,
+  updateUser
+} from './session';
 
 jest.mock('../services/eventsService');
 
@@ -30,6 +34,21 @@ describe('session actions', () => {
       fulfilledType: 'SIGN_IN_SESSION_FULFILLED',
       pendingType: 'SIGN_IN_SESSION_PENDING',
       rejectedType: 'SIGN_IN_SESSION_REJECTED'
+    });
+  });
+
+  it('returns action for updateUser', () => {
+    const action = updateUser({
+      username: 'org',
+      password: 'orgpass'
+    });
+
+    expect(action).toEqual({
+      type: 'UPDATE_USER',
+      payload: {
+        username: 'org',
+        password: 'orgpass'
+      }
     });
   });
 });

@@ -4,6 +4,7 @@ jest.mock('../services/eventsService');
 
 describe('session reducer', () => {
   const state = {
+    user: {},
     token: ''
   };
 
@@ -28,6 +29,24 @@ describe('session reducer', () => {
     expect(reducer(state, action)).toEqual({
       ...state,
       token: '5678'
+    });
+  });
+
+  it('updates user', () => {
+    const action = {
+      type: 'UPDATE_USER',
+      payload: {
+        username: 'org',
+        password: 'pass'
+      }
+    };
+
+    expect(reducer(state, action)).toEqual({
+      ...state,
+      user: {
+        username: 'org',
+        password: 'pass'
+      }
     });
   });
 });
