@@ -8,7 +8,7 @@ describe('Sign in form', () => {
       handleSubmit: jest.fn(),
       handleChange: jest.fn(),
       user: {
-        email: 'theOrg@org.com',
+        username: 'theOrg@org.com',
         password: 'pass'
       }
     };
