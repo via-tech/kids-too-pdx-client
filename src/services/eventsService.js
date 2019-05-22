@@ -7,7 +7,7 @@ export const getFilteredEvents = filters => {
   let route = '/events/query/q?';
 
   Object.keys(filters).every(key => {
-    return filters[key] !== 'DEFAULT' ? route += `${key}=${filters[key]}&` : route;
+    return filters[key] ? route += `${key}=${filters[key]}&` : route;
   });
 
   return get(route);

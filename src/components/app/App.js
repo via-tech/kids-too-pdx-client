@@ -11,7 +11,6 @@ import AboutUs from '../info/AboutUs';
 import Resources from '../resources/Resources';
 import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
 
-console.log('HEYY');
 export default function App() {
   return (
     <Router>

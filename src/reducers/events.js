@@ -11,7 +11,12 @@ import {
 const initialState = {
   events: [],
   loading: false,
-  filters: {}
+  filters: {
+    category: '',
+    price: '',
+    ageMin: '',
+    ageMax: ''
+  }
 };
 
 export default function reducer(state = initialState, action) {

@@ -8,12 +8,18 @@ exports[`Search snapshots Search 1`] = `
   <select
     name="category"
     onChange={[MockFunction]}
+    value=""
   >
     <option
       hidden={true}
-      value="DEFAULT"
+      value=""
     >
       Category
+    </option>
+    <option
+      value=""
+    >
+      All
     </option>
     <option
       value="Sports"
@@ -54,6 +60,7 @@ exports[`Search snapshots Search 1`] = `
       onChange={[MockFunction]}
       placeholder="max"
       type="number"
+      value=""
     />
   </label>
   <label>
@@ -64,6 +71,7 @@ exports[`Search snapshots Search 1`] = `
       onChange={[MockFunction]}
       placeholder="min"
       type="number"
+      value=""
     />
     <input
       min="0"
@@ -71,6 +79,7 @@ exports[`Search snapshots Search 1`] = `
       onChange={[MockFunction]}
       placeholder="max"
       type="number"
+      value=""
     />
   </label>
   <button
