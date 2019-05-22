@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SubmitEvent snapshots SubmitEvent 1`] = `
+exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
 <form
   className="Form"
   onSubmit={[Function]}
@@ -225,4 +225,17 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
     CREATE EVENT
   </button>
 </form>
+`;
+
+exports[`SubmitEvent snapshots SubmitEvent logged out 1`] = `
+<h1>
+  Please 
+  <a
+    href="/login"
+    onClick={[Function]}
+  >
+    Log In
+  </a>
+    to post an event!
+</h1>
 `;
