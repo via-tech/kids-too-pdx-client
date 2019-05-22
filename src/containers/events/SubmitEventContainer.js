@@ -35,8 +35,6 @@ const mapDispatchToProps = dispatch => ({
 
   handleSubmit(orgEvent, event) {
     event.preventDefault();
-    console.log('orgEvent', orgEvent);
-    
     dispatch(createEvent(modelEvent(orgEvent)));
     // action.payload.then(({ _id }) => {
     //   props.history.push(`/events/${_id}`);
