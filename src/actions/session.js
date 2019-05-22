@@ -1,9 +1,18 @@
 import { createAction } from 'promise-middleware-redux';
+import { signIn, signUp } from '../services/eventsService';
 
 export const [
-  setSession,
-  SET_SESSION,
-  SET_SESSION_PENDING,
-  SET_SESSION_FULFILLED,
-  SET_SESSION_ERROR
-] = createAction('SET_SESSION');
+  signUpSession,
+  SIGN_UP_SESSION
+] = createAction('SIGN_UP_SESSION', signUp);
+
+export const [
+  signInSession,
+  SIGN_IN_SESSION
+] = createAction('SIGN_IN_SESSION', signIn);
+
+export const UPDATE_USER = 'UPDATE_USER';
+export const updateUser = user => ({
+  type: UPDATE_USER,
+  payload: user
+});

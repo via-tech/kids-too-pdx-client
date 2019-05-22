@@ -1,6 +1,7 @@
 import Events from '../../components/events/Events';
 import { connect } from 'react-redux';
-import { getEvents,
+import { 
+  getEvents,
   isLoading,
   getFilters
 } from '../../selectors/events';
