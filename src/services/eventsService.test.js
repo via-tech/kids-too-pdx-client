@@ -1,31 +1,49 @@
+import { seedTestData, deleteTestData } from './seedTestData';
+
 import {
   getEvents,
-  signUp
 } from './eventsService';
 
 jest.mock('./request.js');
 
 describe('request', () => {
+  let user = null;
+  let events = null;
+
+  beforeAll(done => {
+    return seedTestData()
+      .then(({ createdUser, createdEvents }) => {
+        user = createdUser;
+        events = createdEvents;
+        console.log(events);
+        done();
+      });
+  });
+
+  afterAll(() => deleteTestData());
+
   it('gets events', () => {
     return getEvents()
-      .then(events => expect(events).toHaveLength(241));
+      .then(events => expect(events).toBeDefined());
   });
 
   it('signs up an organization', () => {
-    return signUp({
-      username: 'theorg',
-      password: 'pass',
-      role: 'org',
-      name: 'The Org',
-      email: 'theorg@org.com',
-      phone: '5551234567',
-      address: {
-        street: '123 Main St.',
-        city: 'Portland',
-        state: 'OR',
-        zipcode: '97203'
-      }
-    })
-      .then(user => console.log('user', user));
+    expect(user).toEqual({
+      user: {
+        _id: expect.any(String),
+        username: 'theOrg123',
+        role: 'org',
+        name: 'The Org',
+        email: 'theorg123@email.com',
+        phone: '5551234567',
+        address: {
+          street: '123 Main St.',
+          city: 'Portland',
+          state: 'OR',
+          zipcode: '97203'
+        }
+      },
+      token: expect.any(String)
+    });
   });
 });
