@@ -2,6 +2,7 @@ import { seedTestData, deleteTestData } from './seedTestData';
 
 import {
   getEvents,
+  signIn
 } from './eventsService';
 
 jest.mock('./request.js');
@@ -10,22 +11,21 @@ describe('request', () => {
   let user = null;
   let events = null;
 
-  beforeAll(done => {
-    return seedTestData()
+  beforeAll(done =>
+    seedTestData()
       .then(({ createdUser, createdEvents }) => {
         user = createdUser;
         events = createdEvents;
-        console.log(events);
         done();
-      });
-  });
+      })
+  );
 
   afterAll(() => deleteTestData());
 
-  it('gets events', () => {
-    return getEvents()
-      .then(events => expect(events).toBeDefined());
-  });
+  it('gets events', () =>
+    getEvents()
+      .then(events => expect(events).toBeDefined())
+  );
 
   it('signs up an organization', () => {
     expect(user).toEqual({
@@ -46,4 +46,11 @@ describe('request', () => {
       token: expect.any(String)
     });
   });
+
+  it('signs in an organization', () =>
+    signIn({ username: 'theOrg123', password: 'passit' })
+      .then(signedUser => expect(signedUser).toEqual(user))
+  );
+
+  it('posts events', () => expect(events).toHaveLength(5));
 });

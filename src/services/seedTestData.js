@@ -9,6 +9,7 @@ let createdUser = null;
 let createdEvents = null;
 
 const user = {
+  _id: '5ce60cad619d860f166caf70',
   role: 'org',
   username: 'theOrg123',
   password: 'passit',
@@ -62,7 +63,8 @@ const events = [
 ];
 
 const createUser = user => signUp(user)
-  .then(userRes => createdUser = userRes);
+  .then(userRes => createdUser = userRes)
+  .catch(err => err);
 
 const createEvents = events => {
   const { token } = createdUser;
@@ -73,9 +75,14 @@ const createEvents = events => {
     .then(eventRes => createdEvents = eventRes);
 };
 
-const deleteUser = user => deleteOrg(user._id);
-
-const deleteEvents = events => Promise.all(events.map(event => deleteEvent(event._id)));
+const deleteEvents = events => {
+  const { token } = createdUser;
+  return Promise.all(events.map(event => {
+    event.token = token;
+    return deleteEvent(event);
+  }))
+    .catch(err => err);
+};
 
 export const seedTestData = () => {
   return createUser(user)
@@ -87,5 +94,6 @@ export const seedTestData = () => {
     .catch(err => err);
 };
 
-export const deleteTestData = () => Promise.all([deleteUser(createdUser), deleteEvents(createdEvents)])
-  .catch(err => err);
+export const deleteTestData = () =>
+  Promise.all([deleteOrg(createdUser), deleteEvents(createEvents)])
+    .catch(err => err);

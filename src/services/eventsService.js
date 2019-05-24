@@ -23,7 +23,7 @@ export const getFilteredEvents = filters => {
 
 export const patchEvent = id => patch(`/events/${id}`);
 
-export const deleteEvent = id => del(`/events/${id}`);
+export const deleteEvent = event => del(`/events/${event._id}`, event);
 
 export const signUp = user => post('/auth/signup', user);
 
@@ -33,4 +33,4 @@ export const patchUser = (id, user) => patch(`/auth/${id}`, user);
 
 export const getOrgs = () => get('/orgs');
 
-export const deleteOrg = id => del(`'/orgs/${id}`);
+export const deleteOrg = org => del(`/orgs/${org._id}`, org);
