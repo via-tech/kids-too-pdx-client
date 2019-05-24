@@ -1,8 +1,10 @@
-import store from '../store';
-import { getToken } from '../selectors/session';
+require('dotenv').config();
+import store from '../../store';
+import { getToken } from '../../selectors/session';
+import fetch from 'cross-fetch';
 
 const request = (path, method, body) => {
-  return fetch(`${process.env.API_URL}${path}`, {
+  return fetch(`${process.env.API_URL_TEST}${path}`, {
     method,
     body: body ? JSON.stringify(body) : null,
     headers: {
@@ -20,7 +22,3 @@ const request = (path, method, body) => {
 export const post = (path, body) => request(path, 'POST', body);
 
 export const get = (path, body) => request(path, 'GET', body);
-
-export const del = (path, body) => request(path, 'DELETE', body);
-
-export const patch = (path, body) => request(path, 'PATCH', body);
