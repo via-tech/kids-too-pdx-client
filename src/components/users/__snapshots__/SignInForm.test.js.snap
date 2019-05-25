@@ -9,7 +9,7 @@ exports[`Sign in form snapshots SignInForm 1`] = `
       User Info
     </legend>
     <label>
-      Email:
+      Username:
       <input
         name="username"
         onChange={[MockFunction]}

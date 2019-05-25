@@ -10,12 +10,13 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       Event Contact Info
     </legend>
     <label>
-      Name:
+      Contact Name:
       <input
         name="contactName"
         onChange={[MockFunction]}
         required={true}
         type="text"
+        value="Shaba R"
       />
     </label>
     <label
@@ -27,6 +28,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="email"
+        value="org@email.com"
       />
     </label>
     <label>
@@ -36,6 +38,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="tel"
+        value="5551234567"
       />
     </label>
   </fieldset>
@@ -44,11 +47,12 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       Event Details
     </legend>
     <label>
-      Name:
+      Event Name:
       <input
         name="name"
         onChange={[MockFunction]}
         type="text"
+        value="The Event"
       />
     </label>
     <label>
@@ -57,6 +61,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         name="website"
         onChange={[MockFunction]}
         type="text"
+        value="org.com"
       />
     </label>
     <label>
@@ -66,6 +71,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="date"
+        value="5/21/2019"
       />
     </label>
     <label>
@@ -75,6 +81,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="time"
+        value="2PM"
       />
     </label>
     <label>
@@ -85,6 +92,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         placeholder="Venue"
         required={true}
         type="text"
+        value="Library"
       />
       <input
         name="address"
@@ -92,24 +100,28 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         placeholder="Address"
         required={true}
         type="text"
+        value="123 Main St."
       />
       <input
         name="city"
         onChange={[MockFunction]}
         placeholder="City"
         type="text"
+        value="Portland"
       />
       <input
         name="state"
         onChange={[MockFunction]}
         placeholder="State"
         type="state"
+        value="OR"
       />
       <input
         name="zipcode"
         onChange={[MockFunction]}
         placeholder="Zipcode"
         type="zipcode"
+        value="97203"
       />
     </label>
     <label>
@@ -121,6 +133,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         placeholder="$"
         required={true}
         type="number"
+        value="200"
       />
     </label>
     <label
@@ -143,6 +156,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         placeholder="Min Age"
         required={true}
         type="number"
+        value="8"
       />
       <input
         min="0"
@@ -151,6 +165,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         placeholder="Max Age"
         required={true}
         type="number"
+        value="14"
       />
     </label>
     <label>
@@ -159,6 +174,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         name="category"
         onChange={[MockFunction]}
         required={true}
+        value="Art"
       >
         <option
           hidden={true}
@@ -204,6 +220,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         name="description"
         onChange={[MockFunction]}
         required={true}
+        value="blah de blah"
       />
     </label>
     <label

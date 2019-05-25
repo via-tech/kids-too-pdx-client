@@ -10,6 +10,7 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, { type, payload }) {
+  console.log('type', type, 'payload', payload);
   switch(type) {
     case SIGN_IN_SESSION:
     case SIGN_UP_SESSION:
