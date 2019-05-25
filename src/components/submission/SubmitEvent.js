@@ -14,46 +14,46 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
           <legend>Event Contact Info</legend>
 
           <label>Contact Name:
-            <input type="text" name="contactName" value="Shaba R" onChange={handleChange} required/>
+            <input type="text" name="contactName" onChange={handleChange} required/>
           </label>
 
           <label name="email">Email:
-            <input type="email" name="email" value="org@email.com" onChange={handleChange} required/>
+            <input type="email" name="email" onChange={handleChange} required/>
           </label>
 
           <label>Phone #:
-            <input type="tel" name="phone" value="5551234567" onChange={handleChange} required/>
+            <input type="tel" name="phone" onChange={handleChange} required/>
           </label>
         </fieldset>
         <fieldset>
           <legend>Event Details</legend>
 
           <label>Event Name:
-            <input type="text" name="name" value="The Event" onChange={handleChange} />
+            <input type="text" name="name" onChange={handleChange} />
           </label>
 
           <label>Website: 
-            <input type="text" name="website" value="org.com" onChange={handleChange}></input>
+            <input type="text" name="website" onChange={handleChange}></input>
           </label>
 
           <label>Date:
-            <input type="date" onChange={handleChange} value="5/21/2019" name="date" required/>
+            <input type="date" onChange={handleChange} name="date" required/>
           </label>
 
           <label>Time:
-            <input type="time" onChange={handleChange} value="2PM" name="time" required />
+            <input type="string" onChange={handleChange} name="time" required />
           </label>
 
           <label>Location:
-            <input type="text" placeholder="Venue" value="Library"  name="venue" onChange={handleChange} required />
-            <input type="text" placeholder="Address" value="123 Main St." name="address" onChange={handleChange} required />
-            <input type="text" placeholder="City" value="Portland" name="city" onChange={handleChange} />
-            <input type="state" placeholder="State" value="OR" name="state" onChange={handleChange} />
-            <input type="zipcode" placeholder="Zipcode" value="97203" name="zipcode" onChange={handleChange} />
+            <input type="text" placeholder="Venue" name="venue" onChange={handleChange} required />
+            <input type="text" placeholder="Address" name="address" onChange={handleChange} required />
+            <input type="text" placeholder="City" name="city" onChange={handleChange} />
+            <input type="state" placeholder="State" name="state" onChange={handleChange} />
+            <input type="zipcode" placeholder="Zipcode" name="zipcode" onChange={handleChange} />
           </label>
 
           <label>Price:
-            <input type="number" placeholder="$" value="200" onChange={handleChange} name="price" min="0" required/>
+            <input type="number" placeholder="$" onChange={handleChange} name="price" min="0" required/>
           </label>
 
           <label className={styles.radio}>Reduced Rate Available:
@@ -61,12 +61,12 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
           </label>
 
           <label>Age Range:
-            <input type="number" placeholder="Min Age" value="8" onChange={handleChange} name="minAge" min="0" required/>
-            <input type="number" placeholder="Max Age" value="14" onChange={handleChange} name="maxAge" min="0" required/>
+            <input type="number" placeholder="Min Age" onChange={handleChange} name="minAge" min="0" required/>
+            <input type="number" placeholder="Max Age" onChange={handleChange} name="maxAge" min="0" required/>
           </label>
 
           <label>Category:
-            <select onChange={handleChange} value="Art" name="category" required>
+            <select onChange={handleChange} name="category" required>
               <option value="DEFAULT" hidden>Category</option>
               <option value="Sports">Sports</option>
               <option value="Art">Art</option>
@@ -78,7 +78,7 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
           </label>
 
           <label>Description
-            <textarea onChange={handleChange} value="blah de blah" name="description" required/>
+            <textarea onChange={handleChange} name="description" required/>
           </label>
 
           <label className={styles.radio}>By checking the box, you agree that your organization accepts all liability for this event:

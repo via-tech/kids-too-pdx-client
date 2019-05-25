@@ -26,19 +26,18 @@ const mapStateToProps = state => {
   return { orgEvent };
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, props) => ({
   handleChange({ target }) {
     const value = target.checked || target.value;
     dispatch(updateEvent({ [target.name]: value }));
   },
 
   handleSubmit(orgEvent, event) {
+    const action = createEvent(modelEvent(orgEvent));
     event.preventDefault();
-    dispatch(createEvent(modelEvent(orgEvent)))
-      .then(action => console.log('action', action));
-    // action.payload.then(({ _id }) => {
-    //   props.history.push(`/events/${_id}`);
-    // });
+    dispatch(action);
+    action.payload
+      .then(({ _id }) => props.history.push(`/events/${_id}`));
   }
 });
 
