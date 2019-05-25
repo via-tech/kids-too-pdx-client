@@ -1,9 +1,12 @@
 import {
-  signUp,
   postEvent,
-  deleteOrg,
   deleteEvent
 } from './eventsService';
+
+import {
+  signUp,
+  deleteOrg
+} from './usersService';
 
 let createdUser = null;
 let createdEvents = null;
