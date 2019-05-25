@@ -24,7 +24,8 @@ const mapDispatchToProps = (dispatch, props) => ({
     const action = signInSession(user);
     event.preventDefault();
     dispatch(action);
-    console.log('props.history', props.history);
+    action.payload
+      .then(() => props.history.goBack());
   }
 });
 
