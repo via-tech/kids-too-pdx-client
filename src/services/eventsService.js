@@ -33,4 +33,4 @@ export const patchUser = (id, user) => patch(`/auth/${id}`, user);
 
 export const getOrgs = () => get('/orgs');
 
-export const deleteOrg = org => del(`/orgs/${org._id}`, org);
+export const deleteOrg = org => del(`/orgs/${org.user._id}`, org);

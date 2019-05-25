@@ -95,5 +95,5 @@ export const seedTestData = () => {
 };
 
 export const deleteTestData = () =>
-  Promise.all([deleteOrg(createdUser), deleteEvents(createEvents)])
+  Promise.all([deleteOrg(createdUser), deleteEvents(createdEvents)])
     .catch(err => err);

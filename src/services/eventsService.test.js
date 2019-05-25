@@ -49,7 +49,10 @@ describe('request', () => {
 
   it('signs in an organization', () =>
     signIn({ username: 'theOrg123', password: 'passit' })
-      .then(signedUser => expect(signedUser).toEqual(user))
+      .then(signedUser => expect(signedUser).toEqual({
+        ...user,
+        token: expect.any(String)
+      }))
   );
 
   it('posts events', () => expect(events).toHaveLength(5));
