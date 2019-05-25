@@ -5,7 +5,9 @@ import {
   getEvent,
   getFilteredEvents,
   patchEvent,
-  signIn
+  signIn,
+  patchUser,
+  getOrgs
 } from './eventsService';
 
 jest.mock('./request.js');
@@ -112,5 +114,24 @@ describe('request', () => {
         ...user,
         token: expect.any(String)
       }))
+  );
+
+  it('patches a user', () => {
+    const updatedUser = {
+      _id: user.user._id,
+      token: user.token,
+      email: 'theorg123@org.com'
+    };
+
+    patchUser(updatedUser)
+      .then(patchedUser => expect(patchedUser).toEqual({
+        ...user.user,
+        email: 'theorg123@org.com'
+      }));
+  });
+
+  it('gets a list of all organizations', () =>
+    getOrgs()
+      .then(orgs => expect(orgs).toBeDefined())
   );
 });

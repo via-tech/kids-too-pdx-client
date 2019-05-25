@@ -39,13 +39,13 @@ export const signUp = user => post('/auth/signup', user)
 export const signIn = user => post('/auth/signin', user)
   .catch(err => err);
 
-export const patchUser = (id, user) =>
-  patch(`/auth/${id}`, user)
+export const patchUser = updatedUser =>
+  patch(`/auth/${updatedUser._id}`, updatedUser)
     .catch(err => err);
 
 export const getOrgs = () => get('/orgs')
   .catch(err => err);
 
 export const deleteOrg = org =>
-  del(`/orgs/${org.user._id}`, org)
+  del(`/orgs/${org._id}`, org)
     .catch(err => err);

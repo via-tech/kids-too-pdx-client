@@ -94,6 +94,9 @@ export const seedTestData = () => {
     .catch(err => err);
 };
 
-export const deleteTestData = () =>
-  Promise.all([deleteOrg(createdUser), deleteEvents(createdEvents)])
+export const deleteTestData = () => {
+  const { user, token } = createdUser;
+
+  return Promise.all([deleteOrg({ ...user, token }), deleteEvents(createdEvents)])
     .catch(err => err);
+};
