@@ -7,7 +7,6 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, { payload, type }) {
-  console.log('payload', payload);
   switch(type) {
     case UPDATE_EVENT:
       return {

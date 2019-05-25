@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SubmitEvent.css';
+import { Link } from 'react-router-dom';
 
 function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
+  if(!orgEvent.token) {
+    return <h1>Please <Link to="/login">Log In</Link>  to post an event!</h1>;
+  }
   return (
     <>
       <form className={styles.Form} onSubmit={handleSubmit.bind(null, orgEvent)}>
