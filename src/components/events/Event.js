@@ -22,9 +22,8 @@ function Event({ event, details }) {
   if(event.price === 0) {
     event.price = 'Free';
   }
-
   const date = new Date(event.date);
-  event.dateDisplay = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  event.dateDisplay = `${date.getUTCMonth() + 1}/${date.getUTCDate()}/${date.getUTCFullYear()}`;
 
   return (
     <>
