@@ -5,6 +5,15 @@ const users = [
     username: 'org1',
     password: 'org1pass',
     name: 'The Org1',
+    email: 'org1@email.com',
+    phone: '555-123-4567',
+    address: {
+      street: '123 Main St.',
+      city: 'Portland',
+      zipcode: '97203'
+    },
+    logo: 'org.com',
+    bio: 'The bestest organization ever!',
     token: '0'
   },
   {
@@ -13,6 +22,15 @@ const users = [
     username: 'org2',
     password: 'org2pass',
     name: 'The Org2',
+    email: 'org2@email.com',
+    phone: '555-123-4567',
+    address: {
+      street: '123 Main St.',
+      city: 'Portland',
+      zipcode: '97203'
+    },
+    logo: 'org.com',
+    bio: 'The bestest organization ever!',
     token: '1'
   },
   {
@@ -21,7 +39,33 @@ const users = [
     username: 'org3',
     password: 'org3pass',
     name: 'The Org3',
+    email: 'org3@email.com',
+    phone: '555-123-4567',
+    address: {
+      street: '123 Main St.',
+      city: 'Portland',
+      zipcode: '97203'
+    },
+    logo: 'org.com',
+    bio: 'The bestest organization ever!',
     token: '2'
+  },
+  {
+    _id: '3',
+    role: 'admin',
+    username: 'admin',
+    password: 'adminpass',
+    name: 'The Admin',
+    email: 'admin@email.com',
+    phone: '555-123-4567',
+    address: {
+      street: '123 Main St.',
+      city: 'Portland',
+      zipcode: '97203'
+    },
+    logo: 'admin.com',
+    bio: 'The bestest organization ever!',
+    token: '3'
   }
 ];
 
@@ -33,3 +77,7 @@ export const signUp = user => {
 };
 
 export const signIn = ({ username, password }) => Promise.resolve(users.find(user => user.username === username && user.password === password).token);
+
+export const getOrgs = () => Promise.resolve(users.map(user => {
+  if(user.role === 'org') return user;
+}));
