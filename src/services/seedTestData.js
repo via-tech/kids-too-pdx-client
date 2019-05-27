@@ -12,15 +12,14 @@ let createdUser = null;
 let createdEvents = null;
 
 const user = {
-  _id: '5ce60cad619d860f166caf70',
   role: 'org',
-  username: 'theOrg123',
+  username: 'theOrg999',
   password: 'passit',
   name: 'The Org',
-  email: 'theorg123@email.com',
+  email: 'theorg999@email.com',
   phone: '5551234567',
   address: {
-    street: '123 Main St.',
+    street: '1223 Main St.',
     city: 'Portland',
     state: 'OR',
     zipcode: '97203'

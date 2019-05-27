@@ -6,7 +6,7 @@ function SignInForm({ handleSubmit, handleChange, user }) {
     <form onSubmit={handleSubmit.bind(null, user)}>
       <fieldset>
         <legend>User Info</legend>
-        <label>Username:
+        <label>Username or Email:
           <input type="text" name="username" onChange={handleChange} required />
         </label>
 
