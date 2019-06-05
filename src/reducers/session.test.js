@@ -1,6 +1,7 @@
 import reducer from './session';
 
-jest.mock('../services/eventsService');
+jest.mock('../services/request');
+jest.mock('../services/usersService');
 
 describe('session reducer', () => {
   const state = {

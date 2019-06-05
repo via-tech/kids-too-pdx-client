@@ -9,6 +9,21 @@ function SubmitContainer(props) {
   return <SubmitEvent {...props} />;
 }
 
+const modelEvent = orgEvent => {
+  const { contactName, email, phone, venue, address, city, state, zipcode } = orgEvent;
+
+  return {
+    ...orgEvent,
+    contact: { contactName, email, phone },
+    location: { venue, address, city, state, zipcode }
+  };
+};
+
+const mapStateToProps = state => {
+  const orgEvent = getEvent(state);
+  orgEvent.token = getToken(state);
+  return { orgEvent };
+};
 
 const modelEvent = orgEvent => {
   const { contactName, email, phone, venue, address, city, state, zipcode } = orgEvent;
@@ -33,11 +48,11 @@ const mapDispatchToProps = dispatch => ({
   },
 
   handleSubmit(orgEvent, event) {
+    const action = createEvent(modelEvent(orgEvent));
     event.preventDefault();
-    dispatch(createEvent(modelEvent(orgEvent)));
-    // action.payload.then(({ _id }) => {
-    //   props.history.push(`/events/${_id}`);
-    // });
+    dispatch(action);
+    action.payload
+      .then(({ _id }) => props.history.push(`/events/${_id}`));
   }
 });
 

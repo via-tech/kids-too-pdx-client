@@ -24,13 +24,13 @@ describe('usersService', () => {
     expect(user).toEqual({
       user: {
         _id: expect.any(String),
-        username: 'theOrg123',
+        username: 'theOrg999',
         role: 'org',
         name: 'The Org',
-        email: 'theorg123@email.com',
+        email: 'theorg999@email.com',
         phone: '5551234567',
         address: {
-          street: '123 Main St.',
+          street: '1223 Main St.',
           city: 'Portland',
           state: 'OR',
           zipcode: '97203'
@@ -41,7 +41,10 @@ describe('usersService', () => {
   });
 
   it('signs in an organization', () =>
-    signIn({ username: 'theOrg123', password: 'passit' })
+    signIn({
+      username: 'theOrg999',
+      password: 'passit'
+    })
       .then(signedUser => expect(signedUser).toEqual({
         ...user,
         token: expect.any(String)
@@ -52,13 +55,13 @@ describe('usersService', () => {
     const updatedUser = {
       _id: user.user._id,
       token: user.token,
-      email: 'theorg123@org.com'
+      email: 'theorg999@org.com'
     };
 
     patchUser(updatedUser)
       .then(patchedUser => expect(patchedUser).toEqual({
         ...user.user,
-        email: 'theorg123@org.com'
+        email: 'theorg999@org.com'
       }));
   });
 

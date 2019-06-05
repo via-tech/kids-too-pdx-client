@@ -10,7 +10,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       Event Contact Info
     </legend>
     <label>
-      Name:
+      Contact Name:
       <input
         name="contactName"
         onChange={[MockFunction]}
@@ -44,7 +44,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       Event Details
     </legend>
     <label>
-      Name:
+      Event Name:
       <input
         name="name"
         onChange={[MockFunction]}
@@ -74,7 +74,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         name="time"
         onChange={[MockFunction]}
         required={true}
-        type="time"
+        type="string"
       />
     </label>
     <label>

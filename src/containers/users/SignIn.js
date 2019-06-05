@@ -15,14 +15,17 @@ const mapStateToProps = state => ({
   user: getUser(state)
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, props) => ({
   handleChange({ target }) {
     dispatch(updateUser({ [target.name]: target.value }));
   },
 
   handleSubmit(user, event) {
+    const action = signInSession(user);
     event.preventDefault();
-    dispatch(signInSession(user));
+    dispatch(action);
+    action.payload
+      .then(() => props.history.goBack());
   }
 });
 

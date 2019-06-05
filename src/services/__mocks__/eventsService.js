@@ -42,6 +42,7 @@ export const getFilteredEvents = filters => {
 };
 
 export const getEvent = id => Promise.resolve(events.find(event => event._id === id));
+};
 
 export const signUp = user => {
   user._id = users.length - 1;

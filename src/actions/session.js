@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { signIn, signUp } from '../services/eventsService';
+import { signIn, signUp } from '../services/usersService';
 
 export const [
   signUpSession,

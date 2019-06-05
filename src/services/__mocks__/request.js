@@ -1,16 +1,14 @@
 require('dotenv').config();
-import store from '../../store';
-import { getToken } from '../../selectors/session';
 import fetch from 'cross-fetch';
 
 const request = (path, method, body) => {
   return fetch(`${process.env.API_URL_TEST}${path}`, {
     method,
     body: body ? JSON.stringify(body) : null,
-    headers: {
+    headers: body ? {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${getToken(store.getState())}`
-    }
+      Authorization: `Bearer ${body.token}`
+    } : null
   })
     .then(res => [res.ok, res.json()])
     .then(([ok, json]) => {
