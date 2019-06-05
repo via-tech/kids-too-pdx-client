@@ -7,4 +7,3 @@ export const [
   FETCH_EVENT_DETAIL_PENDING,
   FETCH_EVENT_DETAIL_FULFILLED
 ] = createAction('FETCH_EVENT_DETAIL', getEvent);
-

@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SubmitEvent snapshots SubmitEvent 1`] = `
+exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
 <form
   className="Form"
   onSubmit={[Function]}
 >
   <fieldset>
     <legend>
-      Contact Info
+      Event Contact Info
     </legend>
     <label>
       Name:
@@ -16,7 +16,6 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="text"
-        value="Joe"
       />
     </label>
     <label
@@ -24,27 +23,25 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
     >
       Email:
       <input
-        name="contactEmail"
+        name="email"
         onChange={[MockFunction]}
         required={true}
         type="email"
-        value="joe@email.com"
       />
     </label>
     <label>
       Phone #:
       <input
-        name="contactPhone"
+        name="phone"
         onChange={[MockFunction]}
         required={true}
         type="tel"
-        value="555-123-4567"
       />
     </label>
   </fieldset>
   <fieldset>
     <legend>
-      Event Info
+      Event Details
     </legend>
     <label>
       Name:
@@ -52,7 +49,6 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         name="name"
         onChange={[MockFunction]}
         type="text"
-        value="House Event"
       />
     </label>
     <label>
@@ -70,7 +66,6 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="date"
-        value="Fri Mar 29 2019 00:00:00 GMT-0700 (Pacific Daylight Time)"
       />
     </label>
     <label>
@@ -80,47 +75,41 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="time"
-        value="2pm"
       />
     </label>
     <label>
       Location:
       <input
-        name="locationVenue"
+        name="venue"
         onChange={[MockFunction]}
         placeholder="Venue"
         required={true}
         type="text"
-        value="My House"
       />
       <input
-        name="locationAddress"
+        name="address"
         onChange={[MockFunction]}
         placeholder="Address"
         required={true}
         type="text"
-        value="123 Main St."
       />
       <input
-        name="locationCity"
+        name="city"
         onChange={[MockFunction]}
         placeholder="City"
         type="text"
-        value="Portland"
       />
       <input
-        name="locationState"
+        name="state"
         onChange={[MockFunction]}
         placeholder="State"
         type="state"
-        value="OR"
       />
       <input
-        name="locationZipcode"
+        name="zipcode"
         onChange={[MockFunction]}
         placeholder="Zipcode"
         type="zipcode"
-        value={97223}
       />
     </label>
     <label>
@@ -132,7 +121,6 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         placeholder="$"
         required={true}
         type="number"
-        value={250}
       />
     </label>
     <label
@@ -140,8 +128,10 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
     >
       Reduced Rate Available:
       <input
+        name="reducedRate"
         onChange={[MockFunction]}
         type="checkbox"
+        value=""
       />
     </label>
     <label>
@@ -169,7 +159,6 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         name="category"
         onChange={[MockFunction]}
         required={true}
-        value="Art"
       >
         <option
           hidden={true}
@@ -215,12 +204,38 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         name="description"
         onChange={[MockFunction]}
         required={true}
-        value="The bestest event"
+      />
+    </label>
+    <label
+      className="radio"
+    >
+      By checking the box, you agree that your organization accepts all liability for this event:
+      <input
+        name="liability"
+        onChange={[MockFunction]}
+        required={true}
+        type="checkbox"
+        value=""
       />
     </label>
   </fieldset>
-  <button>
-    SUBMIT
+  <button
+    type="submit"
+  >
+    CREATE EVENT
   </button>
 </form>
+`;
+
+exports[`SubmitEvent snapshots SubmitEvent logged out 1`] = `
+<h1>
+  Please 
+  <a
+    href="/login"
+    onClick={[Function]}
+  >
+    Log In
+  </a>
+    to post an event!
+</h1>
 `;

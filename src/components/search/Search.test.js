@@ -6,7 +6,13 @@ describe('Search', () => {
   it('snapshots Search', () => {
     const props = {
       onChange: jest.fn(),
-      onSubmit: jest.fn()
+      onSubmit: jest.fn(),
+      filters: {
+        category: '',
+        price: '',
+        ageMin: '',
+        ageMax: ''
+      }
     };
 
     const tree = renderer.create(

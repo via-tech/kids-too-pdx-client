@@ -1,76 +1,73 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SubmitEvent.css';
+import { Link } from 'react-router-dom';
 
-function SubmitEvent({
-  contact, name, website, date, time, location, price, minAge, maxAge, category, description,
-  rrSelect, handleSubmit, handleChange, reducedRate
-}) {
-  const { contactName, email, phone } = contact;
-  const { venue, address, city, state, zipcode } = location;
+function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
+  if(!orgEvent.token) {
+    return <h1>Please <Link to="/login">Log In</Link>  to post an event!</h1>;
+  }
   return (
     <>
-      <form className={styles.Form} onSubmit={handleSubmit.bind(
-        null, contact, name, website, date, time, location, price, minAge, maxAge, reducedRate, category, description
-      )}>
+      <form className={styles.Form} onSubmit={handleSubmit.bind(null, orgEvent)}>
         <fieldset>
-          <legend>Contact Info</legend>
+          <legend>Event Contact Info</legend>
 
           <label>Name:
-            <input type="text" value={contactName} name="contactName" onChange={handleChange} required/>
+            <input type="text" name="contactName" onChange={handleChange} required/>
           </label>
 
           <label name="email">Email:
-            <input type="email" value={email} name="contactEmail" onChange={handleChange} required/>
+            <input type="email" name="email" onChange={handleChange} required/>
           </label>
 
           <label>Phone #:
-            <input type="tel" value={phone} name="contactPhone" onChange={handleChange} required/>
+            <input type="tel" name="phone" onChange={handleChange} required/>
           </label>
         </fieldset>
         <fieldset>
-          <legend>Event Info</legend>
+          <legend>Event Details</legend>
 
           <label>Name:
-            <input type="text" value={name} name="name" onChange={handleChange} />
+            <input type="text" name="name" onChange={handleChange} />
           </label>
 
           <label>
             Website: 
-            <input type="text" value={website} name="website" onChange={handleChange}></input>
+            <input type="text" name="website" onChange={handleChange}></input>
           </label>
 
           <label>Date:
-            <input type="date" value={date} onChange={handleChange} name="date" required/>
+            <input type="date" onChange={handleChange} name="date" required/>
           </label>
 
           <label>Time:
-            <input type="time" value={time} onChange={handleChange} name="time" required />
+            <input type="time" onChange={handleChange} name="time" required />
           </label>
 
           <label>Location:
-            <input type="text" placeholder="Venue" value={venue} name="locationVenue" onChange={handleChange} required />
-            <input type="text" placeholder="Address" value={address} name="locationAddress" onChange={handleChange} required />
-            <input type="text" placeholder="City" value={city} name="locationCity" onChange={handleChange} />
-            <input type="state" placeholder="State" value={state} name="locationState" onChange={handleChange} />
-            <input type="zipcode" placeholder="Zipcode" value={zipcode} name="locationZipcode" onChange={handleChange} />
+            <input type="text" placeholder="Venue"  name="venue" onChange={handleChange} required />
+            <input type="text" placeholder="Address" name="address" onChange={handleChange} required />
+            <input type="text" placeholder="City" name="city" onChange={handleChange} />
+            <input type="state" placeholder="State" name="state" onChange={handleChange} />
+            <input type="zipcode" placeholder="Zipcode" name="zipcode" onChange={handleChange} />
           </label>
 
           <label>Price:
-            <input type="number" placeholder="$" value={price} onChange={handleChange} name="price" min="0" required/>
+            <input type="number" placeholder="$" onChange={handleChange} name="price" min="0" required/>
           </label>
 
           <label className={styles.radio}>Reduced Rate Available:
-            <input type="checkbox" onChange={rrSelect} value={reducedRate}/>
+            <input type="checkbox" name="reducedRate" value="" onChange={handleChange}/>
           </label>
 
           <label>Age Range:
-            <input type="number" placeholder="Min Age" value={minAge} onChange={handleChange} name="minAge" min="0" required/>
-            <input type="number" placeholder="Max Age" value={maxAge} onChange={handleChange} name="maxAge" min="0" required/>
+            <input type="number" placeholder="Min Age"  onChange={handleChange} name="minAge" min="0" required/>
+            <input type="number" placeholder="Max Age" onChange={handleChange} name="maxAge" min="0" required/>
           </label>
 
           <label>Category:
-            <select value={category} onChange={handleChange} name="category" required>
+            <select onChange={handleChange} name="category" required>
               <option value="DEFAULT" hidden>Category</option>
               <option value="Sports">Sports</option>
               <option value="Art">Art</option>
@@ -82,39 +79,22 @@ function SubmitEvent({
           </label>
 
           <label>Description
-            <textarea value={description} onChange={handleChange} name="description" required/>
+            <textarea onChange={handleChange} name="description" required/>
+          </label>
+
+          <label className={styles.radio}>By checking the box, you agree that your organization accepts all liability for this event:
+            <input type="checkbox" value="" name="liability" onChange={handleChange} required/>
           </label>
 
         </fieldset>
-        <button>SUBMIT</button>
+        <button type="submit">CREATE EVENT</button>
       </form>
     </>
   );
 }
 
 SubmitEvent.propTypes = {
-  contact: PropTypes.object,
-  name: PropTypes.string,
-  website: PropTypes.string,
-  date: PropTypes.string,
-  time: PropTypes.string,
-  location: PropTypes.object,
-  price: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
-  minAge: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
-  maxAge: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]),
-  reducedRate: PropTypes.bool,
-  category: PropTypes.string,
-  description: PropTypes.string,
-  rrSelect: PropTypes.func.isRequired,
+  orgEvent: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired
 };
