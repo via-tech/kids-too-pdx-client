@@ -9,7 +9,7 @@ describe('SubmitEvent', () => {
       image: 'image.com',
       time: '2pm',
       name: 'House Event',
-      date: new Date().toString(),
+      date: 'Fri Mar 29 2019 00:00:00 GMT-0700 (Pacific Daylight Time)',
       contact: {
         contactName: 'Joe',
         email: 'joe@email.com',

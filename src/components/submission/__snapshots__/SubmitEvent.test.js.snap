@@ -70,7 +70,7 @@ exports[`SubmitEvent snapshots SubmitEvent 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="date"
-        value="Fri Mar 29 2019 09:56:51 GMT-0700 (Pacific Daylight Time)"
+        value="Fri Mar 29 2019 00:00:00 GMT-0700 (Pacific Daylight Time)"
       />
     </label>
     <label>
