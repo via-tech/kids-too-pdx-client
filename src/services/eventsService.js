@@ -21,6 +21,8 @@ export const getFilteredEvents = filters => {
     return filters[key] ? route += `${key}=${filters[key]}&` : route;
   });
 
+  if(route === '/events/query/q?') route = '/events';
+
   return get(route)
     .catch(err => err);
 };
