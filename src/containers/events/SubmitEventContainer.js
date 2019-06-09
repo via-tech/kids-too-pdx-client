@@ -25,23 +25,7 @@ const mapStateToProps = state => {
   return { orgEvent };
 };
 
-const modelEvent = orgEvent => {
-  const { contactName, email, phone, venue, address, city, state, zipcode } = orgEvent;
-
-  return {
-    ...orgEvent,
-    contact: { contactName, email, phone },
-    location: { venue, address, city, state, zipcode }
-  };
-};
-
-const mapStateToProps = state => {
-  const orgEvent = getEvent(state);
-  orgEvent.token = getToken(state);
-  return { orgEvent };
-};
-
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, props) => ({
   handleChange({ target }) {
     const value = target.checked || target.value;
     dispatch(updateEvent({ [target.name]: value }));
