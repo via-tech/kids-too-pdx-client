@@ -7,7 +7,7 @@ function Search({ onChange, onSubmit, filters }) {
     <form className={styles.Select} onSubmit={onSubmit}>
       <select name="category" value={filters.category} onChange={onChange}>
         <option value="" hidden>Category</option>
-        <option value="">All</option>
+        <option value="All">All</option>
         <option value="Sports">Sports</option>
         <option value="Art">Art</option>
         <option value="Music">Music</option>
