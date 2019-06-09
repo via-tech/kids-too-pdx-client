@@ -17,7 +17,7 @@ exports[`Search snapshots Search 1`] = `
       Category
     </option>
     <option
-      value=""
+      value="All"
     >
       All
     </option>
