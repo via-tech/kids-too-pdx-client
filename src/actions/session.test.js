@@ -4,7 +4,7 @@ import {
   updateUser
 } from './session';
 
-jest.mock('../services/eventsService');
+jest.mock('../services/request');
 
 describe('session actions', () => {
   it('returns action for signUpSession', () => {

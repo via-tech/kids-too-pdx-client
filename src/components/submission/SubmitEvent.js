@@ -13,7 +13,7 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
         <fieldset>
           <legend>Event Contact Info</legend>
 
-          <label>Name:
+          <label>Contact Name:
             <input type="text" name="contactName" onChange={handleChange} required/>
           </label>
 
@@ -28,12 +28,11 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
         <fieldset>
           <legend>Event Details</legend>
 
-          <label>Name:
+          <label>Event Name:
             <input type="text" name="name" onChange={handleChange} />
           </label>
 
-          <label>
-            Website: 
+          <label>Website: 
             <input type="text" name="website" onChange={handleChange}></input>
           </label>
 
@@ -42,11 +41,11 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
           </label>
 
           <label>Time:
-            <input type="time" onChange={handleChange} name="time" required />
+            <input type="string" onChange={handleChange} name="time" required />
           </label>
 
           <label>Location:
-            <input type="text" placeholder="Venue"  name="venue" onChange={handleChange} required />
+            <input type="text" placeholder="Venue" name="venue" onChange={handleChange} required />
             <input type="text" placeholder="Address" name="address" onChange={handleChange} required />
             <input type="text" placeholder="City" name="city" onChange={handleChange} />
             <input type="state" placeholder="State" name="state" onChange={handleChange} />
@@ -62,7 +61,7 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
           </label>
 
           <label>Age Range:
-            <input type="number" placeholder="Min Age"  onChange={handleChange} name="minAge" min="0" required/>
+            <input type="number" placeholder="Min Age" onChange={handleChange} name="minAge" min="0" required/>
             <input type="number" placeholder="Max Age" onChange={handleChange} name="maxAge" min="0" required/>
           </label>
 
