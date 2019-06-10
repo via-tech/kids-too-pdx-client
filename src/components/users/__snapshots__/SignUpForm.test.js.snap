@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign up form snapshots SignUpForm 1`] = `
+<form
+  onSubmit={[MockFunction]}
+>
+  <fieldset>
+    <legend>
+      Organization Info
+    </legend>
+    <label>
+      Username:
+      <input
+        name="username"
+        onChange={[MockFunction]}
+        required={true}
+        type="text"
+      />
+    </label>
+    <label>
+      Organization Name:
+      <input
+        name="orgName"
+        onChange={[MockFunction]}
+        required={true}
+        type="text"
+      />
+    </label>
+    <label>
+      Email:
+      <input
+        name="email"
+        onChange={[MockFunction]}
+        required={true}
+        type="email"
+      />
+    </label>
+    <label>
+      Phone:
+      <input
+        name="phone"
+        onChange={[MockFunction]}
+        required={true}
+        type="tel"
+      />
+    </label>
+    <label>
+      Address:
+      <label>
+        Street:
+        <input
+          name="street"
+          onChange={[MockFunction]}
+          type="text"
+        />
+      </label>
+      <label>
+        City:
+        <input
+          name="city"
+          onChange={[MockFunction]}
+          type="text"
+        />
+      </label>
+      <label>
+        Zip Code:
+        <input
+          name="zipcode"
+          onChange={[MockFunction]}
+          pattern="[0-9]*"
+          type="text"
+        />
+      </label>
+    </label>
+    <label>
+      Organization Bio:
+      <textarea
+        name="bio"
+        onChange={[MockFunction]}
+      />
+    </label>
+    <label>
+      Password:
+      <input
+        name="password"
+        onChange={[MockFunction]}
+        required={true}
+        type="text"
+      />
+    </label>
+  </fieldset>
+  <button
+    type="submit"
+  >
+    Sign Up
+  </button>
+</form>
+`;

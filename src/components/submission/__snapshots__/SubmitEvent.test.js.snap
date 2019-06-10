@@ -10,7 +10,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       Event Contact Info
     </legend>
     <label>
-      Contact Name:
+      Name:
       <input
         name="contactName"
         onChange={[MockFunction]}
@@ -52,7 +52,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       />
     </label>
     <label>
-      Website:
+      Registration Link:
       <input
         name="website"
         onChange={[MockFunction]}

@@ -13,7 +13,7 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
         <fieldset>
           <legend>Event Contact Info</legend>
 
-          <label>Contact Name:
+          <label>Name:
             <input type="text" name="contactName" onChange={handleChange} required/>
           </label>
 
@@ -32,7 +32,7 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
             <input type="text" name="name" onChange={handleChange} />
           </label>
 
-          <label>Website: 
+          <label>Registration Link: 
             <input type="text" name="website" onChange={handleChange}></input>
           </label>
 
