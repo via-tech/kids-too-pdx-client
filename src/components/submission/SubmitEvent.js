@@ -60,7 +60,7 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
             <input type="checkbox" name="reducedRate" value="" onChange={handleChange}/>
           </label>
 
-          <label>Age Range:
+          <label>Age Range (Enter 0 to 100 for All Ages):
             <input type="number" placeholder="Min Age" onChange={handleChange} name="minAge" min="0" required/>
             <input type="number" placeholder="Max Age" onChange={handleChange} name="maxAge" min="0" required/>
           </label>

@@ -5,9 +5,20 @@ import Search from '../search/Search';
 import styles from './Events.css';
 
 function Events({ events, onChange, onSubmit, details, filters }) {
+  let display;
   const listOfEvents = events.map((event, i) => {
     return <li key={i}><Event event={event} details={details} /></li>;
   });
+
+  if(listOfEvents.length) {
+    display =
+      <ul>
+        {listOfEvents}
+      </ul>;
+  } else {
+    display = <p>No results match search fields</p>;
+  }
+
   return (
   <>
     <Search 
@@ -16,9 +27,7 @@ function Events({ events, onChange, onSubmit, details, filters }) {
       filters={filters}
     />
     <section className={styles.Event}>
-      <ul>
-        {listOfEvents}
-      </ul>
+      {display}
     </section>
   </>
   );
