@@ -10,7 +10,7 @@ function SignUpForm({ handleSubmit, handleChange }) {
           <input type="text" name="username" onChange={handleChange} required />
         </label>
         <label>Organization Name:
-          <input type="text" name="orgName" onChange={handleChange} required/>
+          <input type="text" name="name" onChange={handleChange} required/>
         </label>
         <label>Email:
           <input type="email" name="email" onChange={handleChange} required />
