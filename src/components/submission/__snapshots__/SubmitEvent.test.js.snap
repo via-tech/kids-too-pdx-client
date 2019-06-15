@@ -137,6 +137,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
     <label>
       Age Range (Enter 0 to 100 for All Ages):
       <input
+        max="100"
         min="0"
         name="minAge"
         onChange={[MockFunction]}
@@ -145,6 +146,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         type="number"
       />
       <input
+        max="100"
         min="0"
         name="maxAge"
         onChange={[MockFunction]}
