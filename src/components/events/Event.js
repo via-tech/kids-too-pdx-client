@@ -4,21 +4,13 @@ import styles from './Event.css';
 import { Link } from 'react-router-dom';
 
 function Event({ event, details }) {
-  if(event.ageMin && event.ageMax) {
+  if(event.ageMin === 0 && event.ageMax === 100) {
+    event.age = 'All ages';
+  } else if(event.ageMin >= 1 && event.ageMax <= 35) {
     event.age = `${event.ageMin}-${event.ageMax}`;
-  } 
-  else if(event.ageMin === 0 && !event.ageMax) {
-    event.age = 'All ages';
-  } 
-  else if(event.ageMax > 50 && !event.ageMinx) {
-    event.age = 'All ages';
-  }  
-  else if(event.ageMin) {
-    event.age = `${event.ageMin}`;
-  } 
-  else if(event.ageMax) {
-    event.age = `${event.ageMax}`;
-  } 
+  } else {
+    event.age = event.ageMin || event.ageMax;
+  }
   if(event.price === 0) {
     event.price = 'Free';
   }
