@@ -20,7 +20,7 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
     <label>
       Organization Name:
       <input
-        name="orgName"
+        name="name"
         onChange={[MockFunction]}
         required={true}
         type="text"
