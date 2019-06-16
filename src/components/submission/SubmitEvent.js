@@ -57,12 +57,14 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
           </label>
 
           <label className={styles.radio}>Reduced Rate Available:
-            <input type="checkbox" name="reducedRate" value="" onChange={handleChange}/>
+            <input type="checkbox" name="reducedRate" value="1" onChange={handleChange}/>
           </label>
 
+          <input type="radio" onChange={handleChange} name="age" value="0" required/>All ages<br/>
+          <input type="radio" onChange={handleChange} name="age" value="1"/>Enter age range
           <label>Age Range (Enter 0 to 100 for All Ages):
-            <input type="number" placeholder="Min Age" onChange={handleChange} name="minAge" min="0" max="100" required/>
-            <input type="number" placeholder="Max Age" onChange={handleChange} name="maxAge" min="0" max="100" required/>
+            <input type="number" placeholder="Min Age" onChange={handleChange} name="ageMin" min="0" max="100"/>
+            <input type="number" placeholder="Max Age" onChange={handleChange} name="ageMax" min="0" max="100"/>
           </label>
 
           <label>Category:
@@ -82,7 +84,7 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
           </label>
 
           <label className={styles.radio}>By checking the box, you agree that your organization accepts all liability for this event:
-            <input type="checkbox" value="" name="liability" onChange={handleChange} required/>
+            <input type="checkbox" value="1" name="liability" onChange={handleChange} required/>
           </label>
 
         </fieldset>

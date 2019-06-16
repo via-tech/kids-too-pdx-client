@@ -1,5 +1,6 @@
 import {
-  UPDATE_EVENT
+  UPDATE_EVENT,
+  CREATE_EVENT
 } from '../actions/submitEvent';
 
 const initialState = {
@@ -12,6 +13,10 @@ export default function reducer(state = initialState, { payload, type }) {
       return {
         ...state,
         event: { ...state.event, ...payload }
+      };
+    case CREATE_EVENT:
+      return {
+        event: {}
       };
     default:
       return state;

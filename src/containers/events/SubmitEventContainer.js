@@ -10,12 +10,14 @@ function SubmitContainer(props) {
 }
 
 const modelEvent = orgEvent => {
-  const { contactName, email, phone, venue, address, city, state, zipcode } = orgEvent;
+  const { contactName, email, phone, venue, address, city, state, zipcode, ageMin, ageMax } = orgEvent;
 
   return {
     ...orgEvent,
     contact: { contactName, email, phone },
-    location: { venue, address, city, state, zipcode }
+    location: { venue, address, city, state, zipcode },
+    ageMin: ageMin || 0,
+    ageMax: ageMax || 100
   };
 };
 
@@ -27,8 +29,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, props) => ({
   handleChange({ target }) {
-    const value = target.checked || target.value;
-    dispatch(updateEvent({ [target.name]: value }));
+    const { name, value } = target;
+    dispatch(updateEvent({ [name]: value }));
   },
 
   handleSubmit(orgEvent, event) {

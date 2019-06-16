@@ -131,27 +131,41 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         name="reducedRate"
         onChange={[MockFunction]}
         type="checkbox"
-        value=""
+        value="1"
       />
     </label>
+    <input
+      name="age"
+      onChange={[MockFunction]}
+      required={true}
+      type="radio"
+      value="0"
+    />
+    All ages
+    <br />
+    <input
+      name="age"
+      onChange={[MockFunction]}
+      type="radio"
+      value="1"
+    />
+    Enter age range
     <label>
       Age Range (Enter 0 to 100 for All Ages):
       <input
         max="100"
         min="0"
-        name="minAge"
+        name="ageMin"
         onChange={[MockFunction]}
         placeholder="Min Age"
-        required={true}
         type="number"
       />
       <input
         max="100"
         min="0"
-        name="maxAge"
+        name="ageMax"
         onChange={[MockFunction]}
         placeholder="Max Age"
-        required={true}
         type="number"
       />
     </label>
@@ -217,7 +231,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         onChange={[MockFunction]}
         required={true}
         type="checkbox"
-        value=""
+        value="1"
       />
     </label>
   </fieldset>
