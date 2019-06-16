@@ -12,6 +12,7 @@ function Header() {
               <img src={logo} />
             </section>
             <Link to="/login">Log In</Link>
+            <Link to="/signup">Sign Up</Link>
             <nav className={styles.nav}>
               <Link to="/">Home</Link>
               <Link to='/submit-event'>Submit Event</Link>

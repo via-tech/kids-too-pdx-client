@@ -2,7 +2,7 @@
 
 exports[`Sign up form snapshots SignUpForm 1`] = `
 <form
-  onSubmit={[MockFunction]}
+  onSubmit={[Function]}
 >
   <fieldset>
     <legend>

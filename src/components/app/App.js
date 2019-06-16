@@ -10,6 +10,7 @@ import AboutUs from '../info/AboutUs';
 import ResourcesContainer from '../../containers/resources/ResourcesContainer';
 import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
 import SignIn from '../../containers/users/SignIn';
+import SignUp from '../../containers/users/SignUp';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route exact path='/aboutus' component={AboutUs} /> 
         <Route exact path='/resources' component={ResourcesContainer} />
         <Route exact path='/login' component={SignIn} />
+        <Route exact path='/signup' component={SignUp} />
       </Switch>
       <Footer />
     </>

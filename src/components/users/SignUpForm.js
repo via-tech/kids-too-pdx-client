@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function SignUpForm({ handleSubmit, handleChange }) {
+function SignUpForm({ handleSubmit, handleChange, user }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit.bind(null, user)}>
       <fieldset>
         <legend>Organization Info</legend>
 
@@ -53,7 +53,8 @@ function SignUpForm({ handleSubmit, handleChange }) {
 
 SignUpForm.propTypes = {
   handleSubmit: PropTypes.func,
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
+  user: PropTypes.object
 };
 
 export default SignUpForm;

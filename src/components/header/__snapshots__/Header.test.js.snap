@@ -20,6 +20,12 @@ exports[`Header matches snapshot for Header 1`] = `
     >
       Log In
     </a>
+    <a
+      href="/signup"
+      onClick={[Function]}
+    >
+      Sign Up
+    </a>
     <nav
       className="nav"
     >
