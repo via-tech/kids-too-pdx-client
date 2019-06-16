@@ -6,7 +6,8 @@ import {
 
 const initialState = {
   user: {},
-  token: ''
+  token: '',
+  error: null
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -15,7 +16,8 @@ export default function reducer(state = initialState, { type, payload }) {
     case SIGN_UP_SESSION:
       return {
         ...state,
-        token: payload.token
+        token: payload.token,
+        error: payload.error || null
       };
     case UPDATE_USER:
       return {

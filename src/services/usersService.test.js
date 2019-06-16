@@ -51,6 +51,14 @@ describe('usersService', () => {
       }))
   );
 
+  it('rejects user with wrong sign in', () => {
+    signIn({
+      username: 'blahUser',
+      password: 'passit'
+    })
+      .then(res => expect(res).toEqual({ error: 'Bad email or password' }));
+  });
+
   it('patches a user', () => {
     const updatedUser = {
       _id: user.user._id,

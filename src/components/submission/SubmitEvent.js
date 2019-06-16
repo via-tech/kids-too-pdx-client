@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SubmitEvent.css';
-import { Link } from 'react-router-dom';
 
-function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
+function SubmitEvent({ orgEvent, handleSubmit, handleChange, history }) {
   if(!orgEvent.token) {
-    return <h1>Please <Link to="/login">Log In</Link>  to post an event!</h1>;
+    history.push('/login');
   }
   return (
     <>
@@ -98,7 +97,8 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange }) {
 SubmitEvent.propTypes = {
   orgEvent: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired,
+  history: PropTypes.object
 };
 
 export default SubmitEvent;

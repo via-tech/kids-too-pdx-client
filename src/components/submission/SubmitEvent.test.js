@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import SubmitEvent from './SubmitEvent';
-import { MemoryRouter } from 'react-router-dom';
 
 describe('SubmitEvent', () => {
   const orgEvent = {
@@ -39,9 +38,7 @@ describe('SubmitEvent', () => {
     };
 
     const tree = renderer.create(
-      <MemoryRouter>
-        <SubmitEvent {...props} />
-      </MemoryRouter>
+      <SubmitEvent {...props} />
     );
 
     expect(tree).toMatchSnapshot();
@@ -52,13 +49,12 @@ describe('SubmitEvent', () => {
     const props = {
       orgEvent,
       handleChange: jest.fn(),
-      handleSubmit: jest.fn()
+      handleSubmit: jest.fn(),
+      history: []
     };
 
     const tree = renderer.create(
-      <MemoryRouter>
-        <SubmitEvent {...props} />
-      </MemoryRouter>
+      <SubmitEvent {...props} />
     );
 
     expect(tree).toMatchSnapshot();
