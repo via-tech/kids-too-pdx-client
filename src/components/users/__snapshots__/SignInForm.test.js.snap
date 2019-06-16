@@ -2,6 +2,7 @@
 
 exports[`Sign in form snapshots SignInForm 1`] = `
 <form
+  className="SignIn"
   onSubmit={[Function]}
 >
   <fieldset>

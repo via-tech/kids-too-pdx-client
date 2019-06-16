@@ -1,6 +1,7 @@
 import {
   getToken,
-  getUser
+  getUser,
+  getError
 } from './session';
 
 describe('session selector', () => {
@@ -10,7 +11,8 @@ describe('session selector', () => {
       user: {
         username: 'org',
         password: 'pass'
-      }
+      },
+      error: 'Bad email or password'
     }
   };
 
@@ -20,4 +22,6 @@ describe('session selector', () => {
     username: 'org',
     password: 'pass'
   }));
+
+  it('gets error', () => expect(getError(state)).toEqual('Bad email or password'));
 });

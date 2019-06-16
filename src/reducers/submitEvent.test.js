@@ -45,4 +45,10 @@ describe('Submit Event reducers', () => {
       }
     });
   });
+
+  it('resets state after creating event', () => {
+    const action = { type: 'CREATE_EVENT' };
+    
+    expect(reducer(state, action)).toEqual({ event: {} });
+  });
 });

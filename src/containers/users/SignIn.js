@@ -5,14 +5,18 @@ import {
   updateUser,
   signInSession
 } from '../../actions/session';
-import { getUser } from '../../selectors/session';
+import {
+  getUser,
+  getError
+} from '../../selectors/session';
 
 function SignIn(props) {
   return <SignInForm {...props} />;
 }
 
 const mapStateToProps = state => ({
-  user: getUser(state)
+  user: getUser(state),
+  error: getError(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({

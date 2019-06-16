@@ -6,7 +6,8 @@ jest.mock('../services/usersService');
 describe('session reducer', () => {
   const state = {
     user: {},
-    token: ''
+    token: '',
+    error: null
   };
 
   it('sets session on sign up', () => {

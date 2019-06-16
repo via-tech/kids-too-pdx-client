@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './SignInForm.css';
 
-function SignInForm({ handleSubmit, handleChange, user }) {
+function SignInForm({ handleSubmit, handleChange, user, error }) {
   return (
-    <form onSubmit={handleSubmit.bind(null, user)}>
+    <form className={styles.SignIn} onSubmit={handleSubmit.bind(null, user)}>
+      {error && <p className={styles.error}>{error}</p>}
       <fieldset>
         <legend>User Info</legend>
         <label>Username or Email:
@@ -22,7 +24,8 @@ function SignInForm({ handleSubmit, handleChange, user }) {
 SignInForm.propTypes = {
   handleSubmit: PropTypes.func,
   handleChange: PropTypes.func,
-  user: PropTypes.object
+  user: PropTypes.object,
+  error: PropTypes.string
 };
 
 export default SignInForm;

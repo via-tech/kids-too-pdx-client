@@ -4,8 +4,12 @@
   legend {
     text-align: center;
   }
-  input {
-    width: 100%;
+  label, input {
+    display: block;
+    margin-top: 1em;
+  }
+  input[type="checkbox"], input[type="radio"] {
+    display: inline;
   }
   textarea {
     width: 100%;
@@ -19,6 +23,9 @@
     padding: 1em;
     border-radius: 5px;
     background-color: white;
+  }
+  .required {
+    color: red;
   }
 }
 .radio {
