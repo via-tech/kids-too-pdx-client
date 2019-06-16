@@ -10,7 +10,13 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       Event Contact Info
     </legend>
     <label>
-      Name:
+      Name
+      <span
+        className="required"
+      >
+        *
+      </span>
+      :
       <input
         name="contactName"
         onChange={[MockFunction]}
@@ -21,7 +27,13 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
     <label
       name="email"
     >
-      Email:
+      Email
+      <span
+        className="required"
+      >
+        *
+      </span>
+      :
       <input
         name="email"
         onChange={[MockFunction]}
@@ -30,7 +42,13 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       />
     </label>
     <label>
-      Phone #:
+      Phone #
+      <span
+        className="required"
+      >
+        *
+      </span>
+      :
       <input
         name="phone"
         onChange={[MockFunction]}
@@ -44,7 +62,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       Event Details
     </legend>
     <label>
-      Event Name:
+      Event Name
       <input
         name="name"
         onChange={[MockFunction]}
@@ -52,7 +70,7 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       />
     </label>
     <label>
-      Registration Link:
+      Registration Link
       <input
         name="website"
         onChange={[MockFunction]}
@@ -60,7 +78,13 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       />
     </label>
     <label>
-      Date:
+      Date
+      <span
+        className="required"
+      >
+        *
+      </span>
+      :
       <input
         name="date"
         onChange={[MockFunction]}
@@ -69,7 +93,13 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       />
     </label>
     <label>
-      Time:
+      Time
+      <span
+        className="required"
+      >
+        *
+      </span>
+      :
       <input
         name="time"
         onChange={[MockFunction]}
@@ -78,7 +108,13 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       />
     </label>
     <label>
-      Location:
+      Location
+      <span
+        className="required"
+      >
+        *
+      </span>
+      :
       <input
         name="venue"
         onChange={[MockFunction]}
@@ -113,7 +149,13 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       />
     </label>
     <label>
-      Price:
+      Price
+      <span
+        className="required"
+      >
+        *
+      </span>
+      :
       <input
         min="0"
         name="price"
@@ -134,6 +176,14 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
         value="1"
       />
     </label>
+    <p>
+      Age
+      <span
+        className="required"
+      >
+        *
+      </span>
+    </p>
     <input
       name="age"
       onChange={[MockFunction]}
@@ -149,9 +199,8 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       type="radio"
       value="1"
     />
-    Enter age range
+    Enter an age range
     <label>
-      Age Range (Enter 0 to 100 for All Ages):
       <input
         max="100"
         min="0"
@@ -170,7 +219,12 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
       />
     </label>
     <label>
-      Category:
+      Category
+      <span
+        className="required"
+      >
+        *
+      </span>
       <select
         name="category"
         onChange={[MockFunction]}
@@ -216,6 +270,11 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
     </label>
     <label>
       Description
+      <span
+        className="required"
+      >
+        *
+      </span>
       <textarea
         name="description"
         onChange={[MockFunction]}
@@ -225,7 +284,12 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
     <label
       className="radio"
     >
-      By checking the box, you agree that your organization accepts all liability for this event:
+      By checking the box, you agree that your organization accepts all liability for this event.
+      <span
+        className="required"
+      >
+        *
+      </span>
       <input
         name="liability"
         onChange={[MockFunction]}
