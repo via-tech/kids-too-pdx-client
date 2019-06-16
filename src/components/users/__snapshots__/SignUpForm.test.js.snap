@@ -51,6 +51,7 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
         <input
           name="street"
           onChange={[MockFunction]}
+          required={true}
           type="text"
         />
       </label>
@@ -59,6 +60,7 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
         <input
           name="city"
           onChange={[MockFunction]}
+          required={true}
           type="text"
         />
       </label>
@@ -68,6 +70,7 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
           name="zipcode"
           onChange={[MockFunction]}
           pattern="[0-9]*"
+          required={true}
           type="text"
         />
       </label>
