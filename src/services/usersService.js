@@ -5,7 +5,42 @@ import {
   patch
 } from './request';
 
-export const signUp = user => post('/auth/signup', user)
+const modelUser = user => {
+  const { street, city, state, zipcode, billStreet, billCity, billState, billZipcode, cardName, cardNumber, securityCode, expMonth, expYear, method } = user;
+
+  const address = {
+    street,
+    city,
+    state,
+    zipcode
+  };
+
+  const billAdress = {
+    billStreet: billStreet || street,
+    billCity: billCity || city,
+    billState: billState || state,
+    billZipcode: billZipcode || zipcode
+  };
+
+  const payment = {
+    cardNumber,
+    cardName,
+    securityCode,
+    expMonth,
+    expYear,
+    method,
+    billAdress
+  };
+
+  return {
+    ...user,
+    role: 'org',
+    payment,
+    address
+  };
+};
+
+export const signUp = user => post('/auth/signup', modelUser(user))
   .catch(err => err);
 
 export const signIn = user => post('/auth/signin', user)

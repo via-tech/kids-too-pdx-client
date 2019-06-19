@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Registration Form snapshots PaymentInfo form 1`] = `
+<fieldset>
+  <legend>
+    Payment Info
+  </legend>
+  <label>
+    Card Number
+    <input
+      maxLength="19"
+      name="cardNumber"
+      onChange={[MockFunction]}
+      pattern="[0-9]*"
+      placeholder="Card Number"
+      required={true}
+      type="text"
+    />
+  </label>
+  <label>
+    Security Code
+    <input
+      maxLength="3"
+      name="securityCode"
+      onChange={[MockFunction]}
+      required={true}
+      type="text"
+    />
+  </label>
+  <label>
+    Name
+    <input
+      name="cardName"
+      onChange={[MockFunction]}
+      placeholder="Card Name"
+      required={true}
+      type="text"
+    />
+  </label>
+  <label>
+    Expiration Date
+    <input
+      maxLength="2"
+      name="expMonth"
+      onChange={[MockFunction]}
+      pattern="[0-9]*"
+      placeholder="mm"
+      required={true}
+      type="text"
+    />
+    <input
+      maxLength="4"
+      minLength="4"
+      name="expYear"
+      onChange={[MockFunction]}
+      pattern="[0-9]*"
+      placeholder="yyyy"
+      required={true}
+      type="text"
+    />
+  </label>
+  <label>
+    Method
+    <input
+      name="method"
+      onChange={[MockFunction]}
+      required={true}
+      type="radio"
+      value="visa"
+    />
+    Visa
+    <input
+      name="method"
+      onChange={[MockFunction]}
+      required={true}
+      type="radio"
+      value="master"
+    />
+    Master
+  </label>
+  <label>
+    Billing Address (if different from business address)
+    <label>
+      Street:
+      <input
+        name="billStreet"
+        onChange={[MockFunction]}
+        type="text"
+      />
+    </label>
+    <label>
+      City:
+      <input
+        name="billCity"
+        onChange={[MockFunction]}
+        type="text"
+      />
+    </label>
+    <label>
+      Zip Code:
+      <input
+        name="billZipcode"
+        onChange={[MockFunction]}
+        pattern="[0-9]*"
+        required={true}
+        type="text"
+      />
+    </label>
+  </label>
+</fieldset>
+`;

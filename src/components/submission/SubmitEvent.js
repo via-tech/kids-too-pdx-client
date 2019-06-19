@@ -60,10 +60,14 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange, history }) {
           </label>
 
           <p>Age<span className={styles.required}>*</span></p>
+
           <input type="radio" onChange={handleChange} name="age" value="0" required/>All ages<br/>
+
           <input type="radio" onChange={handleChange} name="age" value="1"/>Enter an age range
+
           <label>
             <input type="number" placeholder="Min Age" onChange={handleChange} name="ageMin" min="0" max="100"/>
+            
             <input type="number" placeholder="Max Age" onChange={handleChange} name="ageMax" min="0" max="100"/>
           </label>
 

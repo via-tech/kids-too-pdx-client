@@ -19,19 +19,16 @@ const user = {
   name: 'The Org',
   email: 'theorg999@email.com',
   phone: '5551234567',
-  address: {
-    street: '1223 Main St.',
-    city: 'Portland',
-    state: 'OR',
-    zipcode: '97203'
-  },
-  payment: {
-    cardNumber: 1234567890123456,
-    cardName: name,
-    expDate: '01/20',
-    securityCode: 123,
-    method: 'visa'
-  }
+  street: '1223 Main St.',
+  city: 'Portland',
+  state: 'OR',
+  zipcode: '97203',
+  cardNumber: '1234567890123456',
+  cardName: name,
+  expMonth: '01',
+  expYear: '2020',
+  securityCode: '123',
+  method: 'visa'
 };
 
 const admin = {
@@ -42,19 +39,16 @@ const admin = {
   name: 'The Admin',
   email: 'admin999@email.com',
   phone: '5551234567',
-  address: {
-    street: '1223 Main St.',
-    city: 'Portland',
-    state: 'OR',
-    zipcode: '97203'
-  },
-  payment: {
-    cardNumber: 1234567890123456,
-    cardName: name,
-    expDate: '01/20',
-    securityCode: 123,
-    method: 'visa'
-  }
+  street: '1223 Main St.',
+  city: 'Portland',
+  state: 'OR',
+  zipcode: '97203',
+  cardNumber: '1234567890123456',
+  cardName: name,
+  expMonth: '01',
+  expYear: '2020',
+  securityCode: '123',
+  method: 'visa'
 };
 
 const events = [

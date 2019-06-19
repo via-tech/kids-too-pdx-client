@@ -23,9 +23,8 @@ const mapDispatchToProps = (dispatch, props) => ({
   },
 
   handleSubmit(user, event) {
-    user.role = 'org';
-    const action = signUpSession(user);
     event.preventDefault();
+    const action = signUpSession(user);
     dispatch(action);
     action.payload
       .then(() => props.history.goBack());
