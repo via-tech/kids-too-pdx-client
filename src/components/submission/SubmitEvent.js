@@ -98,7 +98,7 @@ SubmitEvent.propTypes = {
   orgEvent: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  history: PropTypes.object
+  history: PropTypes.array
 };
 
 export default SubmitEvent;
