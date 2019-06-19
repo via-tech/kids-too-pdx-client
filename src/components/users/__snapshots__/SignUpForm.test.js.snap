@@ -199,6 +199,9 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
       </label>
     </label>
   </fieldset>
+  <h2>
+    Total: $1.00
+  </h2>
   <button
     type="submit"
   >
