@@ -20,7 +20,7 @@ describe('Sign up form', () => {
     const props = {
       handleSubmit: jest.fn(),
       handleChange: jest.fn(),
-      confirmation: '1234'
+      confirmation: true
     };
 
     const tree = renderer.create(

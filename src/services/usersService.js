@@ -40,8 +40,12 @@ const modelUser = user => {
   };
 };
 
-export const signUp = user => post('/auth/signup', modelUser(user))
-  .catch(err => err);
+export const signUp = user => {
+  if(user.password !== user.confirmPassword) return { error: 'Password does not match' };
+  
+  return post('/auth/signup', modelUser(user))
+    .catch(err => err);
+};
 
 export const signIn = user => post('/auth/signin', user)
   .catch(err => err);

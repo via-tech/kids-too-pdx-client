@@ -89,7 +89,16 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
         name="password"
         onChange={[MockFunction]}
         required={true}
-        type="text"
+        type="password"
+      />
+    </label>
+    <label>
+      Confirm Password:
+      <input
+        name="confirmPassword"
+        onChange={[MockFunction]}
+        required={true}
+        type="password"
       />
     </label>
   </fieldset>
@@ -315,7 +324,16 @@ exports[`Sign up form snapshots form with error 1`] = `
         name="password"
         onChange={[MockFunction]}
         required={true}
-        type="text"
+        type="password"
+      />
+    </label>
+    <label>
+      Confirm Password:
+      <input
+        name="confirmPassword"
+        onChange={[MockFunction]}
+        required={true}
+        type="password"
       />
     </label>
   </fieldset>

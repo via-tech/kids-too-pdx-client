@@ -34,7 +34,7 @@ SignUpForm.propTypes = {
   handleClick: PropTypes.func,
   user: PropTypes.object,
   error: PropTypes.string,
-  confirmation: PropTypes.string
+  confirmation: PropTypes.bool
 };
 
 export default SignUpForm;

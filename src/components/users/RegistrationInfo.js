@@ -41,7 +41,11 @@ function RegistrationInfo({ handleChange }) {
       </label>
 
       <label>Password:
-        <input type="text" name="password" onChange={handleChange} required />
+        <input type="password" name="password" onChange={handleChange} required />
+      </label>
+
+      <label>Confirm Password:
+        <input type="password" name="confirmPassword" onChange={handleChange} required />
       </label>
     </fieldset>
   );

@@ -10,7 +10,8 @@ describe('session actions', () => {
   it('returns action for signUpSession', () => {
     const action = signUpSession({
       username: 'org2',
-      password: 'org2pass'
+      password: 'org2pass',
+      confirmPassword: 'org2pass'
     });
 
     expect(action).toEqual({
