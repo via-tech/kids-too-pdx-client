@@ -7,7 +7,8 @@ describe('session reducer', () => {
   const state = {
     user: {},
     token: '',
-    error: null
+    error: null,
+    confirmation: false
   };
 
   it('sets session on sign up', () => {
@@ -18,7 +19,8 @@ describe('session reducer', () => {
 
     expect(reducer(state, action)).toEqual({
       ...state,
-      token: '1234'
+      token: '1234',
+      confirmation: true
     });
   });
 
@@ -49,6 +51,22 @@ describe('session reducer', () => {
         username: 'org',
         password: 'pass'
       }
+    });
+  });
+
+  it('signs out user', () => {
+    const action = {
+      type: 'SIGN_OUT_SESSION'
+    };
+
+    const newState = {
+      ...state,
+      token: '12345'
+    };
+
+    expect(reducer(newState, action)).toEqual({
+      ...state,
+      token: ''
     });
   });
 });

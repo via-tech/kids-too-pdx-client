@@ -15,4 +15,32 @@ describe('Sign up form', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('snapshots form with confirmation', () => {
+    const props = {
+      handleSubmit: jest.fn(),
+      handleChange: jest.fn(),
+      confirmation: true
+    };
+
+    const tree = renderer.create(
+      <SignUpForm {...props} />
+    );
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('snapshots form with error', () => {
+    const props = {
+      handleSubmit: jest.fn(),
+      handleChange: jest.fn(),
+      error: 'User already exists'
+    };
+
+    const tree = renderer.create(
+      <SignUpForm {...props} />
+    );
+
+    expect(tree).toMatchSnapshot();
+  });
 });

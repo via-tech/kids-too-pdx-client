@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header matches snapshot for Header 1`] = `
+exports[`Header snapshot Header signed out 1`] = `
 <section
   className="container"
 >
@@ -18,8 +18,66 @@ exports[`Header matches snapshot for Header 1`] = `
       href="/login"
       onClick={[Function]}
     >
-      Log In
+      Sign In
     </a>
+    <a
+      href="/signup"
+      onClick={[Function]}
+    >
+      Sign Up
+    </a>
+    
+    <nav
+      className="nav"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        href="/submit-event"
+        onClick={[Function]}
+      >
+        Submit Event
+      </a>
+      <a
+        href="/contact"
+        onClick={[Function]}
+      >
+        Contact
+      </a>
+      <a
+        href="/resources"
+        onClick={[Function]}
+      >
+        Resources
+      </a>
+    </nav>
+  </header>
+</section>
+`;
+
+exports[`Header snapshots Header signed in 1`] = `
+<section
+  className="container"
+>
+  <header
+    className="Header"
+  >
+    <section
+      className="logo"
+    >
+      <img
+        src="/path/to/image.png"
+      />
+    </section>
+    <button
+      onClick={[MockFunction]}
+    >
+      Sign Out
+    </button>
     <nav
       className="nav"
     >

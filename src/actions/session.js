@@ -16,3 +16,8 @@ export const updateUser = user => ({
   type: UPDATE_USER,
   payload: user
 });
+
+export const SIGN_OUT_SESSION = 'SIGN_OUT_SESSION';
+export const signOutSession = () => ({
+  type: SIGN_OUT_SESSION
+});

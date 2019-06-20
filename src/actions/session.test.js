@@ -1,7 +1,8 @@
 import {
   signUpSession,
   signInSession,
-  updateUser
+  updateUser,
+  signOutSession
 } from './session';
 
 jest.mock('../services/request');
@@ -10,7 +11,8 @@ describe('session actions', () => {
   it('returns action for signUpSession', () => {
     const action = signUpSession({
       username: 'org2',
-      password: 'org2pass'
+      password: 'org2pass',
+      confirmPassword: 'org2pass'
     });
 
     expect(action).toEqual({
@@ -51,4 +53,9 @@ describe('session actions', () => {
       }
     });
   });
+
+  it('return action for signOutSession', () =>
+    expect(signOutSession()).toEqual({
+      type: 'SIGN_OUT_SESSION'
+    }));
 });

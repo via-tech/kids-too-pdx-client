@@ -1,22 +1,24 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import SignInForm from '../../components/users/SignInForm';
+import SignUpForm from '../../components/users/SignUpForm';
 import {
   updateUser,
-  signInSession
+  signUpSession
 } from '../../actions/session';
 import {
   getUser,
-  getError
+  getError,
+  getConfirmation
 } from '../../selectors/session';
 
-function SignIn(props) {
-  return <SignInForm {...props} />;
+function SignUp(props) {
+  return <SignUpForm {...props} />;
 }
 
 const mapStateToProps = state => ({
   user: getUser(state),
-  error: getError(state)
+  error: getError(state),
+  confirmation: getConfirmation(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -25,17 +27,17 @@ const mapDispatchToProps = (dispatch, props) => ({
   },
 
   handleSubmit(user, event) {
-    const action = signInSession(user);
     event.preventDefault();
+    const action = signUpSession(user);
     dispatch(action);
-    action.payload
-      .then(res => {
-        res.token ? props.history.goBack() : null;
-      });
+  },
+
+  handleClick() {
+    props.history.goBack();
   }
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SignIn);
+)(SignUp);

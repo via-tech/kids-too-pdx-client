@@ -10,20 +10,47 @@ import {
 
 let createdUser = null;
 let createdEvents = null;
+let createdAdmin = null;
 
 const user = {
   role: 'org',
   username: 'theOrg999',
-  password: 'passit',
+  password: '12345678',
+  confirmPassword: '12345678',
   name: 'The Org',
   email: 'theorg999@email.com',
   phone: '5551234567',
-  address: {
-    street: '1223 Main St.',
-    city: 'Portland',
-    state: 'OR',
-    zipcode: '97203'
-  }
+  street: '1223 Main St.',
+  city: 'Portland',
+  state: 'OR',
+  zipcode: '97203',
+  cardNumber: '1234567890123456',
+  cardName: name,
+  expMonth: '01',
+  expYear: '2020',
+  securityCode: '123',
+  method: 'visa'
+};
+
+const admin = {
+  role: 'admin',
+  adminPassCode: process.env.ADMIN_PASS_CODE,
+  username: 'admin999',
+  password: '12345678',
+  confirmPassword:  '12345678',
+  name: 'The Admin',
+  email: 'admin999@email.com',
+  phone: '5551234567',
+  street: '1223 Main St.',
+  city: 'Portland',
+  state: 'OR',
+  zipcode: '97203',
+  cardNumber: '1234567890123456',
+  cardName: name,
+  expMonth: '01',
+  expYear: '2020',
+  securityCode: '123',
+  method: 'visa'
 };
 
 const events = [
@@ -64,8 +91,14 @@ const events = [
   }
 ];
 
-const createUser = user => signUp(user)
-  .then(userRes => createdUser = userRes)
+const createUser = user => Promise.all([
+  signUp(user),
+  signUp(admin)
+])
+  .then(([userRes, adminRes]) => {
+    createdUser = userRes;
+    createdAdmin = adminRes;
+  })
   .catch(err => err);
 
 const createEvents = events => {
@@ -97,8 +130,12 @@ export const seedTestData = () => {
 };
 
 export const deleteTestData = () => {
-  const { user, token } = createdUser;
+  const { user, token } = createdAdmin;
 
-  return Promise.all([deleteOrg({ ...user, token }), deleteEvents(createdEvents)])
+  return Promise.all([
+    deleteOrg({ ...createdUser.user, token }),
+    deleteOrg({ ...user, token }),
+    deleteEvents(createdEvents)
+  ])
     .catch(err => err);
 };

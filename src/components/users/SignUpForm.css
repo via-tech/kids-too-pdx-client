@@ -1,0 +1,14 @@
+.SignUp {
+  label, input {
+    display: block;
+    margin-top: 1em;
+  }
+
+  input[type="radio"] {
+    display: inline;
+  }
+
+  .error {
+    color: red;
+  }
+}

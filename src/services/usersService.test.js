@@ -1,8 +1,11 @@
-import { seedTestData, deleteTestData } from './seedTestData';
+import {
+  seedTestData,
+  deleteTestData } from './seedTestData';
 import {
   signIn,
   patchUser,
-  getOrgs
+  getOrgs,
+  signUp
 } from './usersService';
 
 jest.mock('./request.js');
@@ -43,7 +46,7 @@ describe('usersService', () => {
   it('signs in an organization', () =>
     signIn({
       username: 'theOrg999',
-      password: 'passit'
+      password: '12345678'
     })
       .then(signedUser => expect(signedUser).toEqual({
         ...user,
@@ -77,4 +80,52 @@ describe('usersService', () => {
     getOrgs()
       .then(orgs => expect(orgs).toBeDefined())
   );
+
+  it('catches mismatched password', () => {
+    const badUser = {
+      role: 'org',
+      username: 'badUser',
+      password: '12345678',
+      confirmPassword: '12345679',
+      name: 'The Bad Org',
+      email: 'badUser@email.com',
+      phone: '5551234567',
+      street: '1223 Main St.',
+      city: 'Portland',
+      state: 'OR',
+      zipcode: '97203',
+      cardNumber: '1234567890123456',
+      cardName: name,
+      expMonth: '01',
+      expYear: '2020',
+      securityCode: '123',
+      method: 'visa'
+    };
+
+    expect(signUp(badUser)).toEqual({ error: 'Password does not match' });
+  });
+
+  it('catches weak password', () => {
+    const badUser = {
+      role: 'org',
+      username: 'badUser',
+      password: '1234567',
+      confirmPassword: '1234567',
+      name: 'The Bad Org',
+      email: 'badUser@email.com',
+      phone: '5551234567',
+      street: '1223 Main St.',
+      city: 'Portland',
+      state: 'OR',
+      zipcode: '97203',
+      cardNumber: '1234567890123456',
+      cardName: name,
+      expMonth: '01',
+      expYear: '2020',
+      securityCode: '123',
+      method: 'visa'
+    };
+
+    expect(signUp(badUser)).toEqual({ error: 'Password must be at least 8 characters' });
+  });
 });

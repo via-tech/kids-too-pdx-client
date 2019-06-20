@@ -13,7 +13,7 @@ function SignInForm({ handleSubmit, handleChange, user, error }) {
         </label>
 
         <label>Password:
-          <input type="text" name="password" onChange={handleChange} required />
+          <input type="password" name="password" onChange={handleChange} required />
         </label>
       </fieldset>
       <button type="submit">Login</button>

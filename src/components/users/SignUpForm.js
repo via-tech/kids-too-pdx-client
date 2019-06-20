@@ -1,50 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RegistrationInfo from './RegistrationInfo';
+import PaymentInfo from './PaymentInfo';
+import styles from './SignUpForm.css';
 
-function SignUpForm({ handleSubmit, handleChange }) {
+function SignUpForm(props) {
+  const { handleSubmit, user, error, confirmation, handleClick } = props;
+  
+  if(confirmation) return (
+    <section>
+      <p>Sign up successful! A $90.00 subscription fee will automatically be charged after trial period ends. Subscription will automatically renew each year. Email reminders will be sent out accordingly. To manage subscription preferences, please visit the dashboard. Thank you!</p>
+
+      <button onClick={handleClick}>Click to Continue</button>
+    </section>
+  );
+
   return (
-    <form onSubmit={handleSubmit}>
-      <fieldset>
-        <legend>Organization Info</legend>
+    <form className={styles.SignUp} onSubmit={handleSubmit.bind(null, user)}>
+      {error && <p className={styles.error}>{error}</p>}
 
-        <label>Username:
-          <input type="text" name="username" onChange={handleChange} required />
-        </label>
+      <RegistrationInfo {...props} />
 
-        <label>Organization Name:
-          <input type="text" name="name" onChange={handleChange} required/>
-        </label>
-
-        <label>Email:
-          <input type="email" name="email" onChange={handleChange} required />
-        </label>
-
-        <label>Phone:
-          <input type="tel" name="phone" onChange={handleChange} required />
-        </label>
-
-        <label>Address:
-          <label>Street:
-            <input type="text" name="street" onChange={handleChange} required />
-          </label>
-
-          <label>City:
-            <input type="text" name="city" onChange={handleChange} required />
-          </label>
-
-          <label>Zip Code:
-            <input type="text" name="zipcode" pattern="[0-9]*" onChange={handleChange} required />
-          </label>
-        </label>
-
-        <label>Organization Bio:
-          <textarea name="bio" onChange={handleChange} />
-        </label>
-
-        <label>Password:
-          <input type="text" name="password" onChange={handleChange} required />
-        </label>
-      </fieldset>
+      <PaymentInfo {...props} />
 
       <button type="submit">Sign Up</button>
     </form>
@@ -53,7 +30,11 @@ function SignUpForm({ handleSubmit, handleChange }) {
 
 SignUpForm.propTypes = {
   handleSubmit: PropTypes.func,
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
+  handleClick: PropTypes.func,
+  user: PropTypes.object,
+  error: PropTypes.string,
+  confirmation: PropTypes.bool
 };
 
 export default SignUpForm;
