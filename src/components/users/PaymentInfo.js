@@ -41,7 +41,7 @@ function PaymentInfo({ handleChange }) {
           </label>
 
           <label>Zip Code:
-            <input type="text" name="billZipcode" pattern="[0-9]*" onChange={handleChange} required />
+            <input type="text" name="billZipcode" pattern="[0-9]*" onChange={handleChange} />
           </label>
         </label>
       </fieldset>

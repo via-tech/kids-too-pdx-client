@@ -29,7 +29,9 @@ const mapDispatchToProps = (dispatch, props) => ({
     event.preventDefault();
     dispatch(action);
     action.payload
-      .then(() => props.history.goBack());
+      .then(res => {
+        res.token ? props.history.goBack() : null;
+      });
   }
 });
 

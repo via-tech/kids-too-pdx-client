@@ -103,7 +103,6 @@ Array [
           name="billZipcode"
           onChange={[MockFunction]}
           pattern="[0-9]*"
-          required={true}
           type="text"
         />
       </label>

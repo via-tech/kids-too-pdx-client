@@ -7,7 +7,8 @@ describe('session reducer', () => {
   const state = {
     user: {},
     token: '',
-    error: null
+    error: null,
+    confirmation: ''
   };
 
   it('sets session on sign up', () => {
@@ -18,7 +19,8 @@ describe('session reducer', () => {
 
     expect(reducer(state, action)).toEqual({
       ...state,
-      token: '1234'
+      token: '1234',
+      confirmation: '1234'
     });
   });
 

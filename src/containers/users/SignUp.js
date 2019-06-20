@@ -6,7 +6,9 @@ import {
   signUpSession
 } from '../../actions/session';
 import {
-  getUser
+  getUser,
+  getError,
+  getConfirmation
 } from '../../selectors/session';
 
 function SignUp(props) {
@@ -14,7 +16,9 @@ function SignUp(props) {
 }
 
 const mapStateToProps = state => ({
-  user: getUser(state)
+  user: getUser(state),
+  error: getError(state),
+  confirmation: getConfirmation(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -26,8 +30,10 @@ const mapDispatchToProps = (dispatch, props) => ({
     event.preventDefault();
     const action = signUpSession(user);
     dispatch(action);
-    action.payload
-      .then(() => props.history.goBack());
+  },
+
+  handleClick() {
+    props.history.goBack();
   }
 });
 
