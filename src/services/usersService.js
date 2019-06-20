@@ -40,9 +40,21 @@ const modelUser = user => {
   };
 };
 
-export const signUp = user => {
-  if(user.password !== user.confirmPassword) return { error: 'Password does not match' };
+const passwordCheck = user => {
+  const { password, confirmPassword } = user;
   
+  if(password !== confirmPassword) return { error: 'Password does not match' };
+  
+  if(password.length < 8) return { error: 'Password must be at least 8 characters' };
+
+  return false;
+};
+
+export const signUp = user => {
+  const error = passwordCheck(user);
+
+  if(error) return error;
+
   return post('/auth/signup', modelUser(user))
     .catch(err => err);
 };

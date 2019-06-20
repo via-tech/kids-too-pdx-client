@@ -45,7 +45,7 @@ describe('usersService', () => {
   it('signs in an organization', () =>
     signIn({
       username: 'theOrg999',
-      password: 'passit'
+      password: '12345678'
     })
       .then(signedUser => expect(signedUser).toEqual({
         ...user,
