@@ -1,4 +1,6 @@
-import { seedTestData, deleteTestData } from './seedTestData';
+import {
+  seedTestData,
+  deleteTestData } from './seedTestData';
 import {
   signIn,
   patchUser,

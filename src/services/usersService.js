@@ -34,7 +34,7 @@ const modelUser = user => {
 
   return {
     ...user,
-    role: 'org',
+    role: user.role || 'org',
     payment,
     address
   };
