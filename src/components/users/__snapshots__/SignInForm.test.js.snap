@@ -24,7 +24,7 @@ exports[`Sign in form snapshots SignInForm 1`] = `
         name="password"
         onChange={[MockFunction]}
         required={true}
-        type="text"
+        type="password"
       />
     </label>
   </fieldset>

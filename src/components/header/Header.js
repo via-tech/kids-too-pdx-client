@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './Header.css';
 import logo from '../../../public/assets/logo.png';
 
-function Header() {
+function Header({ token, handleSignOut }) {
   return (
     <>
         <section className={styles.container}>
@@ -11,8 +12,9 @@ function Header() {
             <section className={styles.logo}>
               <img src={logo} />
             </section>
-            <Link to="/login">Log In</Link>
-            <Link to="/signup">Sign Up</Link>
+            {!token && <Link to="/login">Sign In</Link>}
+            {!token && <Link to="/signup">Sign Up</Link>}
+            {token && <button onClick={handleSignOut}>Sign Out</button>}
             <nav className={styles.nav}>
               <Link to="/">Home</Link>
               <Link to='/submit-event'>Submit Event</Link>
@@ -24,5 +26,10 @@ function Header() {
       </>
   );
 }
+
+Header.propTypes = {
+  token: PropTypes.string,
+  handleSignOut: PropTypes.func
+};
 
 export default Header;

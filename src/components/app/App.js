@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from '../header/Header';
+import HeaderContainer from '../../containers/header/HeaderContainer';
 import Footer from '../footer/Footer';
 import 'normalize.css';
 import Home from '../home/Home';
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <Router>
       <>
-      <Header />
+      <HeaderContainer />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/events/:id' component={EventDetail} />

@@ -1,7 +1,8 @@
 import { 
   SIGN_IN_SESSION,
   SIGN_UP_SESSION,
-  UPDATE_USER
+  UPDATE_USER,
+  SIGN_OUT_SESSION
 } from '../actions/session';
 
 const initialState = {
@@ -30,6 +31,11 @@ export default function reducer(state = initialState, { type, payload }) {
       return {
         ...state,
         user: { ...state.user, ...payload }
+      };
+    case SIGN_OUT_SESSION:
+      return {
+        ...state,
+        token: ''
       };
     default:
       return state;

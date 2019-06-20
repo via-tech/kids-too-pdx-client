@@ -1,7 +1,8 @@
 import {
   signUpSession,
   signInSession,
-  updateUser
+  updateUser,
+  signOutSession
 } from './session';
 
 jest.mock('../services/request');
@@ -52,4 +53,9 @@ describe('session actions', () => {
       }
     });
   });
+
+  it('return action for signOutSession', () =>
+    expect(signOutSession()).toEqual({
+      type: 'SIGN_OUT_SESSION'
+    }));
 });

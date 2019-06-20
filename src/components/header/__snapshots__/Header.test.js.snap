@@ -18,7 +18,7 @@ exports[`Header matches snapshot for Header 1`] = `
       href="/login"
       onClick={[Function]}
     >
-      Log In
+      Sign In
     </a>
     <a
       href="/signup"

@@ -53,4 +53,20 @@ describe('session reducer', () => {
       }
     });
   });
+
+  it('signs out user', () => {
+    const action = {
+      type: 'SIGN_OUT_SESSION'
+    };
+
+    const newState = {
+      ...state,
+      token: '12345'
+    };
+
+    expect(reducer(newState, action)).toEqual({
+      ...state,
+      token: ''
+    });
+  });
 });
