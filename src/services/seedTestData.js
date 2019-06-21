@@ -5,7 +5,8 @@ import {
 
 import {
   signUp,
-  deleteOrg
+  // deleteOrg,
+  deleteUser
 } from './usersService';
 
 let createdUser = null;
@@ -46,7 +47,7 @@ const admin = {
   state: 'OR',
   zipcode: '97203',
   cardNumber: '1234567890123456',
-  cardName: name,
+  cardName: 'The Admin',
   expMonth: '01',
   expYear: '2020',
   securityCode: '123',
@@ -133,8 +134,8 @@ export const deleteTestData = () => {
   const { user, token } = createdAdmin;
 
   return Promise.all([
-    deleteOrg({ ...createdUser.user, token }),
-    deleteOrg({ ...user, token }),
+    deleteUser({ ...createdUser.user, token }),
+    deleteUser({ ...user, token }),
     deleteEvents(createdEvents)
   ])
     .catch(err => err);

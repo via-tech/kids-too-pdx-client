@@ -15,7 +15,7 @@ const modelUser = user => {
     zipcode
   };
 
-  const billAdress = {
+  const billAddress = {
     billStreet: billStreet || street,
     billCity: billCity || city,
     billState: billState || state,
@@ -29,7 +29,7 @@ const modelUser = user => {
     expMonth,
     expYear,
     method,
-    billAdress
+    billAddress
   };
 
   return {
@@ -55,8 +55,6 @@ export const signUp = user => {
 
   if(error) return error;
 
-  console.log('user', modelUser(user));
-
   return post('/auth/signup', modelUser(user))
     .catch(err => err);
 };
@@ -73,4 +71,8 @@ export const getOrgs = () => get('/orgs')
 
 export const deleteOrg = org =>
   del(`/orgs/${org._id}`, org)
+    .catch(err => err);
+
+export const deleteUser = user =>
+  del(`/auth/${user._id}`, user)
     .catch(err => err);
