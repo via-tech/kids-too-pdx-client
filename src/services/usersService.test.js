@@ -5,7 +5,8 @@ import {
   signIn,
   patchUser,
   getOrgs,
-  signUp
+  signUp,
+  deleteOrg
 } from './usersService';
 
 jest.mock('./request.js');
@@ -102,7 +103,8 @@ describe('usersService', () => {
       method: 'visa'
     };
 
-    expect(signUp(badUser)).toEqual({ error: 'Password does not match' });
+    signUp(badUser)
+      .then(err => expect(err).toEqual({ error: 'Password does not match' }));
   });
 
   it('catches weak password', () => {
@@ -126,6 +128,15 @@ describe('usersService', () => {
       method: 'visa'
     };
 
-    expect(signUp(badUser)).toEqual({ error: 'Password must be at least 8 characters' });
+    signUp(badUser)
+      .then(err => expect(err).toEqual({ error: 'Password must be at least 8 characters' }));
+  });
+
+  it('deactivates organization', () => {
+    deleteOrg(user)
+      .then(deactive => expect(deactive).toEqual({
+        ...user,
+        role: 'inactive'
+      }));
   });
 });

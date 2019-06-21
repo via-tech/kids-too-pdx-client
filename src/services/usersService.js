@@ -53,7 +53,7 @@ const passwordCheck = user => {
 export const signUp = user => {
   const error = passwordCheck(user);
 
-  if(error) return error;
+  if(error) return Promise.resolve(error);
 
   return post('/auth/signup', modelUser(user))
     .catch(err => err);
