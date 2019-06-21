@@ -21,7 +21,7 @@ function Confirmation({ subFee, confirmation }) {
 }
 
 Confirmation.propTypes = {
-  subFee: PropTypes.number.isRequired,
+  subFee: PropTypes.string.isRequired,
   confirmation: PropTypes.bool.isRequired
 };
 

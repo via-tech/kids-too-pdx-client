@@ -25,12 +25,12 @@ const mapDispatchToProps = (dispatch, props) => ({
     dispatch(updateUser({ [target.name]: target.value }));
   },
 
-  handleSubmit(user, event, error) {
+  handleSubmit(user, error, event) {
     event.preventDefault();
     const action = signUpSession(user);
     dispatch(action);
-    if(!error) action.payload
-      .then(() => props.history.push('/confirmation'));
+    action.payload
+      .then(res => !res.error ? props.history.push('/confirmation') : null);
   },
 });
 

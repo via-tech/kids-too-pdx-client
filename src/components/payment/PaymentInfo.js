@@ -53,7 +53,7 @@ function PaymentInfo({ handleChange, subFee }) {
 
 PaymentInfo.propTypes = {
   handleChange: PropTypes.func,
-  subFee: PropTypes.number
+  subFee: PropTypes.string
 };
 
 export default PaymentInfo;
