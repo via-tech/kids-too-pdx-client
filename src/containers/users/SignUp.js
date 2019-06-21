@@ -7,8 +7,7 @@ import {
 } from '../../actions/session';
 import {
   getUser,
-  getError,
-  getConfirmation
+  getError
 } from '../../selectors/session';
 
 function SignUp(props) {
@@ -17,8 +16,8 @@ function SignUp(props) {
 
 const mapStateToProps = state => ({
   user: getUser(state),
-  error: getError(state),
-  confirmation: getConfirmation(state)
+  subFee: process.env.SUB_FEE_TRIAL,
+  error: getError(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -26,15 +25,13 @@ const mapDispatchToProps = (dispatch, props) => ({
     dispatch(updateUser({ [target.name]: target.value }));
   },
 
-  handleSubmit(user, event) {
+  handleSubmit(user, event, error) {
     event.preventDefault();
     const action = signUpSession(user);
     dispatch(action);
+    if(!error) action.payload
+      .then(() => props.history.push('/confirmation'));
   },
-
-  handleClick() {
-    props.history.goBack();
-  }
 });
 
 export default connect(

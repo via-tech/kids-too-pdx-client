@@ -5,7 +5,8 @@ import PaymentInfo from './PaymentInfo';
 describe('Registration Form', () => {
   it('snapshots PaymentInfo form', () => {
     const props = {
-      handleChange: jest.fn()
+      handleChange: jest.fn(),
+      subFee: 800
     };
 
     const tree = renderer.create(

@@ -209,7 +209,7 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
     </label>
   </fieldset>
   <h2>
-    Total: $1.00
+    Total: $
   </h2>
   <button
     type="submit"
@@ -217,17 +217,6 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
     Sign Up
   </button>
 </form>
-`;
-
-exports[`Sign up form snapshots form with confirmation 1`] = `
-<section>
-  <p>
-    Sign up successful! A $90.00 subscription fee will automatically be charged after trial period ends. Subscription will automatically renew each year. Email reminders will be sent out accordingly. To manage subscription preferences, please visit the dashboard. Thank you!
-  </p>
-  <button>
-    Click to Continue
-  </button>
-</section>
 `;
 
 exports[`Sign up form snapshots form with error 1`] = `
@@ -444,7 +433,7 @@ exports[`Sign up form snapshots form with error 1`] = `
     </label>
   </fieldset>
   <h2>
-    Total: $1.00
+    Total: $
   </h2>
   <button
     type="submit"

@@ -55,6 +55,8 @@ export const signUp = user => {
 
   if(error) return error;
 
+  console.log('user', modelUser(user));
+
   return post('/auth/signup', modelUser(user))
     .catch(err => err);
 };

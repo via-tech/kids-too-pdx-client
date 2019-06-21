@@ -11,6 +11,7 @@ import ResourcesContainer from '../../containers/resources/ResourcesContainer';
 import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
 import SignIn from '../../containers/users/SignIn';
 import SignUp from '../../containers/users/SignUp';
+import ConfirmationContainer from '../../containers/payment/ConfirmationContainer';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route exact path='/resources' component={ResourcesContainer} />
         <Route exact path='/login' component={SignIn} />
         <Route exact path='/signup' component={SignUp} />
+        <Route exact path='/confirmation' component={ConfirmationContainer} />
       </Switch>
       <Footer />
     </>

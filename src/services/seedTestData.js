@@ -25,7 +25,7 @@ const user = {
   state: 'OR',
   zipcode: '97203',
   cardNumber: '1234567890123456',
-  cardName: name,
+  cardName: 'The Org',
   expMonth: '01',
   expYear: '2020',
   securityCode: '123',

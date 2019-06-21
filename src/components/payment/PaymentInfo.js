@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function PaymentInfo({ handleChange }) {
+function PaymentInfo({ handleChange, subFee }) {
   return (
     <>
       <fieldset>
@@ -46,13 +46,14 @@ function PaymentInfo({ handleChange }) {
         </label>
       </fieldset>
 
-      <h2>Total: $1.00</h2>
+      <h2>Total: ${subFee}</h2>
     </>
   );
 }
 
 PaymentInfo.propTypes = {
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
+  subFee: PropTypes.number
 };
 
 export default PaymentInfo;

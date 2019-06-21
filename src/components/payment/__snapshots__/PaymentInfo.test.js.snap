@@ -109,7 +109,8 @@ Array [
     </label>
   </fieldset>,
   <h2>
-    Total: $1.00
+    Total: $
+    800
   </h2>,
 ]
 `;

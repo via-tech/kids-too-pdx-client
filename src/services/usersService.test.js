@@ -23,7 +23,7 @@ describe('usersService', () => {
 
   afterAll(() => deleteTestData());
 
-  it('signs up an organization', () => {
+  it.only('signs up an organization', () => {
     expect(user).toEqual({
       user: {
         _id: expect.any(String),
