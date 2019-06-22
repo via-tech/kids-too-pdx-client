@@ -14,7 +14,7 @@ function Header({ token, handleSignOut }) {
             </section>
             {!token && <Link to="/login">Sign In</Link>}
             {!token && <Link to="/signup">Sign Up</Link>}
-            {token && <button onClick={handleSignOut}>Sign Out</button>}
+            {token && <Link to="/"><button onClick={handleSignOut}>Sign Out</button></Link>}
             <nav className={styles.nav}>
               <Link to="/">Home</Link>
               <Link to='/submit-event'>Submit Event</Link>

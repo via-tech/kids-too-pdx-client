@@ -73,11 +73,16 @@ exports[`Header snapshots Header signed in 1`] = `
         src="/path/to/image.png"
       />
     </section>
-    <button
-      onClick={[MockFunction]}
+    <a
+      href="/"
+      onClick={[Function]}
     >
-      Sign Out
-    </button>
+      <button
+        onClick={[MockFunction]}
+      >
+        Sign Out
+      </button>
+    </a>
     <nav
       className="nav"
     >
