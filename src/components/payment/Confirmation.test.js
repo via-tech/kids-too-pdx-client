@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 describe('Confirmation', () => {
   it('snapshots confirmation page', () => {
     const props = {
-      subFee: 500,
+      subFee: '500',
       confirmation: true
     };
 
@@ -21,7 +21,7 @@ describe('Confirmation', () => {
 
   it('snapshots confirmation page without confirmation', () => {
     const props = {
-      subFee: 500,
+      subFee: '500',
       confirmation: false
     };
 

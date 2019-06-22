@@ -30,9 +30,9 @@ describe('SubmitEvent', () => {
     liability: true
   };
   it('snapshots SubmitEvent logged in', () => {
-    orgEvent.token = '1234';
     const props = {
       orgEvent,
+      token: '1234',
       handleChange: jest.fn(),
       handleSubmit: jest.fn()
     };
@@ -45,9 +45,9 @@ describe('SubmitEvent', () => {
   });
 
   it('snapshots SubmitEvent logged out', () => {
-    orgEvent.token = '';
     const props = {
       orgEvent,
+      token: '',
       handleChange: jest.fn(),
       handleSubmit: jest.fn(),
       history: []

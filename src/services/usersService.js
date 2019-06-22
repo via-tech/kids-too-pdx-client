@@ -76,3 +76,8 @@ export const deleteOrg = org =>
 export const deleteUser = user =>
   del(`/auth/${user._id}`, user)
     .catch(err => err);
+
+export const activateOrg = org =>
+  post('/orgs/activate', org)
+    .catch(err => err);
+

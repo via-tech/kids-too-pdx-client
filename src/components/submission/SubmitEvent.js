@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SubmitEvent.css';
 
-function SubmitEvent({ orgEvent, handleSubmit, handleChange, history }) {
-  if(!orgEvent.token) {
+function SubmitEvent({ orgEvent, token, handleSubmit, handleChange, history }) {
+  if(!token) {
     history.push('/login');
   }
   return (
@@ -100,6 +100,7 @@ function SubmitEvent({ orgEvent, handleSubmit, handleChange, history }) {
 
 SubmitEvent.propTypes = {
   orgEvent: PropTypes.object.isRequired,
+  token: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   history: PropTypes.object
