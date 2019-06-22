@@ -78,6 +78,6 @@ export const deleteUser = user =>
     .catch(err => err);
 
 export const activateOrg = org =>
-  post('/orgs/activate', org)
+  post('/orgs/activate', modelUser(org))
     .catch(err => err);
 
