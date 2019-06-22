@@ -6,7 +6,12 @@ exports[`Registration Form snapshots RegistrationInfo form 1`] = `
     Organization Info
   </legend>
   <label>
-    Username:
+    Username
+    <span
+      className="required"
+    >
+      *
+    </span>
     <input
       name="username"
       onChange={[MockFunction]}
@@ -15,7 +20,12 @@ exports[`Registration Form snapshots RegistrationInfo form 1`] = `
     />
   </label>
   <label>
-    Organization Name:
+    Organization Name
+    <span
+      className="required"
+    >
+      *
+    </span>
     <input
       name="name"
       onChange={[MockFunction]}
@@ -24,7 +34,12 @@ exports[`Registration Form snapshots RegistrationInfo form 1`] = `
     />
   </label>
   <label>
-    Email:
+    Email
+    <span
+      className="required"
+    >
+      *
+    </span>
     <input
       name="email"
       onChange={[MockFunction]}
@@ -33,7 +48,12 @@ exports[`Registration Form snapshots RegistrationInfo form 1`] = `
     />
   </label>
   <label>
-    Phone:
+    Phone
+    <span
+      className="required"
+    >
+      *
+    </span>
     <input
       name="phone"
       onChange={[MockFunction]}
@@ -42,9 +62,19 @@ exports[`Registration Form snapshots RegistrationInfo form 1`] = `
     />
   </label>
   <label>
-    Address:
+    Address
+    <span
+      className="required"
+    >
+      *
+    </span>
     <label>
-      Street:
+      Street
+      <span
+        className="required"
+      >
+        *
+      </span>
       <input
         name="street"
         onChange={[MockFunction]}
@@ -53,7 +83,12 @@ exports[`Registration Form snapshots RegistrationInfo form 1`] = `
       />
     </label>
     <label>
-      City:
+      City
+      <span
+        className="required"
+      >
+        *
+      </span>
       <input
         name="city"
         onChange={[MockFunction]}
@@ -62,7 +97,12 @@ exports[`Registration Form snapshots RegistrationInfo form 1`] = `
       />
     </label>
     <label>
-      Zip Code:
+      Zip Code
+      <span
+        className="required"
+      >
+        *
+      </span>
       <input
         name="zipcode"
         onChange={[MockFunction]}
@@ -80,7 +120,12 @@ exports[`Registration Form snapshots RegistrationInfo form 1`] = `
     />
   </label>
   <label>
-    Password:
+    Password
+    <span
+      className="required"
+    >
+      *
+    </span>
     <input
       name="password"
       onChange={[MockFunction]}
@@ -89,7 +134,12 @@ exports[`Registration Form snapshots RegistrationInfo form 1`] = `
     />
   </label>
   <label>
-    Confirm Password:
+    Confirm Password
+    <span
+      className="required"
+    >
+      *
+    </span>
     <input
       name="confirmPassword"
       onChange={[MockFunction]}

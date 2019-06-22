@@ -8,6 +8,11 @@ Array [
     </legend>
     <label>
       Card Number
+      <span
+        className="required"
+      >
+        *
+      </span>
       <input
         maxLength="19"
         name="cardNumber"
@@ -20,6 +25,11 @@ Array [
     </label>
     <label>
       Security Code
+      <span
+        className="required"
+      >
+        *
+      </span>
       <input
         maxLength="3"
         name="securityCode"
@@ -30,6 +40,11 @@ Array [
     </label>
     <label>
       Name
+      <span
+        className="required"
+      >
+        *
+      </span>
       <input
         name="cardName"
         onChange={[MockFunction]}
@@ -40,6 +55,11 @@ Array [
     </label>
     <label>
       Expiration Date
+      <span
+        className="required"
+      >
+        *
+      </span>
       <input
         maxLength="2"
         name="expMonth"
@@ -62,6 +82,11 @@ Array [
     </label>
     <label>
       Method
+      <span
+        className="required"
+      >
+        *
+      </span>
       <input
         name="method"
         onChange={[MockFunction]}
