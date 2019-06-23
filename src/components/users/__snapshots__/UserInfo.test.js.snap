@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User Info snapshots UserInfo 1`] = `
+<fieldset>
+  <legend>
+    User Info
+  </legend>
+  <label>
+    Username or Email:
+    <input
+      name="username"
+      onChange={[MockFunction]}
+      required={true}
+      type="text"
+    />
+  </label>
+  <label>
+    Password:
+    <input
+      name="password"
+      onChange={[MockFunction]}
+      required={true}
+      type="password"
+    />
+  </label>
+</fieldset>
+`;

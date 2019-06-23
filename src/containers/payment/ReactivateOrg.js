@@ -1,22 +1,17 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import SignInForm from '../../components/users/SignInForm';
-import {
-  updateUser,
-  signInSession
-} from '../../actions/session';
-import {
-  getUser,
-  getError
-} from '../../selectors/session';
+import ReactivateOrgForm from '../../components/payment/ReactivateOrgForm';
+import { getUser, getError } from '../../selectors/session';
+import { updateUser, activateSession } from '../../actions/session';
 
-function SignIn(props) {
-  return <SignInForm {...props} />;
+function ReactivateOrg(props) {
+  return <ReactivateOrgForm {...props} />;
 }
 
 const mapStateToProps = state => ({
   user: getUser(state),
-  error: getError(state)
+  error: getError(state),
+  subFee: process.env.SUB_FEE_TRIAL,
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -25,14 +20,14 @@ const mapDispatchToProps = (dispatch, props) => ({
   },
 
   handleSubmit(user, event) {
-    const action = signInSession(user);
+    const action = activateSession(user);
 
     event.preventDefault();
     dispatch(action);
-    
+
     action.payload
       .then(res => {
-        res.token ? props.history.goBack() : null;
+        res.token ? props.history.push('/') : null;
       });
   }
 });
@@ -40,4 +35,4 @@ const mapDispatchToProps = (dispatch, props) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SignIn);
+)(ReactivateOrg);

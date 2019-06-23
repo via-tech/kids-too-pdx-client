@@ -32,7 +32,7 @@ function PaymentInfo({ handleChange, subFee }) {
           <input type="radio" name="method" value="master" onChange={handleChange} required />Master
         </label>
 
-        <label>Billing Address (if different from business address)
+        <label>Billing Address 
           <label>Street:
             <input type="text" name="billStreet" onChange={handleChange} />
           </label>

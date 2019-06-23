@@ -100,7 +100,7 @@ function SubmitEvent({ orgEvent, token, handleSubmit, handleChange, history }) {
 
 SubmitEvent.propTypes = {
   orgEvent: PropTypes.object.isRequired,
-  token: PropTypes.string.isRequired,
+  token: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   history: PropTypes.object

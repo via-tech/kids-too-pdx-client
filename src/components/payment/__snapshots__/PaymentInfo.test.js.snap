@@ -105,7 +105,7 @@ Array [
       Master
     </label>
     <label>
-      Billing Address (if different from business address)
+      Billing Address
       <label>
         Street:
         <input

@@ -2,7 +2,8 @@ import {
   signUpSession,
   signInSession,
   updateUser,
-  signOutSession
+  signOutSession,
+  activateSession
 } from './session';
 
 jest.mock('../services/request');
@@ -54,8 +55,35 @@ describe('session actions', () => {
     });
   });
 
-  it('return action for signOutSession', () =>
+  it('returns action for signOutSession', () =>
     expect(signOutSession()).toEqual({
       type: 'SIGN_OUT_SESSION'
     }));
+
+  it('returns action for activateSession', () => {
+    const org = {
+      username: 'theOrg999',
+      password: '12345678',
+      billStreet: '1223 Main St.',
+      billCity: 'Portland',
+      billState: 'OR',
+      billZipcode: '97203',
+      cardNumber: '1234567890123456',
+      cardName: 'The Org',
+      expMonth: '01',
+      expYear: '2020',
+      securityCode: '123',
+      method: 'visa'
+    };
+
+    const action = activateSession(org);
+
+    expect(action).toEqual({
+      type: 'ACTIVATE_SESSION',
+      payload: expect.any(Promise),
+      fulfilledType: 'ACTIVATE_SESSION_FULFILLED',
+      pendingType: 'ACTIVATE_SESSION_PENDING',
+      rejectedType: 'ACTIVATE_SESSION_REJECTED'
+    });
+  });
 });

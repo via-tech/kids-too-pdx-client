@@ -2,7 +2,8 @@ import {
   SIGN_IN_SESSION,
   SIGN_UP_SESSION,
   UPDATE_USER,
-  SIGN_OUT_SESSION
+  SIGN_OUT_SESSION,
+  ACTIVATE_SESSION
 } from '../actions/session';
 
 const initialState = {
@@ -21,6 +22,7 @@ export default function reducer(state = initialState, { type, payload }) {
         error: payload.error || null
       };
     case SIGN_UP_SESSION:
+    case ACTIVATE_SESSION:
       return {
         ...state,
         token: payload.token,

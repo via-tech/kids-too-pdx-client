@@ -5,33 +5,29 @@ exports[`Sign in form snapshots SignInForm 1`] = `
   className="SignIn"
   onSubmit={[Function]}
 >
-  <section
-    className="SignIn"
-  >
-    <fieldset>
-      <legend>
-        User Info
-      </legend>
-      <label>
-        Username or Email:
-        <input
-          name="username"
-          onChange={[MockFunction]}
-          required={true}
-          type="text"
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          name="password"
-          onChange={[MockFunction]}
-          required={true}
-          type="password"
-        />
-      </label>
-    </fieldset>
-  </section>
+  <fieldset>
+    <legend>
+      User Info
+    </legend>
+    <label>
+      Username or Email:
+      <input
+        name="username"
+        onChange={[MockFunction]}
+        required={true}
+        type="text"
+      />
+    </label>
+    <label>
+      Password:
+      <input
+        name="password"
+        onChange={[MockFunction]}
+        required={true}
+        type="password"
+      />
+    </label>
+  </fieldset>
   <button
     type="submit"
   >
