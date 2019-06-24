@@ -1,24 +1,27 @@
 import {
   seedTestData,
-  deleteTestData } from './seedTestData';
+  deleteTestData
+} from './seedTestData';
 import {
   signIn,
   patchUser,
   getOrgs,
   signUp,
   deactivateOrg,
-  // activateOrg
+  activateOrg
 } from './usersService';
 
 jest.mock('./request.js');
 
 describe('usersService', () => {
   let org = null;
+  let inactiveOrg = null;
 
   beforeAll(done =>
     seedTestData()
-      .then(({ createdOrg }) => {
+      .then(({ createdOrg, createdInactive }) => {
         org = createdOrg;
+        inactiveOrg = createdInactive;
         done();
       })
   );
@@ -64,7 +67,7 @@ describe('usersService', () => {
       .then(res => expect(res).toEqual({ error: 'Bad email or password' }));
   });
 
-  it('patches a user', () => {
+  it('patches a user', done => {
     const { user, token } = org;
     const updatedUser = {
       _id: user._id,
@@ -73,10 +76,15 @@ describe('usersService', () => {
     };
 
     patchUser(updatedUser)
-      .then(patchedUser => expect(patchedUser).toEqual({
-        ...user,
-        email: 'theorg999@org.com'
-      }));
+      .then(patchedUser => {
+        expect(patchedUser).toEqual({
+          ...user,
+          email: 'theorg999@org.com'
+        });
+
+        org = { ...org, user: patchedUser };
+        done();
+      });
   });
 
   it('gets a list of all organizations', () =>
@@ -134,23 +142,46 @@ describe('usersService', () => {
       .then(err => expect(err).toEqual({ error: 'Password must be at least 8 characters' }));
   });
 
-  it('deactivates organization', () => {
+  it('deactivates organization', done => {
     const { user, token } = org;
+
     deactivateOrg({ _id: user._id, token })
-      .then(deactivated => expect(deactivated).toEqual({
-        ...user,
-        role: 'inactive'
-      }));
+      .then(deactivated => {
+        expect(deactivated).toEqual({
+          ...user,
+          role: 'inactive'
+        });
+
+        done();
+      });
   });
 
-  // it.only('re-activates organization', () => {
-  //   deleteOrg(user)
-  //     .then(deactive => {
-  //       console.log('deactive', deactive);
-  //       deactive.password = '12345678';
+  it('re-activates organization', done => {
+    const { user } = inactiveOrg;
 
-  //       activateOrg(deactive)
-  //         .then(activatedOrg => console.log('activated', activatedOrg));
-  //     });
-  // });
+    const activateInput = {
+      username: user.username, 
+      password: '12345678',
+      billStreet: '1223 Main St.',
+      billCity: 'Portland',
+      billState: 'OR',
+      billZipcode: '97203',
+      cardNumber: '1234567890123456',
+      cardName: 'The Inactive',
+      expMonth: '01',
+      expYear: '2020',
+      securityCode: '123',
+      method: 'visa'
+    };
+
+    activateOrg(activateInput)
+      .then(activated => {
+        expect(activated).toEqual({
+          ...user,
+          role: 'org'
+        });
+
+        done();
+      });
+  });
 });

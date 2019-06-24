@@ -105,7 +105,12 @@ Array [
       Master
     </label>
     <label>
-      Billing Address
+      Billing Address 
+      <span
+        className="required"
+      >
+        *
+      </span>
       <label>
         Street:
         <input
@@ -119,6 +124,15 @@ Array [
         <input
           name="billCity"
           onChange={[MockFunction]}
+          type="text"
+        />
+      </label>
+      <label>
+        State
+        <input
+          name="state"
+          onChange={[MockFunction]}
+          required={true}
           type="text"
         />
       </label>

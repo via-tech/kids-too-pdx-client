@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "pretest": "npm run lint",
-    "test": "jest --verbose",
+    "test": "jest --verbose --runInBand",
     "test:watch": "npm run test -- --watch",
     "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
     "build": "webpack -p",

@@ -32,6 +32,10 @@ function RegistrationInfo({ handleChange }) {
           <input type="text" name="city" onChange={handleChange} required />
         </label>
 
+        <label>State<span className={styles.required}>*</span>
+          <input type="text" name="state" onChange={handleChange} required />
+        </label>
+
         <label>Zip Code<span className={styles.required}>*</span>
           <input type="text" name="zipcode" pattern="[0-9]*" onChange={handleChange} required />
         </label>

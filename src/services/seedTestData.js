@@ -9,6 +9,7 @@ import {
 } from './usersService';
 
 let createdOrg = null;
+let createdInactive = null;
 let createdEvents = null;
 let createdAdmin = null;
 
@@ -26,6 +27,26 @@ const org = {
   zipcode: '97203',
   cardNumber: '1234567890123456',
   cardName: 'The Org',
+  expMonth: '01',
+  expYear: '2020',
+  securityCode: '123',
+  method: 'visa'
+};
+
+const inactiveOrg = {
+  role: 'inactive',
+  username: 'theInactiveOrg999',
+  password: '12345678',
+  confirmPassword: '12345678',
+  name: 'The Inactive Org 999',
+  email: 'theinactiveorg999@email.com',
+  phone: '5551234567',
+  street: '1223 Main St.',
+  city: 'Portland',
+  state: 'OR',
+  zipcode: '97203',
+  cardNumber: '1234567890123456',
+  cardName: 'The Inactive Org 999',
   expMonth: '01',
   expYear: '2020',
   securityCode: '123',
@@ -93,10 +114,12 @@ const events = [
 
 const createUsers = () => Promise.all([
   signUp(org),
+  signUp(inactiveOrg),
   signUp(admin)
 ])
-  .then(([userRes, adminRes]) => {
+  .then(([userRes, inactiveRes, adminRes]) => {
     createdOrg = userRes;
+    createdInactive = inactiveRes;
     createdAdmin = adminRes;
   })
   .catch(err => err);
@@ -107,7 +130,8 @@ const createEvents = events => {
     event.token = token;
     return postEvent(event);
   }))
-    .then(eventRes => createdEvents = eventRes);
+    .then(eventRes => createdEvents = eventRes)
+    .catch(err => err);
 };
 
 const deleteEvents = events => {
@@ -124,6 +148,7 @@ export const seedTestData = () => {
     .then(() => createEvents(events))
     .then(() => ({
       createdOrg,
+      createdInactive,
       createdAdmin,
       createdEvents
     }))
@@ -135,8 +160,10 @@ export const deleteTestData = () => {
 
   return Promise.all([
     deleteUser({ _id: createdOrg.user._id, token }),
+    deleteUser({ _id: createdInactive.user._id, token }),
     deleteUser({ _id: user._id, token }),
     deleteEvents(createdEvents)
   ])
+    .then(res => ({ deleted: res.length }))
     .catch(err => err);
 };

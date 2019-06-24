@@ -131,7 +131,12 @@ exports[`Reactivation Form snapshots ReactivateOrgForm 1`] = `
       Master
     </label>
     <label>
-      Billing Address
+      Billing Address 
+      <span
+        className="required"
+      >
+        *
+      </span>
       <label>
         Street:
         <input
@@ -145,6 +150,15 @@ exports[`Reactivation Form snapshots ReactivateOrgForm 1`] = `
         <input
           name="billCity"
           onChange={[MockFunction]}
+          type="text"
+        />
+      </label>
+      <label>
+        State
+        <input
+          name="state"
+          onChange={[MockFunction]}
+          required={true}
           type="text"
         />
       </label>
@@ -307,7 +321,12 @@ exports[`Reactivation Form snapshots ReactivateOrgForm with error 1`] = `
       Master
     </label>
     <label>
-      Billing Address
+      Billing Address 
+      <span
+        className="required"
+      >
+        *
+      </span>
       <label>
         Street:
         <input
@@ -321,6 +340,15 @@ exports[`Reactivation Form snapshots ReactivateOrgForm with error 1`] = `
         <input
           name="billCity"
           onChange={[MockFunction]}
+          type="text"
+        />
+      </label>
+      <label>
+        State
+        <input
+          name="state"
+          onChange={[MockFunction]}
+          required={true}
           type="text"
         />
       </label>
