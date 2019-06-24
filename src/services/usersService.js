@@ -69,12 +69,12 @@ export const patchUser = updatedUser =>
 export const getOrgs = () => get('/orgs')
   .catch(err => err);
 
-export const deleteOrg = org =>
-  del(`/orgs/${org._id}`, org)
+export const deactivateOrg = ({ _id, token }) =>
+  del(`/orgs/${_id}`, { token })
     .catch(err => err);
 
-export const deleteUser = user =>
-  del(`/auth/${user._id}`, user)
+export const deleteUser = ({ _id, token }) =>
+  del(`/auth/${_id}`, { token })
     .catch(err => err);
 
 export const activateOrg = org =>

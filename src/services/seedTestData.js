@@ -5,15 +5,14 @@ import {
 
 import {
   signUp,
-  // deleteOrg,
   deleteUser
 } from './usersService';
 
-let createdUser = null;
+let createdOrg = null;
 let createdEvents = null;
 let createdAdmin = null;
 
-const user = {
+const org = {
   role: 'org',
   username: 'theOrg999',
   password: '12345678',
@@ -92,18 +91,18 @@ const events = [
   }
 ];
 
-const createUser = user => Promise.all([
-  signUp(user),
+const createUsers = () => Promise.all([
+  signUp(org),
   signUp(admin)
 ])
   .then(([userRes, adminRes]) => {
-    createdUser = userRes;
+    createdOrg = userRes;
     createdAdmin = adminRes;
   })
   .catch(err => err);
 
 const createEvents = events => {
-  const { token } = createdUser;
+  const { token } = createdOrg;
   return Promise.all(events.map(event => {
     event.token = token;
     return postEvent(event);
@@ -112,7 +111,7 @@ const createEvents = events => {
 };
 
 const deleteEvents = events => {
-  const { token } = createdUser;
+  const { token } = createdOrg;
   return Promise.all(events.map(event => {
     event.token = token;
     return deleteEvent(event);
@@ -121,10 +120,11 @@ const deleteEvents = events => {
 };
 
 export const seedTestData = () => {
-  return createUser(user)
+  return createUsers()
     .then(() => createEvents(events))
     .then(() => ({
-      createdUser,
+      createdOrg,
+      createdAdmin,
       createdEvents
     }))
     .catch(err => err);
@@ -134,8 +134,8 @@ export const deleteTestData = () => {
   const { user, token } = createdAdmin;
 
   return Promise.all([
-    deleteUser({ ...createdUser.user, token }),
-    deleteUser({ ...user, token }),
+    deleteUser({ _id: createdOrg.user._id, token }),
+    deleteUser({ _id: user._id, token }),
     deleteEvents(createdEvents)
   ])
     .catch(err => err);
