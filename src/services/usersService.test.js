@@ -1,22 +1,27 @@
 import {
   seedTestData,
-  deleteTestData } from './seedTestData';
+  deleteTestData
+} from './seedTestData';
 import {
   signIn,
   patchUser,
   getOrgs,
-  signUp
+  signUp,
+  deactivateOrg,
+  activateOrg
 } from './usersService';
 
 jest.mock('./request.js');
 
 describe('usersService', () => {
-  let user = null;
+  let org = null;
+  let inactiveOrg = null;
 
   beforeAll(done =>
     seedTestData()
-      .then(({ createdUser }) => {
-        user = createdUser;
+      .then(({ createdOrg, createdInactive }) => {
+        org = createdOrg;
+        inactiveOrg = createdInactive;
         done();
       })
   );
@@ -24,7 +29,7 @@ describe('usersService', () => {
   afterAll(() => deleteTestData());
 
   it('signs up an organization', () => {
-    expect(user).toEqual({
+    expect(org).toEqual({
       user: {
         _id: expect.any(String),
         username: 'theOrg999',
@@ -49,7 +54,7 @@ describe('usersService', () => {
       password: '12345678'
     })
       .then(signedUser => expect(signedUser).toEqual({
-        ...user,
+        ...org,
         token: expect.any(String)
       }))
   );
@@ -62,18 +67,24 @@ describe('usersService', () => {
       .then(res => expect(res).toEqual({ error: 'Bad email or password' }));
   });
 
-  it('patches a user', () => {
+  it('patches a user', done => {
+    const { user, token } = org;
     const updatedUser = {
-      _id: user.user._id,
-      token: user.token,
+      _id: user._id,
+      token,
       email: 'theorg999@org.com'
     };
 
     patchUser(updatedUser)
-      .then(patchedUser => expect(patchedUser).toEqual({
-        ...user.user,
-        email: 'theorg999@org.com'
-      }));
+      .then(patchedUser => {
+        expect(patchedUser).toEqual({
+          ...user,
+          email: 'theorg999@org.com'
+        });
+
+        org = { ...org, user: patchedUser };
+        done();
+      });
   });
 
   it('gets a list of all organizations', () =>
@@ -95,14 +106,15 @@ describe('usersService', () => {
       state: 'OR',
       zipcode: '97203',
       cardNumber: '1234567890123456',
-      cardName: name,
+      cardName: 'Bad User',
       expMonth: '01',
       expYear: '2020',
       securityCode: '123',
       method: 'visa'
     };
 
-    expect(signUp(badUser)).toEqual({ error: 'Password does not match' });
+    signUp(badUser)
+      .then(err => expect(err).toEqual({ error: 'Password does not match' }));
   });
 
   it('catches weak password', () => {
@@ -119,13 +131,57 @@ describe('usersService', () => {
       state: 'OR',
       zipcode: '97203',
       cardNumber: '1234567890123456',
-      cardName: name,
+      cardName: 'Bad User',
       expMonth: '01',
       expYear: '2020',
       securityCode: '123',
       method: 'visa'
     };
 
-    expect(signUp(badUser)).toEqual({ error: 'Password must be at least 8 characters' });
+    signUp(badUser)
+      .then(err => expect(err).toEqual({ error: 'Password must be at least 8 characters' }));
+  });
+
+  it('deactivates organization', done => {
+    const { user, token } = org;
+
+    deactivateOrg({ _id: user._id, token })
+      .then(deactivated => {
+        expect(deactivated).toEqual({
+          ...user,
+          role: 'inactive'
+        });
+
+        done();
+      });
+  });
+
+  it('re-activates organization', done => {
+    const { user } = inactiveOrg;
+
+    const activateInput = {
+      username: user.username, 
+      password: '12345678',
+      billStreet: '1223 Main St.',
+      billCity: 'Portland',
+      billState: 'OR',
+      billZipcode: '97203',
+      cardNumber: '1234567890123456',
+      cardName: 'The Inactive',
+      expMonth: '01',
+      expYear: '2020',
+      securityCode: '123',
+      method: 'visa'
+    };
+
+    activateOrg(activateInput)
+      .then(activated => {
+        expect(activated).toEqual({
+          ...user,
+          role: 'org'
+        });
+
+        done();
+      });
   });
 });

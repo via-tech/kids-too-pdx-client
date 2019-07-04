@@ -69,4 +69,17 @@ describe('session reducer', () => {
       token: ''
     });
   });
+
+  it('sets session on rea-activation', () => {
+    const action = {
+      type: 'ACTIVATE_SESSION',
+      payload: { token: '1234' }
+    };
+
+    expect(reducer(state, action)).toEqual({
+      ...state,
+      token: '1234',
+      confirmation: true
+    });
+  });
 });

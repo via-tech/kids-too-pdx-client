@@ -9,13 +9,13 @@ import {
 jest.mock('./request.js');
 
 describe('eventsService', () => {
-  let user = null;
+  let org = null;
   let events = null;
 
   beforeAll(done =>
     seedTestData()
-      .then(({ createdUser, createdEvents }) => {
-        user = createdUser;
+      .then(({ createdOrg, createdEvents }) => {
+        org = createdOrg;
         events = createdEvents;
         done();
       })
@@ -34,7 +34,7 @@ describe('eventsService', () => {
     getEvent(events[0]._id)
       .then(event => expect(event).toEqual({
         _id: events[0]._id,
-        user: user.user._id,
+        user: org.user._id,
         image: expect.any(String),
         name: 'The Event 1',
         ageMin: 8,
@@ -54,7 +54,7 @@ describe('eventsService', () => {
     getFilteredEvents(filters)
       .then(filteredEvents => expect(filteredEvents).toEqual([{
         _id: events[3]._id,
-        user: user.user._id,
+        user: org.user._id,
         image: expect.any(String),
         name: 'The Event 4',
         ageMin: 15,
@@ -67,7 +67,7 @@ describe('eventsService', () => {
   it('patches an event', () => {
     const updatedEvent = {
       _id: events[4]._id,
-      token: user.token,
+      token: org.token,
       category: 'Music'
     };
 
@@ -80,7 +80,7 @@ describe('eventsService', () => {
         ageMax: 12,
         category: 'Music',
         liability: true,
-        user: user.user._id
+        user: org.user._id
       }));
   });
 });

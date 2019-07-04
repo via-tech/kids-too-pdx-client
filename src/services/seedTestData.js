@@ -5,14 +5,15 @@ import {
 
 import {
   signUp,
-  deleteOrg
+  deleteUser
 } from './usersService';
 
-let createdUser = null;
+let createdOrg = null;
+let createdInactive = null;
 let createdEvents = null;
 let createdAdmin = null;
 
-const user = {
+const org = {
   role: 'org',
   username: 'theOrg999',
   password: '12345678',
@@ -25,7 +26,27 @@ const user = {
   state: 'OR',
   zipcode: '97203',
   cardNumber: '1234567890123456',
-  cardName: name,
+  cardName: 'The Org',
+  expMonth: '01',
+  expYear: '2020',
+  securityCode: '123',
+  method: 'visa'
+};
+
+const inactiveOrg = {
+  role: 'inactive',
+  username: 'theInactiveOrg999',
+  password: '12345678',
+  confirmPassword: '12345678',
+  name: 'The Inactive Org 999',
+  email: 'theinactiveorg999@email.com',
+  phone: '5551234567',
+  street: '1223 Main St.',
+  city: 'Portland',
+  state: 'OR',
+  zipcode: '97203',
+  cardNumber: '1234567890123456',
+  cardName: 'The Inactive Org 999',
   expMonth: '01',
   expYear: '2020',
   securityCode: '123',
@@ -46,7 +67,7 @@ const admin = {
   state: 'OR',
   zipcode: '97203',
   cardNumber: '1234567890123456',
-  cardName: name,
+  cardName: 'The Admin',
   expMonth: '01',
   expYear: '2020',
   securityCode: '123',
@@ -91,27 +112,30 @@ const events = [
   }
 ];
 
-const createUser = user => Promise.all([
-  signUp(user),
+const createUsers = () => Promise.all([
+  signUp(org),
+  signUp(inactiveOrg),
   signUp(admin)
 ])
-  .then(([userRes, adminRes]) => {
-    createdUser = userRes;
+  .then(([userRes, inactiveRes, adminRes]) => {
+    createdOrg = userRes;
+    createdInactive = inactiveRes;
     createdAdmin = adminRes;
   })
   .catch(err => err);
 
 const createEvents = events => {
-  const { token } = createdUser;
+  const { token } = createdOrg;
   return Promise.all(events.map(event => {
     event.token = token;
     return postEvent(event);
   }))
-    .then(eventRes => createdEvents = eventRes);
+    .then(eventRes => createdEvents = eventRes)
+    .catch(err => err);
 };
 
 const deleteEvents = events => {
-  const { token } = createdUser;
+  const { token } = createdOrg;
   return Promise.all(events.map(event => {
     event.token = token;
     return deleteEvent(event);
@@ -120,10 +144,12 @@ const deleteEvents = events => {
 };
 
 export const seedTestData = () => {
-  return createUser(user)
+  return createUsers()
     .then(() => createEvents(events))
     .then(() => ({
-      createdUser,
+      createdOrg,
+      createdInactive,
+      createdAdmin,
       createdEvents
     }))
     .catch(err => err);
@@ -133,9 +159,11 @@ export const deleteTestData = () => {
   const { user, token } = createdAdmin;
 
   return Promise.all([
-    deleteOrg({ ...createdUser.user, token }),
-    deleteOrg({ ...user, token }),
+    deleteUser({ _id: createdOrg.user._id, token }),
+    deleteUser({ _id: createdInactive.user._id, token }),
+    deleteUser({ _id: user._id, token }),
     deleteEvents(createdEvents)
   ])
+    .then(res => ({ deleted: res.length }))
     .catch(err => err);
 };

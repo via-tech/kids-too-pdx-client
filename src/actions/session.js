@@ -1,5 +1,9 @@
 import { createAction } from 'promise-middleware-redux';
-import { signIn, signUp } from '../services/usersService';
+import {
+  signIn,
+  signUp,
+  activateOrg
+} from '../services/usersService';
 
 export const [
   signUpSession,
@@ -21,3 +25,8 @@ export const SIGN_OUT_SESSION = 'SIGN_OUT_SESSION';
 export const signOutSession = () => ({
   type: SIGN_OUT_SESSION
 });
+
+export const [
+  activateSession,
+  ACTIVATE_SESSION
+] = createAction('ACTIVATE_SESSION', activateOrg);

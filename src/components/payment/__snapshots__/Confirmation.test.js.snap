@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation snapshots confirmation page 1`] = `
+<section>
+  <p>
+    Verification successful! Subscription will automatically renew each year. If on trial period, a $
+    500
+     subscription fee will automatically be charged after trial ends. Email reminders will be sent out accordingly. To manage subscription preferences, please visit the dashboard. Thank you!
+  </p>
+  <p>
+    Continue to
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+     page
+  </p>
+</section>
+`;
+
+exports[`Confirmation snapshots confirmation page without confirmation 1`] = `
+<p>
+  Confirmation page only upon payment! Go 
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+</p>
+`;

@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import UserInfo from './UserInfo';
 import styles from './SignInForm.css';
 
-function SignInForm({ handleSubmit, handleChange, user, error }) {
+function SignInForm(props) {
+  const { handleSubmit, user, error, history } = props;
+
+  if(error && error.includes('deactivated'))  history.push('/activate');
+
   return (
     <form className={styles.SignIn} onSubmit={handleSubmit.bind(null, user)}>
       {error && <p className={styles.error}>{error}</p>}
-      <fieldset>
-        <legend>User Info</legend>
-        <label>Username or Email:
-          <input type="text" name="username" onChange={handleChange} required />
-        </label>
 
-        <label>Password:
-          <input type="password" name="password" onChange={handleChange} required />
-        </label>
-      </fieldset>
+      <UserInfo {...props} />
+
       <button type="submit">Login</button>
     </form>
   );
@@ -23,9 +21,9 @@ function SignInForm({ handleSubmit, handleChange, user, error }) {
 
 SignInForm.propTypes = {
   handleSubmit: PropTypes.func,
-  handleChange: PropTypes.func,
   user: PropTypes.object,
-  error: PropTypes.string
+  error: PropTypes.string,
+  history: PropTypes.object
 };
 
 export default SignInForm;

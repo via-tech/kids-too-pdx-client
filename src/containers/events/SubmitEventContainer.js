@@ -21,11 +21,10 @@ const modelEvent = orgEvent => {
   };
 };
 
-const mapStateToProps = state => {
-  const orgEvent = getEvent(state);
-  orgEvent.token = getToken(state);
-  return { orgEvent };
-};
+const mapStateToProps = state => ({
+  orgEvent: getEvent(state),
+  token: getToken(state)
+});
 
 const mapDispatchToProps = (dispatch, props) => ({
   handleChange({ target }) {

@@ -1,21 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sign up form snapshots SignUpForm 1`] = `
+exports[`Reactivation Form snapshots ReactivateOrgForm 1`] = `
 <form
-  className="SignUp"
+  className="SignIn"
   onSubmit={[Function]}
 >
   <fieldset>
     <legend>
-      Organization Info
+      User Info
     </legend>
     <label>
-      Username
-      <span
-        className="required"
-      >
-        *
-      </span>
+      Username or Email:
       <input
         name="username"
         onChange={[MockFunction]}
@@ -24,142 +19,9 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
       />
     </label>
     <label>
-      Organization Name
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <input
-        name="name"
-        onChange={[MockFunction]}
-        required={true}
-        type="text"
-      />
-    </label>
-    <label>
-      Email
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <input
-        name="email"
-        onChange={[MockFunction]}
-        required={true}
-        type="email"
-      />
-    </label>
-    <label>
-      Phone
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <input
-        name="phone"
-        onChange={[MockFunction]}
-        required={true}
-        type="tel"
-      />
-    </label>
-    <label>
-      Address
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <label>
-        Street
-        <span
-          className="required"
-        >
-          *
-        </span>
-        <input
-          name="street"
-          onChange={[MockFunction]}
-          required={true}
-          type="text"
-        />
-      </label>
-      <label>
-        City
-        <span
-          className="required"
-        >
-          *
-        </span>
-        <input
-          name="city"
-          onChange={[MockFunction]}
-          required={true}
-          type="text"
-        />
-      </label>
-      <label>
-        State
-        <span
-          className="required"
-        >
-          *
-        </span>
-        <input
-          name="state"
-          onChange={[MockFunction]}
-          required={true}
-          type="text"
-        />
-      </label>
-      <label>
-        Zip Code
-        <span
-          className="required"
-        >
-          *
-        </span>
-        <input
-          name="zipcode"
-          onChange={[MockFunction]}
-          pattern="[0-9]*"
-          required={true}
-          type="text"
-        />
-      </label>
-    </label>
-    <label>
-      Organization Bio:
-      <textarea
-        name="bio"
-        onChange={[MockFunction]}
-      />
-    </label>
-    <label>
-      Password
-      <span
-        className="required"
-      >
-        *
-      </span>
+      Password:
       <input
         name="password"
-        onChange={[MockFunction]}
-        required={true}
-        type="password"
-      />
-    </label>
-    <label>
-      Confirm Password
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <input
-        name="confirmPassword"
         onChange={[MockFunction]}
         required={true}
         type="password"
@@ -313,18 +175,19 @@ exports[`Sign up form snapshots SignUpForm 1`] = `
   </fieldset>
   <h2>
     Total: $
+    900
   </h2>
   <button
     type="submit"
   >
-    Sign Up
+    Activate Account
   </button>
 </form>
 `;
 
-exports[`Sign up form snapshots form with error 1`] = `
+exports[`Reactivation Form snapshots ReactivateOrgForm with error 1`] = `
 <form
-  className="SignUp"
+  className="SignIn"
   onSubmit={[Function]}
 >
   <p
@@ -334,15 +197,10 @@ exports[`Sign up form snapshots form with error 1`] = `
   </p>
   <fieldset>
     <legend>
-      Organization Info
+      User Info
     </legend>
     <label>
-      Username
-      <span
-        className="required"
-      >
-        *
-      </span>
+      Username or Email:
       <input
         name="username"
         onChange={[MockFunction]}
@@ -351,142 +209,9 @@ exports[`Sign up form snapshots form with error 1`] = `
       />
     </label>
     <label>
-      Organization Name
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <input
-        name="name"
-        onChange={[MockFunction]}
-        required={true}
-        type="text"
-      />
-    </label>
-    <label>
-      Email
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <input
-        name="email"
-        onChange={[MockFunction]}
-        required={true}
-        type="email"
-      />
-    </label>
-    <label>
-      Phone
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <input
-        name="phone"
-        onChange={[MockFunction]}
-        required={true}
-        type="tel"
-      />
-    </label>
-    <label>
-      Address
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <label>
-        Street
-        <span
-          className="required"
-        >
-          *
-        </span>
-        <input
-          name="street"
-          onChange={[MockFunction]}
-          required={true}
-          type="text"
-        />
-      </label>
-      <label>
-        City
-        <span
-          className="required"
-        >
-          *
-        </span>
-        <input
-          name="city"
-          onChange={[MockFunction]}
-          required={true}
-          type="text"
-        />
-      </label>
-      <label>
-        State
-        <span
-          className="required"
-        >
-          *
-        </span>
-        <input
-          name="state"
-          onChange={[MockFunction]}
-          required={true}
-          type="text"
-        />
-      </label>
-      <label>
-        Zip Code
-        <span
-          className="required"
-        >
-          *
-        </span>
-        <input
-          name="zipcode"
-          onChange={[MockFunction]}
-          pattern="[0-9]*"
-          required={true}
-          type="text"
-        />
-      </label>
-    </label>
-    <label>
-      Organization Bio:
-      <textarea
-        name="bio"
-        onChange={[MockFunction]}
-      />
-    </label>
-    <label>
-      Password
-      <span
-        className="required"
-      >
-        *
-      </span>
+      Password:
       <input
         name="password"
-        onChange={[MockFunction]}
-        required={true}
-        type="password"
-      />
-    </label>
-    <label>
-      Confirm Password
-      <span
-        className="required"
-      >
-        *
-      </span>
-      <input
-        name="confirmPassword"
         onChange={[MockFunction]}
         required={true}
         type="password"
@@ -640,11 +365,12 @@ exports[`Sign up form snapshots form with error 1`] = `
   </fieldset>
   <h2>
     Total: $
+    900
   </h2>
   <button
     type="submit"
   >
-    Sign Up
+    Activate Account
   </button>
 </form>
 `;

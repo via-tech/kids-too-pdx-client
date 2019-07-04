@@ -1,15 +1,15 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PaymentInfo from './PaymentInfo';
+import UserInfo from './UserInfo';
 
-describe('Registration Form', () => {
-  it('snapshots PaymentInfo form', () => {
+describe('User Info', () => {
+  it('snapshots UserInfo', () => {
     const props = {
       handleChange: jest.fn()
     };
 
     const tree = renderer.create(
-      <PaymentInfo {...props} />
+      <UserInfo {...props} />
     );
 
     expect(tree).toMatchSnapshot();
