@@ -8,7 +8,8 @@ import {
   getOrgs,
   signUp,
   deactivateOrg,
-  activateOrg
+  activateOrg,
+  recoverPass
 } from './usersService';
 
 jest.mock('./request.js');
@@ -16,12 +17,14 @@ jest.mock('./request.js');
 describe('usersService', () => {
   let org = null;
   let inactiveOrg = null;
+  let forgetfulUser = null;
 
   beforeAll(done =>
     seedTestData()
-      .then(({ createdOrg, createdInactive }) => {
+      .then(({ createdOrg, createdInactive, createdForgetful }) => {
         org = createdOrg;
         inactiveOrg = createdInactive;
+        forgetfulUser = createdForgetful;
         done();
       })
   );
@@ -179,6 +182,17 @@ describe('usersService', () => {
         expect(activated).toEqual({
           ...user,
           role: 'org'
+        });
+
+        done();
+      });
+  });
+
+  it('resets forgotten password', done => {
+    return recoverPass(forgetfulUser.user.email)
+      .then(res => {
+        expect(res).toEqual({
+          message: 'Temporary password has been sent to forgetfulUser@email.com'
         });
 
         done();

@@ -19,14 +19,14 @@ export default function reducer(state = initialState, { type, payload }) {
       return {
         ...state,
         token: payload.token,
-        error: payload.error || null
+        error: payload.error
       };
     case SIGN_UP_SESSION:
     case ACTIVATE_SESSION:
       return {
         ...state,
         token: payload.token,
-        error: payload.error || null,
+        error: payload.error,
         confirmation: payload.token ? true : false
       };
     case UPDATE_USER:

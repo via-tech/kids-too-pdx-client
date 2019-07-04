@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ForgotPassword from './ForgotPassword';
+import ForgotPasswordForm from './ForgotPasswordForm';
 
 describe('Forgot Password component', () => {
   it('snapshots ForgotPassword', () => {
@@ -11,7 +11,7 @@ describe('Forgot Password component', () => {
     };
 
     const tree = renderer.create(
-      <ForgotPassword {...props} />
+      <ForgotPasswordForm {...props} />
     );
 
     expect(tree).toMatchSnapshot();
@@ -25,7 +25,7 @@ describe('Forgot Password component', () => {
     };
 
     const tree = renderer.create(
-      <ForgotPassword {...props} />
+      <ForgotPasswordForm {...props} />
     );
 
     expect(tree).toMatchSnapshot();
