@@ -4,7 +4,7 @@ import event from './eventDetail';
 import submit from './submitEvent';
 import session from './session';
 import resources from './resources';
-import forgetPass from './forgotPass';
+import forgotPass from './forgotPass';
 
 export default combineReducers({
   events,
@@ -12,5 +12,5 @@ export default combineReducers({
   submit, 
   session,
   resources,
-  forgetPass
+  forgotPass
 });
