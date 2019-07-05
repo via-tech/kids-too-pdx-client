@@ -80,3 +80,8 @@ export const deleteUser = ({ _id, token }) =>
 export const activateOrg = org => 
   post('/orgs/activate', modelUser(org))
     .catch(err => err);
+
+export const recoverPass = username =>
+  post('/auth/forgot', { username })
+    .catch(err => err);
+

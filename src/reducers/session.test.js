@@ -7,7 +7,7 @@ describe('session reducer', () => {
   const state = {
     user: {},
     token: '',
-    error: null,
+    error: undefined,
     confirmation: false
   };
 

@@ -12,6 +12,7 @@ let createdOrg = null;
 let createdInactive = null;
 let createdEvents = null;
 let createdAdmin = null;
+let createdForgetful = null;
 
 const org = {
   role: 'org',
@@ -74,6 +75,26 @@ const admin = {
   method: 'visa'
 };
 
+const forgetfulUser = {
+  role: 'org',
+  username: 'forgetfulUser',
+  password: '12345678',
+  confirmPassword: '12345678',
+  name: 'The Forgetful Org',
+  email: 'forgetfulUser@email.com',
+  phone: '5551234567',
+  street: '1223 Main St.',
+  city: 'Portland',
+  state: 'OR',
+  zipcode: '97203',
+  cardNumber: '1234567890123456',
+  cardName: 'Forgetful User',
+  expMonth: '01',
+  expYear: '2020',
+  securityCode: '123',
+  method: 'visa'
+};
+
 const events = [
   {
     name: 'The Event 1',
@@ -115,12 +136,14 @@ const events = [
 const createUsers = () => Promise.all([
   signUp(org),
   signUp(inactiveOrg),
-  signUp(admin)
+  signUp(admin),
+  signUp(forgetfulUser)
 ])
-  .then(([userRes, inactiveRes, adminRes]) => {
+  .then(([userRes, inactiveRes, adminRes, forgetfulRes]) => {
     createdOrg = userRes;
     createdInactive = inactiveRes;
     createdAdmin = adminRes;
+    createdForgetful = forgetfulRes;
   })
   .catch(err => err);
 
@@ -150,7 +173,8 @@ export const seedTestData = () => {
       createdOrg,
       createdInactive,
       createdAdmin,
-      createdEvents
+      createdEvents,
+      createdForgetful
     }))
     .catch(err => err);
 };
@@ -162,6 +186,7 @@ export const deleteTestData = () => {
     deleteUser({ _id: createdOrg.user._id, token }),
     deleteUser({ _id: createdInactive.user._id, token }),
     deleteUser({ _id: user._id, token }),
+    deleteUser({ _id: createdForgetful.user._id, token }),
     deleteEvents(createdEvents)
   ])
     .then(res => ({ deleted: res.length }))
