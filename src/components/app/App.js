@@ -12,7 +12,8 @@ import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
 import SignIn from '../../containers/users/SignIn';
 import SignUp from '../../containers/users/SignUp';
 import ConfirmationContainer from '../../containers/payment/ConfirmationContainer';
-import ReactivateOrgContainer from '../../containers/payment/ReactivateOrg';
+// import ReactivateOrgContainer from '../../containers/payment/ReactivateOrg';
+import StripePay from '../../containers/payment/StripePay';
 import ForgotPassword from '../../containers/users/ForgotPassword';
 
 export default function App() {
@@ -30,7 +31,7 @@ export default function App() {
         <Route exact path='/login' component={SignIn} />
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/confirmation' component={ConfirmationContainer} />
-        <Route exact path='/activate' component={ReactivateOrgContainer} />
+        <Route exact path='/activate' component={StripePay} />
         <Route exact path='/forgot' component={ForgotPassword} />
       </Switch>
       <Footer />
