@@ -1,23 +1,14 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { Elements, StripeProvider } from 'react-stripe-elements';
-import CheckoutForm from '../../components/payment/CheckoutForm';
+import StripePayForm from '../../components/payment/StripePayForm';
 
 function StripePay(props) {
-  return (
-    <StripeProvider apiKey={process.env.STRIPE_PUB_KEY}>
-      <div>
-        <h1>Payment</h1>
-        <Elements>
-          <CheckoutForm {...props} />
-        </Elements>
-      </div>
-    </StripeProvider>
-  );
+  return <StripePayForm {...props} />;
 }
 
 const mapStateToProps = () => ({
-  subFee: process.env.SUB_FEE_REG
+  subFee: process.env.SUB_FEE_REG,
+  apiKey: process.env.STRIPE_PUB_KEY
 });
 
 const mapDispatchToProps = () => ({
