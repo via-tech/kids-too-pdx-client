@@ -7,7 +7,7 @@ describe('session reducer', () => {
   const state = {
     user: {},
     token: '',
-    error: undefined,
+    error: '',
     confirmation: false
   };
 
@@ -20,7 +20,7 @@ describe('session reducer', () => {
     expect(reducer(state, action)).toEqual({
       ...state,
       token: '1234',
-      confirmation: true
+      confirmation: false
     });
   });
 
@@ -70,10 +70,13 @@ describe('session reducer', () => {
     });
   });
 
-  it('sets session on rea-activation', () => {
+  it('sets session on re-activation', () => {
     const action = {
       type: 'ACTIVATE_SESSION',
-      payload: { token: '1234' }
+      payload: {
+        token: '1234',
+        confirmation: true
+      }
     };
 
     expect(reducer(state, action)).toEqual({

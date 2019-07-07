@@ -27,7 +27,7 @@ const mapDispatchToProps = (dispatch, props) => ({
 
     action.payload
       .then(res => {
-        res.token ? props.history.push('/') : null;
+        res.user.role === 'org' ? props.history.push('/') : null;
       });
   }
 });

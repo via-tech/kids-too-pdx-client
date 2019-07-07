@@ -6,7 +6,7 @@ import styles from './SignInForm.css';
 function SignInForm(props) {
   const { handleSubmit, user, error, history } = props;
 
-  if(error && error.includes('deactivated'))  history.push('/activate');
+  if(error && error.includes('deactivated')) history.push('/activate');
 
   return (
     <form className={styles.SignIn} onSubmit={handleSubmit.bind(null, user)}>

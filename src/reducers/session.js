@@ -9,7 +9,7 @@ import {
 const initialState = {
   user: {},
   token: '',
-  error: null,
+  error: '',
   confirmation: false
 };
 
@@ -18,16 +18,16 @@ export default function reducer(state = initialState, { type, payload }) {
     case SIGN_IN_SESSION:
       return {
         ...state,
-        token: payload.token,
-        error: payload.error
+        token: payload.token || '',
+        error: payload.error || ''
       };
     case SIGN_UP_SESSION:
     case ACTIVATE_SESSION:
       return {
         ...state,
-        token: payload.token,
-        error: payload.error,
-        confirmation: payload.token ? true : false
+        token: payload.token || '',
+        error: payload.error || '',
+        confirmation: payload.confirmation || false 
       };
     case UPDATE_USER:
       return {

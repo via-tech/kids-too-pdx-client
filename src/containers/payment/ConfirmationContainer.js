@@ -1,9 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import Confirmation from '../../components/payment/Confirmation';
-import {
-  getConfirmation
-} from '../../selectors/session';
+import { getConfirmation } from '../../selectors/session';
 
 function ConfirmationContainer(props) {
   return <Confirmation {...props} />;

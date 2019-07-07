@@ -7,6 +7,7 @@ function StripePay(props) {
 }
 
 const mapStateToProps = () => ({
+  //pass stripeToken as props
   subFee: process.env.SUB_FEE_REG,
   apiKey: process.env.STRIPE_PUB_KEY
 });

@@ -12,7 +12,6 @@ import SubmitEventContainer from '../../containers/events/SubmitEventContainer';
 import SignIn from '../../containers/users/SignIn';
 import SignUp from '../../containers/users/SignUp';
 import ConfirmationContainer from '../../containers/payment/ConfirmationContainer';
-// import ReactivateOrgContainer from '../../containers/payment/ReactivateOrg';
 import StripePay from '../../containers/payment/StripePay';
 import ForgotPassword from '../../containers/users/ForgotPassword';
 
