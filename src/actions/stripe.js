@@ -1,7 +1,7 @@
 import { createAction } from 'promise-middleware-redux';
-import { createStripeToken } from '../services/stripeService';
+import { getStripeToken } from '../services/stripeService';
 
 export const [
-  getStripeToken,
+  createStripeToken,
   CREATE_STRIPE_TOKEN
-] = createAction('CREATE_STRIPE_TOKEN', createStripeToken);
+] = createAction('CREATE_STRIPE_TOKEN', getStripeToken);

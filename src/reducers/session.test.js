@@ -70,7 +70,7 @@ describe('session reducer', () => {
     });
   });
 
-  it('sets session on re-activation', () => {
+  it('sets session on activation', () => {
     const action = {
       type: 'ACTIVATE_SESSION',
       payload: {

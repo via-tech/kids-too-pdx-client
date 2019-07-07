@@ -18,6 +18,7 @@ export default function reducer(state = initialState, { type, payload }) {
     case SIGN_IN_SESSION:
       return {
         ...state,
+        user: { ...payload.user },
         token: payload.token || '',
         error: payload.error || ''
       };

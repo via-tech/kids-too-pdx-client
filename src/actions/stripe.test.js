@@ -1,10 +1,10 @@
-import { getStripeToken } from './stripe';
+import { createStripeToken } from './stripe';
 
 jest.mock('../services/stripeService');
 
 describe('stripe actions', () => {
-  it('returns action for getStripeToken', () => {
-    const action = getStripeToken({
+  it('returns action for createStripeToken', () => {
+    const action = createStripeToken({
       name: 'Test Org'
     });
 
