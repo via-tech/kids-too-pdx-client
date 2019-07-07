@@ -77,8 +77,8 @@ export const deleteUser = ({ _id, token }) =>
   del(`/auth/${_id}`, { token })
     .catch(err => err);
 
-export const activateOrg = org => 
-  post('/orgs/activate', modelUser(org))
+export const activateOrg = stripeToken => 
+  post('/orgs/activate', stripeToken)
     .catch(err => err);
 
 export const recoverPass = username =>

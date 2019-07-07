@@ -4,7 +4,12 @@ import { Elements, StripeProvider } from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
 
 function StripePayForm(props) {
-  const { apiKey } = props;
+  const { apiKey, role, token } = props;
+
+  if(!token) return history.push('/login');
+
+  if(role === 'org' || role === 'admin') return <p>This account has already been activated!</p>;
+
   return (
     <StripeProvider apiKey={apiKey}>
       <div>
@@ -18,7 +23,9 @@ function StripePayForm(props) {
 }
 
 StripePayForm.propTypes = {
-  apiKey: PropTypes.string.isRequired
+  apiKey: PropTypes.string.isRequired,
+  role: PropTypes.string,
+  token: PropTypes.string
 };
 
 export default StripePayForm;
