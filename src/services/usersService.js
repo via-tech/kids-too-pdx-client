@@ -6,7 +6,7 @@ import {
 } from './request';
 
 const modelUser = user => {
-  const { street, city, state, zipcode, billStreet, billCity, billState, billZipcode, cardName, cardNumber, securityCode, expMonth, expYear, method } = user;
+  const { street, city, state, zipcode } = user;
 
   const address = {
     street,
@@ -15,27 +15,9 @@ const modelUser = user => {
     zipcode
   };
 
-  const billAddress = {
-    billStreet: billStreet || street,
-    billCity: billCity || city,
-    billState: billState || state,
-    billZipcode: billZipcode || zipcode
-  };
-
-  const payment = {
-    cardNumber,
-    cardName,
-    securityCode,
-    expMonth,
-    expYear,
-    method,
-    billAddress
-  };
-
   return {
     ...user,
     role: user.role || 'org',
-    payment,
     address
   };
 };
@@ -77,8 +59,8 @@ export const deleteUser = ({ _id, token }) =>
   del(`/auth/${_id}`, { token })
     .catch(err => err);
 
-export const activateOrg = stripeToken => 
-  post('/orgs/activate', stripeToken)
+export const activateOrg = ({ stripeToken, token }) => 
+  post('/orgs/activate', { stripeToken, token })
     .catch(err => err);
 
 export const recoverPass = username =>
