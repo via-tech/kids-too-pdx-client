@@ -16,6 +16,7 @@ let createdForgetful = null;
 
 const org = {
   role: 'org',
+  adminPassCode: process.env.ADMIN_PASS_CODE,
   username: 'theOrg999',
   password: '12345678',
   confirmPassword: '12345678',
@@ -25,13 +26,7 @@ const org = {
   street: '1223 Main St.',
   city: 'Portland',
   state: 'OR',
-  zipcode: '97203',
-  cardNumber: '1234567890123456',
-  cardName: 'The Org',
-  expMonth: '01',
-  expYear: '2020',
-  securityCode: '123',
-  method: 'visa'
+  zipcode: '97203'
 };
 
 const inactiveOrg = {
@@ -45,13 +40,7 @@ const inactiveOrg = {
   street: '1223 Main St.',
   city: 'Portland',
   state: 'OR',
-  zipcode: '97203',
-  cardNumber: '1234567890123456',
-  cardName: 'The Inactive Org 999',
-  expMonth: '01',
-  expYear: '2020',
-  securityCode: '123',
-  method: 'visa'
+  zipcode: '97203'
 };
 
 const admin = {
@@ -66,13 +55,7 @@ const admin = {
   street: '1223 Main St.',
   city: 'Portland',
   state: 'OR',
-  zipcode: '97203',
-  cardNumber: '1234567890123456',
-  cardName: 'The Admin',
-  expMonth: '01',
-  expYear: '2020',
-  securityCode: '123',
-  method: 'visa'
+  zipcode: '97203'
 };
 
 const forgetfulUser = {
@@ -86,13 +69,7 @@ const forgetfulUser = {
   street: '1223 Main St.',
   city: 'Portland',
   state: 'OR',
-  zipcode: '97203',
-  cardNumber: '1234567890123456',
-  cardName: 'Forgetful User',
-  expMonth: '01',
-  expYear: '2020',
-  securityCode: '123',
-  method: 'visa'
+  zipcode: '97203'
 };
 
 const events = [

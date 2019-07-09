@@ -107,13 +107,7 @@ describe('usersService', () => {
       street: '1223 Main St.',
       city: 'Portland',
       state: 'OR',
-      zipcode: '97203',
-      cardNumber: '1234567890123456',
-      cardName: 'Bad User',
-      expMonth: '01',
-      expYear: '2020',
-      securityCode: '123',
-      method: 'visa'
+      zipcode: '97203'
     };
 
     signUp(badUser)
@@ -133,12 +127,6 @@ describe('usersService', () => {
       city: 'Portland',
       state: 'OR',
       zipcode: '97203',
-      cardNumber: '1234567890123456',
-      cardName: 'Bad User',
-      expMonth: '01',
-      expYear: '2020',
-      securityCode: '123',
-      method: 'visa'
     };
 
     signUp(badUser)
@@ -159,29 +147,17 @@ describe('usersService', () => {
       });
   });
 
-  it('re-activates organization', done => {
-    const { user } = inactiveOrg;
+  it('activates organization', done => {
+    const { user, token } = inactiveOrg;
 
-    const activateInput = {
-      username: user.username, 
-      password: '12345678',
-      billStreet: '1223 Main St.',
-      billCity: 'Portland',
-      billState: 'OR',
-      billZipcode: '97203',
-      cardNumber: '1234567890123456',
-      cardName: 'The Inactive',
-      expMonth: '01',
-      expYear: '2020',
-      securityCode: '123',
-      method: 'visa'
-    };
+    
 
-    activateOrg(activateInput)
+    activateOrg({ stripeToken: 'tok_visa', token })
       .then(activated => {
         expect(activated).toEqual({
           ...user,
-          role: 'org'
+          role: 'org',
+          stripeToken: 'tok_visa'
         });
 
         done();

@@ -16,7 +16,6 @@ function SignUp(props) {
 
 const mapStateToProps = state => ({
   user: getUser(state),
-  subFee: process.env.SUB_FEE_TRIAL,
   error: getError(state)
 });
 
@@ -25,12 +24,12 @@ const mapDispatchToProps = (dispatch, props) => ({
     dispatch(updateUser({ [target.name]: target.value }));
   },
 
-  handleSubmit(user, error, event) {
+  handleSubmit({ user }, event) {
     event.preventDefault();
     const action = signUpSession(user);
     dispatch(action);
     action.payload
-      .then(res => !res.error ? props.history.push('/confirmation') : null);
+      .then(res => !res.error ? props.history.push('/activate') : null);
   },
 });
 

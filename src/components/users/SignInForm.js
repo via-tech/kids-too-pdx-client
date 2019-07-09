@@ -2,20 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import UserInfo from './UserInfo';
 import styles from './SignInForm.css';
+import { Link } from 'react-router-dom';
 
 function SignInForm(props) {
   const { handleSubmit, user, error, history } = props;
 
-  if(error && error.includes('deactivated'))  history.push('/activate');
+  if(error && error.includes('deactivated')) history.push('/activate');
 
   return (
-    <form className={styles.SignIn} onSubmit={handleSubmit.bind(null, user)}>
-      {error && <p className={styles.error}>{error}</p>}
+    <section>
+      <form className={styles.SignIn} onSubmit={handleSubmit.bind(null, user)}>
+        {error && <p className={styles.error}>{error}</p>}
 
-      <UserInfo {...props} />
+        <UserInfo {...props} />
 
-      <button type="submit">Login</button>
-    </form>
+        <button type="submit">Login</button>
+      </form>
+
+      <Link to={'/forgot'}><p>Forgot Password?</p></Link>
+    </section>
   );
 }
 

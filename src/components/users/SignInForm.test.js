@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import SignInForm from './SignInForm';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('Sign in form', () => {
   it('snapshots SignInForm', () => {
@@ -14,7 +15,9 @@ describe('Sign in form', () => {
     };
 
     const tree = renderer.create(
-      <SignInForm {...props} />
+      <MemoryRouter>
+        <SignInForm {...props} />
+      </MemoryRouter>
     );
 
     expect(tree).toMatchSnapshot();
