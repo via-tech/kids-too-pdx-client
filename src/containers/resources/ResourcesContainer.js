@@ -2,7 +2,7 @@ import Resources from '../../components/resources/Resources';
 import { connect } from 'react-redux';
 import { getOrgs } from '../../selectors/resources';
 import { fetchOrgs } from '../../actions/resources';
-import { withFetch } from '../../components/withFetch';
+import { withFetch } from '../../components/wrappers/withFetch';
 
 const mapStateToProps = state => ({
   orgs: getOrgs(state)
