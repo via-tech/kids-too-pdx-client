@@ -10,7 +10,8 @@ export default function reducer(state = initialState, { type, payload }) {
     case RESET_PASS:
       return {
         ...state,
-        ...payload
+        message: payload.message || '',
+        error: payload.error || ''
       };
     default:
       return state;

@@ -165,7 +165,10 @@ describe('usersService', () => {
   });
 
   it('resets forgotten password', done => {
-    return recoverPass(forgetfulUser.user.email)
+    return recoverPass({
+      username: forgetfulUser.user.email,
+      adminPassCode: process.env.ADMIN_PASS_CODE
+    })
       .then(res => {
         expect(res).toEqual({
           message: 'Temporary password has been sent to forgetfulUser@email.com'
