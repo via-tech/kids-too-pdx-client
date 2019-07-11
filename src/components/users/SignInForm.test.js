@@ -22,4 +22,20 @@ describe('Sign in form', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('snapshots SigninForm with error', () => {
+    const props = {
+      handleChange: jest.fn(),
+      handleSubmit: jest.fn(),
+      error: 'Incorrect username or password'
+    };
+
+    const tree = renderer.create(
+      <MemoryRouter>
+        <SignInForm {...props} />
+      </MemoryRouter>
+    );
+
+    expect(tree).toMatchSnapshot();
+  });
 });

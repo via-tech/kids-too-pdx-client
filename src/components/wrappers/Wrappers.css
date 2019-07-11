@@ -1,0 +1,11 @@
+.Wrappers {
+  .Loader {
+    text-align: center;
+    margin: 100px;
+    color: grey;
+  }
+
+  .Error {
+    color: red;
+  }
+}
