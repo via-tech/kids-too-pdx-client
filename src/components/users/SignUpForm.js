@@ -20,8 +20,7 @@ function SignUpForm(props) {
 SignUpForm.propTypes = {
   handleSubmit: PropTypes.func,
   handleChange: PropTypes.func,
-  user: PropTypes.object,
-  error: PropTypes.string
+  user: PropTypes.object
 };
 
 export default withError(SignUpForm);
