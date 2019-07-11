@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RegistrationInfo from '../payment/RegistrationInfo';
 import styles from './SignUpForm.css';
+import { withError } from '../wrappers/withError';
 
 function SignUpForm(props) {
-  const { handleSubmit, user, error } = props;
+  const { handleSubmit, user } = props;
 
   return (
     <form className={styles.SignUp} onSubmit={handleSubmit.bind(null, { user })}>
-      {error && <p className={styles.error}>{error}</p>}
 
       <RegistrationInfo {...props} />
 
@@ -24,4 +24,4 @@ SignUpForm.propTypes = {
   error: PropTypes.string
 };
 
-export default SignUpForm;
+export default withError(SignUpForm);
