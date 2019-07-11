@@ -3,7 +3,8 @@ import {
   getEvents,
   getEvent,
   getFilteredEvents,
-  patchEvent
+  patchEvent,
+  postEvent
 } from './eventsService';
 
 jest.mock('./request.js');
@@ -24,6 +25,22 @@ describe('eventsService', () => {
   afterAll(() => deleteTestData());
 
   it('posts events', () => expect(events).toHaveLength(5));
+
+  it('errors on posting a bad event', done => {
+    return postEvent({
+      name: 'The Event 5',
+      ageMin: 8,
+      ageMax: 12,
+      category: 'Art',
+      liability: false,
+      token: org.token
+    })
+      .then(res => {
+        expect(res).toEqual({ error: 'Liability agreement required' });
+
+        done();
+      });
+  });
 
   it('gets events', done =>
     getEvents()

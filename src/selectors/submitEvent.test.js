@@ -1,4 +1,4 @@
-import { getEvent } from './submitEvent';
+import { getEvent, getError } from './submitEvent';
 
 describe('submit event selectors', () => {
   const state = {
@@ -25,7 +25,9 @@ describe('submit event selectors', () => {
         maxAge: 12,
         category: 'Art',
         description: 'The bestest event ever!!'
-      }
+      },
+      
+      error: 'Liability required'
     }
   };
 
@@ -54,4 +56,8 @@ describe('submit event selectors', () => {
       description: 'The bestest event ever!!'
     });
   });
+
+  it('gets error', () =>
+    expect(getError(state)).toEqual('Liability required')
+  );
 });
