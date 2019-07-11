@@ -25,26 +25,34 @@ describe('eventsService', () => {
 
   it('posts events', () => expect(events).toHaveLength(5));
 
-  it('gets events', () =>
+  it('gets events', done =>
     getEvents()
-      .then(events => expect(events).toBeDefined())
+      .then(events => {
+        expect(events).toBeDefined();
+
+        done();
+      })
   );
 
-  it('gets an event by id', () => {
+  it('gets an event by id', done => {
     getEvent(events[0]._id)
-      .then(event => expect(event).toEqual({
-        _id: events[0]._id,
-        user: org.user._id,
-        image: expect.any(String),
-        name: 'The Event 1',
-        ageMin: 8,
-        ageMax: 12,
-        category: 'Art',
-        liability: true
-      }));
+      .then(event => {
+        expect(event).toEqual({
+          _id: events[0]._id,
+          user: org.user._id,
+          image: expect.any(String),
+          name: 'The Event 1',
+          ageMin: 8,
+          ageMax: 12,
+          category: 'Art',
+          liability: true
+        });
+
+        done();
+      });
   });
 
-  it('gets filtered event', () => {
+  it('gets filtered event', done => {
     const filters = {
       category: 'Education',
       ageMin: 14,
@@ -52,19 +60,23 @@ describe('eventsService', () => {
     };
 
     getFilteredEvents(filters)
-      .then(filteredEvents => expect(filteredEvents).toEqual([{
-        _id: events[3]._id,
-        user: org.user._id,
-        image: expect.any(String),
-        name: 'The Event 4',
-        ageMin: 15,
-        ageMax: 20,
-        category: 'Education',
-        liability: true
-      }]));
+      .then(filteredEvents => {
+        expect(filteredEvents).toEqual([{
+          _id: events[3]._id,
+          user: org.user._id,
+          image: expect.any(String),
+          name: 'The Event 4',
+          ageMin: 15,
+          ageMax: 20,
+          category: 'Education',
+          liability: true
+        }]);
+
+        done();
+      });
   });
 
-  it('patches an event', () => {
+  it('patches an event', done => {
     const updatedEvent = {
       _id: events[4]._id,
       token: org.token,
@@ -72,15 +84,19 @@ describe('eventsService', () => {
     };
 
     patchEvent(updatedEvent)
-      .then(patchedEvent => expect(patchedEvent).toEqual({
-        image: expect.any(String),
-        _id: events[4]._id,
-        name: 'The Event 5',
-        ageMin: 8,
-        ageMax: 12,
-        category: 'Music',
-        liability: true,
-        user: org.user._id
-      }));
+      .then(patchedEvent => {
+        expect(patchedEvent).toEqual({
+          image: expect.any(String),
+          _id: events[4]._id,
+          name: 'The Event 5',
+          ageMin: 8,
+          ageMax: 12,
+          category: 'Music',
+          liability: true,
+          user: org.user._id
+        });
+
+        done();
+      });
   });
 });

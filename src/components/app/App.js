@@ -7,7 +7,7 @@ import Home from '../home/Home';
 import EventDetail from '../events/EventDetail';
 import Contact from '../info/Contact';
 import AboutUs from '../info/AboutUs';
-import ResourcesContainer from '../../containers/resources/ResourcesContainer';
+import Resources from '../../containers/resources/Resources';
 import SubmitEvent from '../../containers/events/SubmitEvent';
 import SignIn from '../../containers/users/SignIn';
 import SignUp from '../../containers/users/SignUp';
@@ -26,7 +26,7 @@ export default function App() {
         <Route exact path='/submit-event' component={SubmitEvent} />
         <Route exact path='/contact' component={Contact} /> 
         <Route exact path='/aboutus' component={AboutUs} /> 
-        <Route exact path='/resources' component={ResourcesContainer} />
+        <Route exact path='/resources' component={Resources} />
         <Route exact path='/login' component={SignIn} />
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/confirmation' component={Confirmation} />

@@ -1,4 +1,4 @@
-import Resources from '../../components/resources/Resources';
+import ResourcesPage from '../../components/resources/ResourcesPage';
 import { connect } from 'react-redux';
 import { getOrgs } from '../../selectors/resources';
 import { fetchOrgs } from '../../actions/resources';
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withFetch(Resources));
+)(withFetch(ResourcesPage));
