@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CardElement, injectStripe } from 'react-stripe-elements';
+import { withError } from '../wrappers/withError';
 
-function CheckoutForm({ subFee, handleClick, stripe, name, error }) {
+function CheckoutForm({ subFee, handleClick, stripe, name }) {
   return (
     <section>
       <p>Enter card information to complete activation</p>
-      { error && <p>{error}</p>}
 
       <CardElement />
 
@@ -20,8 +20,7 @@ CheckoutForm.propTypes = {
   subFee: PropTypes.string,
   handleClick: PropTypes.func,
   stripe: PropTypes.object.isRequired,
-  name: PropTypes.string.isRequired,
-  error: PropTypes.string
+  name: PropTypes.string.isRequired
 };
 
-export default injectStripe(CheckoutForm);
+export default withError(injectStripe(CheckoutForm));
