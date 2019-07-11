@@ -3,7 +3,7 @@ import React from 'react';
 import SubmitEvent from '../../components/submission/SubmitEvent';
 import { getEvent } from '../../selectors/submitEvent';
 import { updateEvent, createEvent } from '../../actions/submitEvent';
-import { getToken } from '../../selectors/session';
+import { getToken, getUser } from '../../selectors/session';
 
 function SubmitContainer(props) {
   return <SubmitEvent {...props} />;
@@ -23,7 +23,8 @@ const modelEvent = orgEvent => {
 
 const mapStateToProps = state => ({
   orgEvent: getEvent(state),
-  token: getToken(state)
+  token: getToken(state),
+  role: getUser(state).role
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
