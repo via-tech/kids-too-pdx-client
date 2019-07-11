@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withError } from '../wrappers/withError';
 
-function ForgotPassword({ handleChange, handleSubmit, user, message, error }) {
+function ForgotPassword({ handleChange, handleSubmit, user, message }) {
   return (
     <main>
       <form onSubmit={handleSubmit.bind(null, user)}>
@@ -14,7 +15,6 @@ function ForgotPassword({ handleChange, handleSubmit, user, message, error }) {
       </form>
 
       {message && <p>{message}</p>}
-      {error && <p>Something went wrong. Try again.</p>}
     </main>
   );
 }
@@ -23,8 +23,7 @@ ForgotPassword.propTypes = {
   handleChange: PropTypes.func,
   handleSubmit: PropTypes.func,
   message: PropTypes.string,
-  user: PropTypes.object,
-  error: PropTypes.string
+  user: PropTypes.object
 };
 
-export default ForgotPassword;
+export default withError(ForgotPassword);

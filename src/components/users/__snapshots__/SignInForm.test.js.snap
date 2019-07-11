@@ -1,47 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sign in form snapshots SignInForm 1`] = `
-<section>
-  <form
-    className="SignIn"
-    onSubmit={[Function]}
-  >
-    <fieldset>
-      <legend>
-        User Info
-      </legend>
-      <label>
-        Username or Email:
-        <input
-          name="username"
-          onChange={[MockFunction]}
-          required={true}
-          type="text"
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          name="password"
-          onChange={[MockFunction]}
-          required={true}
-          type="password"
-        />
-      </label>
-    </fieldset>
-    <button
-      type="submit"
+<div
+  className="Wrappers"
+>
+  <section>
+    <form
+      className="SignIn"
+      onSubmit={[Function]}
     >
-      Login
-    </button>
-  </form>
-  <a
-    href="/forgot"
-    onClick={[Function]}
+      <fieldset>
+        <legend>
+          User Info
+        </legend>
+        <label>
+          Username or Email:
+          <input
+            name="username"
+            onChange={[MockFunction]}
+            required={true}
+            type="text"
+          />
+        </label>
+        <label>
+          Password:
+          <input
+            name="password"
+            onChange={[MockFunction]}
+            required={true}
+            type="password"
+          />
+        </label>
+      </fieldset>
+      <button
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+    <a
+      href="/forgot"
+      onClick={[Function]}
+    >
+      <p>
+        Forgot Password?
+      </p>
+    </a>
+  </section>
+</div>
+`;
+
+exports[`Sign in form snapshots SigninForm with error 1`] = `
+<div
+  className="Wrappers"
+>
+  <p
+    className="Error"
   >
-    <p>
-      Forgot Password?
-    </p>
-  </a>
-</section>
+    Incorrect username or password
+  </p>
+  <section>
+    <form
+      className="SignIn"
+      onSubmit={[Function]}
+    >
+      <fieldset>
+        <legend>
+          User Info
+        </legend>
+        <label>
+          Username or Email:
+          <input
+            name="username"
+            onChange={[MockFunction]}
+            required={true}
+            type="text"
+          />
+        </label>
+        <label>
+          Password:
+          <input
+            name="password"
+            onChange={[MockFunction]}
+            required={true}
+            type="password"
+          />
+        </label>
+      </fieldset>
+      <button
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+    <a
+      href="/forgot"
+      onClick={[Function]}
+    >
+      <p>
+        Forgot Password?
+      </p>
+    </a>
+  </section>
+</div>
 `;

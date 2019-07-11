@@ -7,7 +7,8 @@ describe('Submit Event reducers', () => {
     event: {
       name: 'The Event',
       price: 200
-    }
+    },
+    error: ''
   };
 
   it('updates event', () => {
@@ -47,8 +48,14 @@ describe('Submit Event reducers', () => {
   });
 
   it('resets state after creating event', () => {
-    const action = { type: 'CREATE_EVENT' };
+    const action = {
+      type: 'CREATE_EVENT',
+      payload: {}
+    };
     
-    expect(reducer(state, action)).toEqual({ event: {} });
+    expect(reducer(state, action)).toEqual({
+      event: {},
+      error: ''
+    });
   });
 });

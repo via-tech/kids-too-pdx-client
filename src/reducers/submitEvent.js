@@ -4,7 +4,8 @@ import {
 } from '../actions/submitEvent';
 
 const initialState = {
-  event: {}
+  event: {},
+  error: ''
 };
 
 export default function reducer(state = initialState, { payload, type }) {
@@ -16,7 +17,8 @@ export default function reducer(state = initialState, { payload, type }) {
       };
     case CREATE_EVENT:
       return {
-        event: {}
+        event: {},
+        error: payload.error || ''
       };
     default:
       return state;

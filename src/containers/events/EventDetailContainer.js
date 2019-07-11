@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchEventDetail } from '../../actions/eventDetail';
 import { withRouter } from 'react-router-dom';
-import { withFetch } from '../../components/withFetch';
+import { withFetch } from '../../components/wrappers/withFetch';
 import Event from '../../components/events/Event';
 import { getEventDetail } from '../../selectors/eventDetail';
 

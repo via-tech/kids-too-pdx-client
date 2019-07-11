@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Elements, StripeProvider } from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
+import { withError } from '../wrappers/withError';
+import { withSignIn } from '../wrappers/withSignIn';
 
 function StripePayForm(props) {
-  const { apiKey, role, token } = props;
-
-  if(!token) return history.push('/login');
+  const { apiKey, role } = props;
 
   if(role === 'org' || role === 'admin') return <p>This account has already been activated!</p>;
 
@@ -24,8 +24,7 @@ function StripePayForm(props) {
 
 StripePayForm.propTypes = {
   apiKey: PropTypes.string.isRequired,
-  role: PropTypes.string,
-  token: PropTypes.string
+  role: PropTypes.string
 };
 
-export default StripePayForm;
+export default withSignIn(withError(StripePayForm));

@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import SubmitEvent from '../../components/submission/SubmitEvent';
-import { getEvent } from '../../selectors/submitEvent';
+import SubmitEventForm from '../../components/submission/SubmitEventForm';
+import { getEvent, getError } from '../../selectors/submitEvent';
 import { updateEvent, createEvent } from '../../actions/submitEvent';
-import { getToken } from '../../selectors/session';
+import { getToken, getUser } from '../../selectors/session';
 
-function SubmitContainer(props) {
-  return <SubmitEvent {...props} />;
+function SubmitEvent(props) {
+  return <SubmitEventForm {...props} />;
 }
 
 const modelEvent = orgEvent => {
@@ -23,7 +23,9 @@ const modelEvent = orgEvent => {
 
 const mapStateToProps = state => ({
   orgEvent: getEvent(state),
-  token: getToken(state)
+  token: getToken(state),
+  role: getUser(state).role,
+  error: getError(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -44,4 +46,4 @@ const mapDispatchToProps = (dispatch, props) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SubmitContainer);
+)(SubmitEvent);

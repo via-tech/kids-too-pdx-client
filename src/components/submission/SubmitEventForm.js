@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SubmitEvent.css';
+import { withActive } from '../wrappers/withActive';
+import { withSignIn } from '../wrappers/withSignIn';
+import { withError } from '../wrappers/withError';
 
-function SubmitEvent({ orgEvent, token, handleSubmit, handleChange, history }) {
-  if(!token) {
-    history.push('/login');
-  }
+function SubmitEventForm({ orgEvent, handleSubmit, handleChange }) {
   return (
     <>
       <form className={styles.Form} onSubmit={handleSubmit.bind(null, orgEvent)}>
@@ -98,12 +98,10 @@ function SubmitEvent({ orgEvent, token, handleSubmit, handleChange, history }) {
   );
 }
 
-SubmitEvent.propTypes = {
+SubmitEventForm.propTypes = {
   orgEvent: PropTypes.object.isRequired,
-  token: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  history: PropTypes.object
+  handleSubmit: PropTypes.func.isRequired
 };
 
-export default SubmitEvent;
+export default withSignIn(withActive(withError(SubmitEventForm)));

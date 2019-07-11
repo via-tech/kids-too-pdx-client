@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Resources.css';
 
-function Resources({ orgs }) {
+function ResourcesPage({ orgs }) {
   const orgsList = orgs.map((org, ind) =>
     <section key={ind}>
       <img alt={`${org.name} Logo`} src={org.logo} />
@@ -18,8 +18,8 @@ function Resources({ orgs }) {
   );
 }
 
-Resources.propTypes = {
+ResourcesPage.propTypes = {
   orgs: PropTypes.array
 };
 
-export default Resources;
+export default ResourcesPage;

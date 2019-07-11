@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Confirmation from './Confirmation';
+import ConfirmationPage from './ConfirmationPage';
 import { MemoryRouter } from 'react-router-dom';
 
-describe('Confirmation', () => {
+describe('ConfirmationPage', () => {
   it('snapshots confirmation page', () => {
     const props = {
       subFee: '500',
@@ -12,7 +12,7 @@ describe('Confirmation', () => {
 
     const tree = renderer.create(
       <MemoryRouter>
-        <Confirmation {...props} />
+        <ConfirmationPage {...props} />
       </MemoryRouter>
     );
 
@@ -27,7 +27,7 @@ describe('Confirmation', () => {
 
     const tree = renderer.create(
       <MemoryRouter>
-        <Confirmation {...props} />
+        <ConfirmationPage {...props} />
       </MemoryRouter>
     );
 

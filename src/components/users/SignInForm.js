@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import UserInfo from './UserInfo';
 import styles from './SignInForm.css';
 import { Link } from 'react-router-dom';
+import { withError } from '../wrappers/withError';
 
 function SignInForm(props) {
   const { handleSubmit, user, error, history } = props;
@@ -12,7 +13,6 @@ function SignInForm(props) {
   return (
     <section>
       <form className={styles.SignIn} onSubmit={handleSubmit.bind(null, user)}>
-        {error && <p className={styles.error}>{error}</p>}
 
         <UserInfo {...props} />
 
@@ -31,4 +31,4 @@ SignInForm.propTypes = {
   history: PropTypes.object
 };
 
-export default SignInForm;
+export default withError(SignInForm);

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Resources from './Resources';
+import ResourcesPage from './ResourcesPage';
 
 describe('Resources', () => {
   const props = {
@@ -61,7 +61,7 @@ describe('Resources', () => {
 
   it('snapshots Resources', () => {
     const tree = renderer.create(
-      <Resources {...props} />
+      <ResourcesPage {...props} />
     );
 
     expect(tree).toMatchSnapshot();

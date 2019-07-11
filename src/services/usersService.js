@@ -63,7 +63,7 @@ export const activateOrg = ({ stripeToken, token }) =>
   post('/orgs/activate', { stripeToken, token })
     .catch(err => err);
 
-export const recoverPass = username =>
-  post('/auth/forgot', { username })
+export const recoverPass = body =>
+  post('/auth/forgot', body)
     .catch(err => err);
 

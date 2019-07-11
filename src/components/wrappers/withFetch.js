@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { SyncLoader } from 'react-spinners';
-import Styles from './home/Home.css';
+import styles from './Wrappers.css';
 
 export const withFetch = Component => {
   class WithFetch extends PureComponent {
@@ -21,9 +21,9 @@ export const withFetch = Component => {
     render() {
       const { loading } = this.props;
       return (
-        <>
+        <div className={styles.Wrappers}>
           {loading ?
-            <div className={Styles.Loader}>
+            <div className={styles.Loader}>
               <SyncLoader 
                 sizeUnit={'px'}
                 size={30}
@@ -31,7 +31,7 @@ export const withFetch = Component => {
               />
             </div>
             : <Component {...this.props} />}
-        </>
+        </div>
       );
     }
   }

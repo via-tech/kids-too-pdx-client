@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With error wrapper snapshots withError with error 1`] = `
+<div
+  className="Wrappers"
+>
+  <p
+    className="Error"
+  >
+    Wrong!!
+  </p>
+  <div>
+    <h1>
+      The Main Component
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`With error wrapper snapshots withError without error 1`] = `
+<div
+  className="Wrappers"
+>
+  
+  <div>
+    <h1>
+      The Main Component
+    </h1>
+  </div>
+</div>
+`;

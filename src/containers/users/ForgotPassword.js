@@ -15,7 +15,7 @@ function ForgotPassword(props) {
 
 const mapStateToProps = state => ({
   user: getUser(state),
-  error: getError(state),
+  error: getError(state) ? 'Something went wrong. Try again.' : null,
   message: getMessage(state)
 });
 

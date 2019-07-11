@@ -10,7 +10,7 @@ import {
   updateFilters,
   fetchFilteredEvents
 } from '../../actions/events';
-import { withFetch } from '../../components/withFetch';
+import { withFetch } from '../../components/wrappers/withFetch';
 import store from '../../store';
 
 const mapStateToProps = state => ({

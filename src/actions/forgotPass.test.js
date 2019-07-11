@@ -4,7 +4,7 @@ jest.mock('../services/request');
 
 describe('forgotPass actions', () => {
   it('returns action for resetPass', () => {
-    const action = resetPass('forgetful123');
+    const action = resetPass({ username: 'forgetful123' });
 
     expect(action).toEqual({
       type: 'RESET_PASS',
