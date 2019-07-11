@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import SubmitEventForm from '../../components/submission/SubmitEventForm';
-import { getEvent } from '../../selectors/submitEvent';
+import { getEvent, getError } from '../../selectors/submitEvent';
 import { updateEvent, createEvent } from '../../actions/submitEvent';
 import { getToken, getUser } from '../../selectors/session';
 
@@ -24,7 +24,8 @@ const modelEvent = orgEvent => {
 const mapStateToProps = state => ({
   orgEvent: getEvent(state),
   token: getToken(state),
-  role: getUser(state).role
+  role: getUser(state).role,
+  error: getError(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './SubmitEvent.css';
 import { withActive } from '../wrappers/withActive';
 import { withSignIn } from '../wrappers/withSignIn';
+import { withError } from '../wrappers/withError';
 
 function SubmitEventForm({ orgEvent, handleSubmit, handleChange }) {
   return (
@@ -103,4 +104,4 @@ SubmitEventForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired
 };
 
-export default withSignIn(withActive(SubmitEventForm));
+export default withSignIn(withActive(withError(SubmitEventForm)));

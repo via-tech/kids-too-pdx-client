@@ -86,4 +86,26 @@ describe('SubmitEvent', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('snapshots SubmitEvent with error', () => {
+    const props = {
+      orgEvent: { ...orgEvent, liability: false },
+      token: '1234',
+      handleChange: jest.fn(),
+      handleSubmit: jest.fn(),
+      role: 'org',
+      history: {
+        push(route) {
+          return route;
+        }
+      },
+      error: 'Liability required'
+    };
+
+    const tree = renderer.create(
+      <SubmitEventForm {...props} />
+    );
+
+    expect(tree).toMatchSnapshot();
+  });
 });
