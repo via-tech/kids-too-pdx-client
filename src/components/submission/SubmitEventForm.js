@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './SubmitEvent.css';
 import { withActive } from '../wrappers/withActive';
 
-function SubmitEventForm({ orgEvent, token, handleSubmit, handleChange, history }) {
-  if(!token) {
-    history.push('/login');
-  }
+function SubmitEventForm({ orgEvent, handleSubmit, handleChange }) {
   return (
     <>
       <form className={styles.Form} onSubmit={handleSubmit.bind(null, orgEvent)}>
@@ -101,10 +98,8 @@ function SubmitEventForm({ orgEvent, token, handleSubmit, handleChange, history 
 
 SubmitEventForm.propTypes = {
   orgEvent: PropTypes.object.isRequired,
-  token: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  history: PropTypes.object
+  handleSubmit: PropTypes.func.isRequired
 };
 
 export default withActive(SubmitEventForm);

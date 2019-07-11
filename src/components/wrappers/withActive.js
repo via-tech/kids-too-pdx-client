@@ -5,11 +5,9 @@ export const withActive = Component => {
   function WithActive(props) {
     const { role, history } = props;
 
-    if(role === 'org' || role === 'admin') {
-      return <Component {...props} />;
-    } else {
-      return history.push('/activate');
-    }
+    if(role === 'org' || role === 'admin') return <Component {...props} />;
+    
+    return history.push('/activate');
   }
 
   WithActive.propTypes = {
