@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Elements, StripeProvider } from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
+import { withError } from '../wrappers/withError';
 
 function StripePayForm(props) {
   const { apiKey, role, token } = props;
@@ -28,4 +29,4 @@ StripePayForm.propTypes = {
   token: PropTypes.string
 };
 
-export default StripePayForm;
+export default withError(StripePayForm);
