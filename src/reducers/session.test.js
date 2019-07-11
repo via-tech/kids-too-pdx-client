@@ -74,14 +74,19 @@ describe('session reducer', () => {
     const action = {
       type: 'ACTIVATE_SESSION',
       payload: {
-        token: '1234',
-        confirmation: true
+        name: 'The Activated Org',
+        role: 'org',
+        stripeToken: '12345'
       }
     };
 
     expect(reducer(state, action)).toEqual({
       ...state,
-      token: '1234',
+      user: {
+        name: 'The Activated Org',
+        role: 'org',
+        stripeToken: '12345'
+      },
       confirmation: true
     });
   });

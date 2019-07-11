@@ -150,8 +150,6 @@ describe('usersService', () => {
   it('activates organization', done => {
     const { user, token } = inactiveOrg;
 
-    
-
     activateOrg({ stripeToken: 'tok_visa', token })
       .then(activated => {
         expect(activated).toEqual({
