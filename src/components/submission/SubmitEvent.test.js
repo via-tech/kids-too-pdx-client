@@ -29,12 +29,13 @@ describe('SubmitEvent', () => {
     description: 'The bestest event',
     liability: true
   };
-  it('snapshots SubmitEvent logged in', () => {
+  it('snapshots SubmitEvent logged in and active', () => {
     const props = {
       orgEvent,
       token: '1234',
       handleChange: jest.fn(),
-      handleSubmit: jest.fn()
+      handleSubmit: jest.fn(),
+      role: 'org'
     };
 
     const tree = renderer.create(
@@ -50,7 +51,33 @@ describe('SubmitEvent', () => {
       token: '',
       handleChange: jest.fn(),
       handleSubmit: jest.fn(),
-      history: []
+      role: 'org',
+      history: {
+        push(route) {
+          return route;
+        }
+      }
+    };
+
+    const tree = renderer.create(
+      <SubmitEvent {...props} />
+    );
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('snapshots SubmitEvent logged in and inactive org', () => {
+    const props = {
+      orgEvent,
+      token: '1234',
+      handleChange: jest.fn(),
+      handleSubmit: jest.fn(),
+      role: 'inactive',
+      history: {
+        push(route) {
+          return route;
+        }
+      }
     };
 
     const tree = renderer.create(

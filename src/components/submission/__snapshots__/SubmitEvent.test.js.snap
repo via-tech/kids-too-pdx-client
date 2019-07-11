@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
+exports[`SubmitEvent snapshots SubmitEvent logged in and active 1`] = `
 <form
   className="Form"
   onSubmit={[Function]}
@@ -306,6 +306,8 @@ exports[`SubmitEvent snapshots SubmitEvent logged in 1`] = `
   </button>
 </form>
 `;
+
+exports[`SubmitEvent snapshots SubmitEvent logged in and inactive org 1`] = `"/activate"`;
 
 exports[`SubmitEvent snapshots SubmitEvent logged out 1`] = `
 <form

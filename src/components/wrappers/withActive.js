@@ -13,7 +13,7 @@ export const withActive = Component => {
   }
 
   WithActive.propTypes = {
-    role: PropTypes.string,
+    role: PropTypes.string.isRequired,
     history: PropTypes.object
   };
 

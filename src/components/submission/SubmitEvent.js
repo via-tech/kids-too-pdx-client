@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SubmitEvent.css';
+import { withActive } from '../wrappers/withActive';
 
 function SubmitEvent({ orgEvent, token, handleSubmit, handleChange, history }) {
   if(!token) {
@@ -106,4 +107,4 @@ SubmitEvent.propTypes = {
   history: PropTypes.object
 };
 
-export default SubmitEvent;
+export default withActive(SubmitEvent);
