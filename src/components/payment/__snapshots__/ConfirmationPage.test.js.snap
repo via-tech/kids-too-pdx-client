@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Confirmation snapshots confirmation page 1`] = `
+exports[`ConfirmationPage snapshots confirmation page 1`] = `
 <section>
   <p>
     Payment successful! Subscription will automatically renew each year. If on trial period, a $
@@ -20,7 +20,7 @@ exports[`Confirmation snapshots confirmation page 1`] = `
 </section>
 `;
 
-exports[`Confirmation snapshots confirmation page without confirmation 1`] = `
+exports[`ConfirmationPage snapshots confirmation page without confirmation 1`] = `
 <p>
   Confirmation page only upon payment! Go 
   <a

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import SubmitEvent from './SubmitEvent';
+import SubmitEventForm from './SubmitEventForm';
 
 describe('SubmitEvent', () => {
   const orgEvent = {
@@ -39,7 +39,7 @@ describe('SubmitEvent', () => {
     };
 
     const tree = renderer.create(
-      <SubmitEvent {...props} />
+      <SubmitEventForm {...props} />
     );
 
     expect(tree).toMatchSnapshot();
@@ -60,7 +60,7 @@ describe('SubmitEvent', () => {
     };
 
     const tree = renderer.create(
-      <SubmitEvent {...props} />
+      <SubmitEventForm {...props} />
     );
 
     expect(tree).toMatchSnapshot();
@@ -81,7 +81,7 @@ describe('SubmitEvent', () => {
     };
 
     const tree = renderer.create(
-      <SubmitEvent {...props} />
+      <SubmitEventForm {...props} />
     );
 
     expect(tree).toMatchSnapshot();

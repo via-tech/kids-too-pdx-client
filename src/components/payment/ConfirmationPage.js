@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Confirmation({ subFee, confirmation }) {
+function ConfirmationPage({ subFee, confirmation }) {
   if(confirmation) return (
     <section>
       <p>Payment successful! Subscription will automatically renew each year. If on trial period, a ${subFee} subscription fee will automatically be charged after trial ends. Email reminders will be sent out accordingly. To manage subscription preferences, please visit the dashboard. Thank you!</p>
@@ -20,9 +20,9 @@ function Confirmation({ subFee, confirmation }) {
   </p>;
 }
 
-Confirmation.propTypes = {
+ConfirmationPage.propTypes = {
   subFee: PropTypes.string.isRequired,
   confirmation: PropTypes.bool.isRequired
 };
 
-export default Confirmation;
+export default ConfirmationPage;

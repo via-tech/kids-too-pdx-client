@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './SubmitEvent.css';
 import { withActive } from '../wrappers/withActive';
 
-function SubmitEvent({ orgEvent, token, handleSubmit, handleChange, history }) {
+function SubmitEventForm({ orgEvent, token, handleSubmit, handleChange, history }) {
   if(!token) {
     history.push('/login');
   }
@@ -99,7 +99,7 @@ function SubmitEvent({ orgEvent, token, handleSubmit, handleChange, history }) {
   );
 }
 
-SubmitEvent.propTypes = {
+SubmitEventForm.propTypes = {
   orgEvent: PropTypes.object.isRequired,
   token: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
@@ -107,4 +107,4 @@ SubmitEvent.propTypes = {
   history: PropTypes.object
 };
 
-export default withActive(SubmitEvent);
+export default withActive(SubmitEventForm);

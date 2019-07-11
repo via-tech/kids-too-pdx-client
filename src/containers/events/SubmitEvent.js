@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import SubmitEvent from '../../components/submission/SubmitEvent';
+import SubmitEventForm from '../../components/submission/SubmitEventForm';
 import { getEvent } from '../../selectors/submitEvent';
 import { updateEvent, createEvent } from '../../actions/submitEvent';
 import { getToken, getUser } from '../../selectors/session';
 
-function SubmitContainer(props) {
-  return <SubmitEvent {...props} />;
+function SubmitEvent(props) {
+  return <SubmitEventForm {...props} />;
 }
 
 const modelEvent = orgEvent => {
@@ -45,4 +45,4 @@ const mapDispatchToProps = (dispatch, props) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SubmitContainer);
+)(SubmitEvent);

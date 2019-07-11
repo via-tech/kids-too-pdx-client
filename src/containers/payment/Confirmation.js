@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import Confirmation from '../../components/payment/Confirmation';
+import ConfirmationPage from '../../components/payment/ConfirmationPage';
 import { getConfirmation } from '../../selectors/session';
 
-function ConfirmationContainer(props) {
-  return <Confirmation {...props} />;
+function Confirmation(props) {
+  return <ConfirmationPage {...props} />;
 }
 
 const mapStateToProps = state => ({
@@ -14,4 +14,4 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps
-)(ConfirmationContainer);
+)(Confirmation);
