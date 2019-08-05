@@ -7,6 +7,8 @@ function ConfirmationPage({ subFee, confirmation }) {
     <section>
       <p>Payment successful! Subscription will automatically renew each year. If on trial period, a ${subFee} subscription fee will automatically be charged after trial ends. Email reminders will be sent out accordingly. To manage subscription preferences, please visit the dashboard. Thank you!</p>
 
+      <p><strong>Please verify your email address with the link sent to the provided email.</strong></p>
+
       <p>
         Continue to
         <Link to="/">Home</Link> page
