@@ -60,10 +60,9 @@ export const deleteUser = ({ _id, token }) =>
     .catch(err => err);
 
 export const activateOrg = ({ stripeToken, token }) => 
-  post('/orgs/activate', { stripeToken, token })
+  post('/activate/payment', { stripeToken, token })
     .catch(err => err);
 
 export const recoverPass = body =>
   post('/auth/forgot', body)
     .catch(err => err);
-

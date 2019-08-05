@@ -122,7 +122,9 @@ const createUsers = () => Promise.all([
     createdAdmin = adminRes;
     createdForgetful = forgetfulRes;
   })
-  .catch(err => err);
+  .catch(err => {
+    throw err;
+  });
 
 const createEvents = events => {
   const { token } = createdOrg;
@@ -131,7 +133,9 @@ const createEvents = events => {
     return postEvent(event);
   }))
     .then(eventRes => createdEvents = eventRes)
-    .catch(err => err);
+    .catch(err => {
+      throw err;
+    });
 };
 
 const deleteEvents = events => {
@@ -140,7 +144,9 @@ const deleteEvents = events => {
     event.token = token;
     return deleteEvent(event);
   }))
-    .catch(err => err);
+    .catch(err => {
+      throw err;
+    });
 };
 
 export const seedTestData = () => {
@@ -153,7 +159,9 @@ export const seedTestData = () => {
       createdEvents,
       createdForgetful
     }))
-    .catch(err => err);
+    .catch(err => {
+      throw err;
+    });
 };
 
 export const deleteTestData = () => {
@@ -167,5 +175,7 @@ export const deleteTestData = () => {
     deleteEvents(createdEvents)
   ])
     .then(res => ({ deleted: res.length }))
-    .catch(err => err);
+    .catch(err => {
+      throw err;
+    });
 };
