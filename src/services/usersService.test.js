@@ -81,11 +81,14 @@ describe('usersService', () => {
     patchUser(updatedUser)
       .then(patchedUser => {
         expect(patchedUser).toEqual({
-          ...user,
-          email: 'theorg999@org.com'
+          user: {
+            ...user,
+            email: 'theorg999@org.com'
+          },
+          token: expect.any(String)
         });
 
-        org = { ...org, user: patchedUser };
+        org = patchedUser;
         done();
       });
   });
@@ -133,32 +136,48 @@ describe('usersService', () => {
       .then(err => expect(err).toEqual({ error: 'Password must be at least 8 characters' }));
   });
 
-  it('deactivates organization', done => {
-    const { user, token } = org;
-
-    deactivateOrg({ _id: user._id, token })
-      .then(deactivated => {
-        expect(deactivated).toEqual({
-          ...user,
-          role: 'inactive'
-        });
-
-        done();
-      });
-  });
-
   it('activates organization', done => {
     const { user, token } = inactiveOrg;
 
     activateOrg({ stripeToken: 'tok_visa', token })
       .then(activated => {
         expect(activated).toEqual({
-          ...user,
-          role: 'org',
-          stripeToken: 'tok_visa'
+          user: {
+            ...user,
+            role: 'inactive',
+            stripeToken: 'tok_visa',
+            stripeSubId: expect.any(String)
+          },
+          previewUrl: false,
+          token: expect.any(String)
         });
 
         done();
+      });
+  });
+
+  it('deactivates organization', done => {
+    const { user, token } = org;
+
+    activateOrg({ stripeToken: 'tok_visa', token })
+      .then(activated => {
+        deactivateOrg({
+          _id: user._id,
+          token: activated.token
+        })
+          .then(deactivated => {
+            expect(deactivated).toEqual({
+              user: {
+                ...user,
+                role: 'inactive',
+                stripeToken: 'tok_visa',
+                stripeSubId: expect.any(String)
+              },
+              token: expect.any(String)
+            });
+    
+            done();
+          });
       });
   });
 
@@ -169,7 +188,8 @@ describe('usersService', () => {
     })
       .then(res => {
         expect(res).toEqual({
-          message: 'Temporary password has been sent to forgetfulUser@email.com'
+          message: 'Temporary password has been sent to forgetfulUser@email.com',
+          previewUrl: false
         });
 
         done();
